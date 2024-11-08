@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      About the children
+    </h1>
+
+    <form class="form" action="/path/of/next/page" method="post">
+
+      <p>
+        [Insert question content here - see the
+        <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+        for examples]
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "adults"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
