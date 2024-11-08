@@ -16,17 +16,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        How many children is this for?
-      </h1>
+      <form class="form" action="children" method="post">
 
-      <form class="form" action="/path/of/next/page" method="post">
+      {{ govukInput({
+        label: {
+          text: "How many children is this for?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        id: "number-of-children",
+        name: "number-of-children",
+        classes: "govuk-input--width-4"
+      }) }}
 
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
 
         {{ govukButton({
           text: "Continue",

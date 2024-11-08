@@ -22,11 +22,39 @@
 
     <form class="form" action="/path/of/next/page" method="post">
 
-      <p>
-        [Insert question content here - see the
-        <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        for examples]
-      </p>
+      {{ govukInput({
+        label: {
+          text: "Name of the first child"
+        },
+        id: "first-child-name",
+        name: "first-child-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Age of the first child"
+        },
+        id: "first-child-age",
+        name: "first-child-age",
+        classes: "govuk-input--width-4"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Name of the second child"
+        },
+        id: "second-child-name",
+        name: "second-child-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Age of the second child"
+        },
+        id: "second-child-age",
+        name: "second-child-age",
+        classes: "govuk-input--width-4"
+      }) }}
 
       {{ govukButton({
         text: "Continue",
