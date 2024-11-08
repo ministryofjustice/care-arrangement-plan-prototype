@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+Using this service– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,17 +16,35 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-       Using this service
-      </h1>
+      <h1 class="govuk-heading-l">Using this service</h1>
 
-      <p>
-        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
-      </p>
+      <h2 class="govuk-heading-m">Domestic abuse</h2>
 
-      <p>
-        Read more <a href="/path/of/page">about this topic</a>.
-      </p>
+      <p>Negotiating with the other person involved won't be suitable if you think they pose a threat to your or your children's safety.</p>
+
+      <p>Find out more about <a href="">signs of domestic violence</a> if you're unsure whether you're a victim.</p>
+
+      <p><a href="">Report domestic violence</a> when it's safe to do so and you think you're a victim.</p>
+
+      <p>If you need to access support, Citizen's Advice has a list of organisations which can help you.</p>
+
+      <p><a href="">Domestic violence and abuse - getting help - Citizen's Advice</a></p>
+
+      <h2 class="govuk-heading-m">Child abuse or neglect</h2>
+
+      <p>You shouldn't make arrangements with the other parent if you think they:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>are abusing your children</li>
+        <li>are neglecting your children</li>
+        <li>have a drug or alcohol problem that's affecting your children</li>
+      </ul>
+
+      <p><a href="">Find out more about child abuse and neglect</a></p>
+
+      <p><a href="">Report child abuse</a> if you have any concerns and tell your children about <a href="">Childline</a> so they can report any abuse themselves.</p>
+   
+      <p>You can also <a href="">report a concern about a child online</a> to the National Society for the Prevenion of Cruelty to Children (NSPCC).</p>
 
       {{ govukButton({
         text: "Agree and continue",

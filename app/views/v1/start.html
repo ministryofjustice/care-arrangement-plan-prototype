@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -18,11 +18,11 @@
         href: "#"
       },
       {
-        text: "Section",
+        text: "Family law",
         href: "#"
       },
       {
-        text: "Subsection"
+        text: "Parenting plan"
       }
     ]
   }) }}
@@ -38,15 +38,16 @@
         {{ serviceName }}
       </h1>
 
-      <p>Use this service to:</p>
+      <p>A parenting plan is a written plan to prepare, discuss and agree arrangements. It's not legally binding but it can help you make plans that meet your children's needs.</p>
+
+      <p>Using a parenting plan:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
+        <li>helps you know what's expected of you</li>
+        <li>confirms your agreements (for example, where your children will live)</li>
+        <li>works as a record for you to go back to</li>
       </ul>
 
-      <p>Registering takes around 5 minutes.</p>
 
       {{ govukButton({
         text: "Start now",
@@ -54,7 +55,7 @@
         isStartButton: true
       }) }}
 
-      <h2 class="govuk-heading-m">
+      <!--<h2 class="govuk-heading-m">
         Before you start
       </h2>
 
@@ -68,7 +69,7 @@
 
       <p>
         You can’t register for this service if you’re in the UK illegally.
-      </p>
+      </p>-->
 
     </div>
 
