@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-    How many children is this for? – {{ serviceName }} – GOV.UK Prototype Kit
+Who will the children live with? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,20 +16,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="children" method="post">
+      <form class="form" action="plan-create" method="post">
 
-      {{ govukInput({
+
+      {{ govukTextarea({
+        name: "moreDetail",
+        id: "more-detail",
         label: {
-          text: "How many children is this for?",
+          text: "Who will the children live with?",
           classes: "govuk-label--l",
           isPageHeading: true
         },
-        id: "number-of-children",
-        name: "number-of-children",
-        classes: "govuk-input--width-4"
+        hint: {
+          text: "Describe who the children will live with most of the time."
+        }
       }) }}
 
 
+    
         {{ govukButton({
           text: "Continue"
         }) }}

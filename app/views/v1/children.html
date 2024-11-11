@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+  About the children  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@
       About the children
     </h1>
 
-    <form class="form" action="/path/of/next/page" method="post">
+    <form class="form" action="adults" method="post">
 
       {{ govukInput({
         label: {
@@ -57,8 +57,7 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue",
-        href: "adults"
+        text: "Continue"
       }) }}
 
     </form>

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Who is using this service? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@
         Who is using this service?
       </h1>
 
-      <form class="form" action="plan" method="post">
+      <form class="form" action="plan-create" method="post">
 
         {{ govukInput({
           label: {
@@ -39,8 +39,7 @@
           name: "second-child-name"
         }) }}
         {{ govukButton({
-          text: "Continue",
-          href: "plan"
+          text: "Continue"
         }) }}
 
       </form>
