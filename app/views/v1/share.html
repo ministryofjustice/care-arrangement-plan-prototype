@@ -9,49 +9,34 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {{ govukCheckboxes({
-        name: "waste",
-        fieldset: {
-          legend: {
-            text: "Share your plan",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "You can share your plan in a few different ways. Select all that apply."
-        },
-        items: [
-          {
-            value: "Save a PDF copy",
-            text: "Save a PDF copy"
-          },
-          {
-            value: "Email a PDF copy",
-            text: "Email a PDF copy"
-          },
-          {
-            value: "Print this page",
-            text: "Print this page"
-          },
-          {
-            value: "Save and return",
-            text: "Save and return"
-          },
-          {
-            value: "Create an account",
-            text: "Create an account"
-          },
-          {
-            value: "Share schedule to your own calendar",
-            text: "Share schedule to your own calendar"
-          }
-        ]
+      {{ govukPanel({
+        titleText: "Plan created"
       }) }}
+
+      <p>This is based on the information you have provided.</p>
+
+
+      <h2 class="govuk-heading-m">
+        What do you want to do next?
+      </h2>
+
+      <p>To share your plan you can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">Download a copy of the plan</a></li>
+        <li><a href="#">Email a copy of the plan</a></li>
+        <li><a href="#">Print a copy of the plan</a></li>
+        <li><a href="#">Share visits schedule to your own calendar</a></li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">
+        Save the plan
+      </h2>
+      <p><a href="#">Create an account</a> to use the plan again in the future.</p>
+
+
    
-      {{ govukButton({
-        text: "Continue"
-      }) }}
 
     </div>
   </div>
