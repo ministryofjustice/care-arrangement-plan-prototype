@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Who will the children live with? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Special days
+      </h1>
+
+      <p>Which special days are important to you? </p>
+
+      <p>For example, New Year celebrations, Mother’s day, UK bank holidays.</p> 
+
+      <p>You should also consider holidays that don’t happen every year, such as an extra bank holiday to celebrate a royal event. </p>
+
+      <p>You may also want to think about family birthdays and special events such as graduation ceremonies or military homecomings.</p> 
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+      <form class="form" action="plan-create" method="post">
+
+
+      {{ govukTextarea({
+        name: "moreDetail",
+        id: "more-detail",
+        label: {
+          text: "What will happen on special days?",
+          classes: "govuk-label--m"        },
+        hint: {
+          text: "Describe what will happen on special days."
+        }
+      }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
