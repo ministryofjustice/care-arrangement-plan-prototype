@@ -1,0 +1,168 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Jay and Robyn's child arrangement plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <form class="form" action="plan" method="post">
+
+        <h1 class="govuk-heading-l">
+          Jay and Robyn's child arrangement plan
+        </h1>
+
+        {{ govukButton({
+          text: "View the standard page",
+          classes: "govuk-button--secondary",
+          href: "plan-create"
+        }) }}
+
+        {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            value: "Jay and Robyn",
+            label: {
+              text: "The children",
+              classes: "govuk-label--m"
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            value: "Heather and Richard",
+            label: {
+              text: "Who is agreeing this arrangement",
+              classes: "govuk-label--m"
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "Who they will live with",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "In this section..."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "Who they will spend time with",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "In this section..."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "When visits will happen",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "In this section..."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "What happens during holidays",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "In this section..."
+            }
+          }) }}
+
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "What happens on special days",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "In this section..."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "How to agree changes",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "In this section..."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "Confirm the arrangement",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "In this section..."
+            }
+          }) }}
+
+
+
+
+
+          {{ govukButton({
+            text: "Create and share your plan"
+          }) }}
+
+          </form>
+
+      </div>
+    </div>
+
+  
+
+
+
+
+
+{% endblock %}
