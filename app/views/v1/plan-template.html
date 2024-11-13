@@ -24,7 +24,7 @@
         <form class="form" action="plan" method="post">
 
         <h1 class="govuk-heading-l">
-          Jay and Robyn's child arrangement plan
+          Child arrangement plan for Jay and Robyn 
         </h1>
 
         {{ govukButton({
@@ -46,7 +46,7 @@
             name: "moreDetail",
             id: "more-detail",
             label: {
-              text: "Who is agreeing this arrangement",
+              text: "Who is agreeing this arrangement?",
               classes: "govuk-label--m"
             }
           }) }}
@@ -56,24 +56,11 @@
             name: "moreDetail",
             id: "more-detail",
             label: {
-              text: "Who they will live with",
-              classes: "govuk-label--m"
-            },
-            hint: {
-              text: "Briefly outline the general arrangements for child care. For example, the children might spend equal time at both parents’ houses."
-            }
-          }) }}
-
-
-          {{ govukTextarea({
-            name: "moreDetail",
-            id: "more-detail",
-            label: {
-              text: "Who they will spend time with",
+              text: "Where will the children live?",
               classes: "govuk-label--m"
             },
             hint: {
-              text: " If the children generally live with one parent, use this page to describe what happens the rest of the time. For example, the children might spend alternate weekends with the other parent."
+              text: "State where the children will generally live. For example, the children might spend equal time at both parents’ houses."
             }
           }) }}
 
@@ -82,11 +69,11 @@
             name: "moreDetail",
             id: "more-detail",
             label: {
-              text: "When visits will happen",
+              text: "Who will the children visit?",
               classes: "govuk-label--m"
             },
             hint: {
-              text: "If the children live with one parent but visit another parent or guardian, use this page to describe when this happens. For example, the children might spend alternate weekends with the other parent."
+              text: "If the children generally live with one parent, use this page to describe what happens the rest of the time. For example, the children might spend alternate weekends with the other parent."
             }
           }) }}
 
@@ -95,11 +82,24 @@
             name: "moreDetail",
             id: "more-detail",
             label: {
-              text: "What happens during holidays",
+              text: "When will visits happen?              ",
               classes: "govuk-label--m"
             },
             hint: {
-              text: "What are you going to do for the school holidays, including half terms? Older children may also have periods of study leave, or work experience."
+              text: "If the children live with one parent but visit another parent or guardian, use this page to describe when this happens.  For example, the children might spend alternate weekends with the other parent."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "What will happen during holidays?",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "What are you going to do for the school holidays, including half terms? Older children may also have periods of study leave, or work experience.  "
             }
           }) }}
 
@@ -109,7 +109,7 @@
             name: "moreDetail",
             id: "more-detail",
             label: {
-              text: "What happens on special days",
+              text: "What will happen on special days?"              ,
               classes: "govuk-label--m"
             },
             hint: {
@@ -122,7 +122,7 @@
             name: "moreDetail",
             id: "more-detail",
             label: {
-              text: "How to agree changes",
+              text: "How will you agree changes?",
               classes: "govuk-label--m"
             },
             hint: {
