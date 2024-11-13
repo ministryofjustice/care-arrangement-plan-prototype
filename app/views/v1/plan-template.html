@@ -28,15 +28,13 @@
         </h1>
 
         {{ govukButton({
-          text: "View the standard page",
-          classes: "govuk-button--secondary",
+          text: "Print this arrangement plan template",
           href: "plan-create"
         }) }}
 
         {{ govukTextarea({
             name: "moreDetail",
             id: "more-detail",
-            value: "Jay and Robyn",
             label: {
               text: "The children",
               classes: "govuk-label--m"
@@ -47,7 +45,6 @@
           {{ govukTextarea({
             name: "moreDetail",
             id: "more-detail",
-            value: "Heather and Richard",
             label: {
               text: "Who is agreeing this arrangement",
               classes: "govuk-label--m"
@@ -146,13 +143,6 @@
             }
           }) }}
 
-
-
-
-
-          {{ govukButton({
-            text: "Create and share your plan"
-          }) }}
 
           </form>
 
