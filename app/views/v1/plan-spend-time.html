@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Special days – {{ serviceName }} – GOV.UK Prototype Kit
+Who the children will spend time with – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,18 +17,12 @@ Special days – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Special days
+        Who the children will spend time with
       </h1>
 
-      <p>Which special days are important to you? </p>
-
-      <p>For example, New Year celebrations, Mother’s day, UK bank holidays.</p> 
-
-      <p>You should also consider holidays that don’t happen every year, such as an extra bank holiday to celebrate a royal event. </p>
-
-      <p>You may also want to think about family birthdays and special events such as graduation ceremonies or military homecomings.</p> 
-
-
+      <p>If the children generally live with one parent, use this page to describe what happens the rest of the time.</p> 
+      
+      <p>For example, the children might spend alternate weekends with the other parent.</p>
 
       <form class="form" action="plan-create" method="post">
 
@@ -37,8 +31,9 @@ Special days – {{ serviceName }} – GOV.UK Prototype Kit
         name: "moreDetail",
         id: "more-detail",
         label: {
-          text: "What will happen on special days?",
-          classes: "govuk-label--m"        }
+          text: "Who will the children spend time with?",
+          classes: "govuk-label--m"
+        }
       }) }}
 
 
