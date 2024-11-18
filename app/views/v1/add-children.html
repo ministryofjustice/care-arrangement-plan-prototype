@@ -68,7 +68,7 @@ The children – {{ serviceName }} – GOV.UK Prototype Kit
         'data-name': 'person[%index%][last_name]',
         'data-id': 'person[%index%][last_name]'
       }
-  }) }}-->
+  }) }}
 
     {{ govukDateInput({
       id: "date-of-birth",
@@ -113,7 +113,21 @@ The children – {{ serviceName }} – GOV.UK Prototype Kit
           }
         }
       ]
-    }) }}
+  }) }}-->
+
+  {{ govukInput({
+    id: 'person[0][age]',
+    name: 'person[0][age]',
+    classes: "govuk-input--width-4",
+    label: {
+      html: 'Age',
+      classes: 'govuk-!-font-weight-bold'
+    },
+    attributes: {
+      'data-name': 'person[%index%][age]',
+      'data-id': 'person[%index%][age]'
+    }
+  }) }}
 
     {% endcall %}
 
