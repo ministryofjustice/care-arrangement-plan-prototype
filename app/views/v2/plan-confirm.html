@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm the arrangement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Confirm the arrangement
+      </h1>
+
+      <p>Confirm that you agree to these child arrangement plans. How often do you agree to review these arrangements?</p>
+
+
+  
+
+      <form class="form" action="plan-create" method="post">
+
+
+      {{ govukTextarea({
+        name: "confirm",
+        id: "confirm",
+        label: {
+          classes: "govuk-label--m",
+          isPageHeading: true
+        }
+      }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
