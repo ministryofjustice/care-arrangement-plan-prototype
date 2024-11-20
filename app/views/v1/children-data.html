@@ -46,11 +46,7 @@
                 classes: "govuk-input--width-4"
             }) }}
 
-        {% endif %}
-        <!-- end of one child -->
-
-        <!-- two children-->
-        {% if data['number-of-children'] == '2' %}
+        {% elif data['number-of-children'] == '2' %}
 
             {{ govukInput({
                 label: {
@@ -86,12 +82,7 @@
                 classes: "govuk-input--width-4"
             }) }}
 
-        {% endif %}
-        <!-- end of two children -->
-
-
-        <!-- three children-->
-        {% if data['number-of-children'] == '3' %}
+        {% elif data['number-of-children'] == '3' %}
 
             {{ govukInput({
                 label: {
@@ -144,12 +135,7 @@
                 classes: "govuk-input--width-4"
             }) }}
 
-        {% endif %}
-        <!-- end of three children -->
-
-
-        <!-- four children-->
-        {% if data['number-of-children'] == '4' %}
+        {% elif data['number-of-children'] == '4' %}
 
             {{ govukInput({
                 label: {
@@ -219,8 +205,48 @@
                 classes: "govuk-input--width-4"
             }) }}
 
+        {% else %}
+
+            <!-- Default to two children -->
+            {{ govukInput({
+                label: {
+                text: "First name of the first child"
+                },
+                id: "first-child-name",
+                name: "first-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the first child"
+                },
+                id: "first-child-age",
+                name: "first-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the second child"
+                },
+                id: "second-child-name",
+                name: "second-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the second child"
+                },
+                id: "second-child-age",
+                name: "second-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+
         {% endif %}
-        <!-- end of four children -->
+
+        
+
 
       {{ govukButton({
         text: "Continue"
