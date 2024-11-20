@@ -16,18 +16,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="children" method="post">
+      <form class="form" action="children-data" method="post">
 
-      {{ govukInput({
-        label: {
-          text: "How many children is this for?",
-          classes: "govuk-label--l",
-          isPageHeading: true
-        },
-        id: "number-of-children",
-        name: "number-of-children",
-        classes: "govuk-input--width-4"
-      }) }}
+        {{ govukInput({
+          label: {
+            text: "How many children is this for?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "number-of-children",
+          name: "number-of-children",
+          classes: "govuk-input--width-4"
+        }) }}
 
 
         {{ govukButton({
