@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Do you feel safe and confident?
+      </h1>
+
+      <p>
+        This service asks you to work with your parenting partner to agree a plan for your children. You need to be able to state your needs and views without feeling intimidated.
+      </p>
+
+      <!-- I feel confident that I discuss things without feeling intimidated. -->
+
+      {{ govukCheckboxes({
+        name: "adult-sage",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "farm",
+            text: "I feel safe to continue, I feel confident that I can discuss things without feeling intimidated"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "content-2"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

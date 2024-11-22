@@ -87,98 +87,50 @@
                     </p>
 
                     <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        You can now use the DWP Authenticate admin portal to:
+                        We’re inviting you to make a child arrangements plan for Jay and Robyn.
                     </p>
-
-                    <ul class="govuk-list govuk-list--bullet">
-                        <li>give people access to {{ data['prototype-service'] }} and manage their access</li>
-                        <li>add organisations, such as a local authority or contractor, so that their employees can use {{ data['prototype-service'] }}</li>
-                    </ul>
-
-                    <h2 style="Margin: 0 0 20px 0; padding: 0; font-size: 27px; line-height: 35=
-        px; font-weight: bold; color: #0B0C0C;">
-                        Sign in to the DWP Authenticate admin portal
-                    </h2>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        To sign in, click on this link:
-                    </p>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        <a href="signin" class="govuk-link" style="overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; word-break: break-all; word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;">
-                            {% if data['prototype-service'] == "HTDS" %}
-                                https://htds-signin-url.gov.uk{{ queryString }}
-                            {% elseif data['prototype-service'] == "PRaP" %}
-                                https://prap-signin-url.gov.uk{{ queryString }}
-                            {% elseif data['prototype-service'] == "ESF" %}
-                                https://esf-signin-url.gov.uk{{ queryString }}
-                            {% endif %}
-                        </a>
-                    </p>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        Then:
-                    </p>
-
-                    <ol class="govuk-list govuk-list--number">
-                        <li>Select DWP Authenticate admin portal.</li>
-                        <li>Sign in with your DWP Authenticate username and password.</li>
-                    </ol>
 
                     <h2 style="Margin: 0 0 20px 0; padding: 0; font-size: 27px; line-height: 35=
                     px; font-weight: bold; color: #0B0C0C;">
-                        Problems signing in
+                        Why you should make a child arrangements plan
                     </h2>
 
                     <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        If you have any problems signing in, contact {% if data['prototype-service'] == "HTDS" %}the HTDS Support Team{% elseif data['prototype-service'] == "PRaP" %}the PRaP Operational Support Team{% elseif data['prototype-service'] == "ESF" %}the ESF Operational Support Team{% endif %}.
+                        A child arrangements plan isa written agreement for how you are going to co-parent Jay and Robyn. It lays out how you will both meet the needs of your children.
                     </p>
 
                     <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        Email:<br>
-                        {% if data['prototype-service'] == "HTDS" %}
-                            <a href="mailto:DigitalHealth.livesupport@dwp.gov.uk" class="govuk-link">DigitalHealth.livesupport@dwp.gov.uk</a>
-                        {% elseif data['prototype-service'] == "PRaP" %}
-                            <a href="mailto:prap.support@dwp.gov.uk" class="govuk-link">prap.support@dwp.gov.uk</a>
-                        {% elseif data['prototype-service'] == "ESF" %}
-                            <a href="mailto:prap.support@dwp.gov.uk" class="govuk-link">esf.support@dwp.gov.uk</a>
-                        {% endif %}
+                        Making a plan can help you avoidthe expense and delay of having to go to court. If you go to court, judges or magistrates will expect you to have tried to make child arrangements before involving the courts.                    
+                    </p>
+
+                    <h2 style="Margin: 0 0 20px 0; padding: 0; font-size: 27px; line-height: 35=
+                    px; font-weight: bold; color: #0B0C0C;">
+                        How to make a child arrangements plan
+                    </h2>
+
+                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                        You can use the online service to <a href="code">respond to Heather’s proposals for your child arrangements</a>.                 
                     </p>
 
                     <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        Telephone:<br>
-                        <strong>
-                            {% if data['prototype-service'] == "HTDS" %}
-                                01253 843 812
-                            {% elseif data['prototype-service'] == "PRaP" %}
-                                0345 604 5406
-                            {% elseif data['prototype-service'] == "ESF" %}
-                                0345 111 111
-                            {% endif %}
-                        </strong>
+                        If you prefer to start from scratch, you can <a href="#">start your own child arrangements plan</a>. Heather will then respond to what you propose until you both reach agreement.                
                     </p>
 
                     <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        Opening times:<br>
-                        {% if data['prototype-service'] == "HTDS" %}
-                                <strong>Monday to Friday: 8:00am to 4:30pm</strong>
-                            {% elseif data['prototype-service'] == "PRaP" %}
-                                <strong>Monday to Friday: 9:00am to 4:00pm</strong>
-                            {% elseif data['prototype-service'] == "ESF" %}
-                                <strong>Monday to Friday: 9:00am to 4:00pm</strong>
-                            {% endif %}
+                        If you don’t want to do this online, <a href="#">you can download the template</a>.              
                     </p>
 
                     <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        We will respond to emails within 3 days.
+                        Remember, it’s best for your children if you can reach an agreement together without going to court.              
                     </p>
 
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        Regards
+                    <p style="Margin: 0 0 20px 0; font-size: 27px; line-height: 25px; color: #0B0C0C; font-weight: bold;">
+                        2764
                     </p>
 
+         
                     <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
-                        {% if data['prototype-service'] == "HTDS" %}HTDS Support Team{% elseif data['prototype-service'] == "PRaP" %}PRaP Operational Support Team{% elseif data['prototype-service'] == "ESF" %}ESF Operational Support Team{% endif %}
+                        Ministry of Justice, Private Family Law team
                     </p>
                 </td>
 
