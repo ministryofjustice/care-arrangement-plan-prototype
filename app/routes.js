@@ -18,3 +18,14 @@ router.post('/v2/review-live-with', function (req, res) {
     res.redirect('suggest-change-live-with')
   } 
 });
+
+
+router.post('/v2/review-changes', function (req, res) {
+  const editChoice = req.session.data['review-changes']
+
+  if (editChoice === 'yes') {
+    res.redirect('review-plan')
+  } else if (editChoice === 'change') {
+    res.redirect('suggest-change-changes')
+  } 
+});

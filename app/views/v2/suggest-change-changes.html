@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Suggest a change about how will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Suggest a change about how will you agree changes?
+      </h1>
+
+      <p>There will be times when plans will need to change, such as if one parent is too unwell to care for children.</p> 
+      
+      <p>Think about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>how changes should be agreed. For example, by email.</li>
+        <li>how much notice you must give the other parent</li>
+      </ul>
+
+
+       
+
+      <form class="form" action="review-suggest-change-changes" method="post">
+
+
+        {{ govukTextarea({
+          name: "change-changes",
+          id: "change-changes",
+          label: {
+            text: "Describe how will you agree changes",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          }
+        }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

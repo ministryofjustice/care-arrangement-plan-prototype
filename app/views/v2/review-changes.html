@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How will you agree changes?
+      </h1>
+
+      <p>Heather has suggested:</p> 
+      
+
+
+        {{ govukInsetText({
+          text: "To change scheduled visit times we agree to 48 hours notice. Other changes to be agreed one week prior to the start of a new school term."
+        }) }}
+      
+        <hr class="govuk-section-break govuk-section-break--m">
+
+
+       
+
+      <form class="form" action="review-changes" method="post">
+
+
+        {{ govukRadios({
+          name: "review-changes",
+          fieldset: {
+            legend: {
+              text: "Do you agree?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I agree"
+            },
+            {
+              value: "change",
+              text: "I'd like to suggest a change"
+            }
+          ]
+        }) }}
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <p><a href="review-plan">Skip this section for now</a></p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
