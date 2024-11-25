@@ -17,7 +17,7 @@ Suggest a change about how will you agree changes? – {{ serviceName }} – GOV
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Suggest a change about how will you agree changes?
+        Suggest a change 
       </h1>
 
       <p>There will be times when plans will need to change, such as if one parent is too unwell to care for children.</p> 
@@ -29,7 +29,13 @@ Suggest a change about how will you agree changes? – {{ serviceName }} – GOV
         <li>how much notice you must give the other parent</li>
       </ul>
 
+      <h2 class="govuk-heading-m">Heather has suggested:</h2> 
+      
 
+
+      {{ govukInsetText({
+        text: "Let’s give each other at least 48 hours notice if plans need to change. We should agree changes by text message."
+      }) }}
        
 
       <form class="form" action="review-suggest-change-changes" method="post">
@@ -39,7 +45,7 @@ Suggest a change about how will you agree changes? – {{ serviceName }} – GOV
           name: "change-changes",
           id: "change-changes",
           label: {
-            text: "Describe how will you agree changes",
+            text: "Your suggested change",
             classes: "govuk-label--m",
             isPageHeading: true
           }
