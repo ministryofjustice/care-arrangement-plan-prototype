@@ -1,0 +1,194 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Check your plan
+      </h1>
+
+      <p>This is the child arrangements plan you are suggesting to Heather.</p>
+
+
+      <h2 class="govuk-heading-m">
+        Who the plan is for
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            The children
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jay, Robyn
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who is agreeing this plan?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Heather, Richard
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        The arrangements
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Where will the children live?
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jay and Robyn will live with Heather on weekdays.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            When will visits happen?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <div class="govuk-!-padding-bottom-3">
+              <strong class="govuk-tag govuk-tag--yellow">
+                Suggested change
+              </strong>
+            </div>
+            Jay and Robyn will see Richard every other weekend starting from 12th December 2025.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What will happen during holidays?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Heather and Richard agree to make plans with Jay and Robin about what will happen during the school holidays, at least 3 weeks before each holiday.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What will happen on special days?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jay and Robyn will stay with Heather for Christmas 2025 and with Richard Christmas 2026 and alternate each year.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Other things
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What other things matter?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           We will arrange visits with grandparents and other relatives on an ad-hoc basis.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Decision making
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How will you agree changes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <div class="govuk-!-padding-bottom-3">
+              <strong class="govuk-tag govuk-tag--yellow">
+                Suggested change
+              </strong>
+            </div>
+            Let’s give each other at least 48 hours notice if plans need to change. We should agree changes by text message.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Agree to the arrangements
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Heather and Richard agree to this arrangement. We agree to review this arrangement every 6 months.
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Now send your suggestions
+      </h2>
+
+      <p>Heather will have a chance to respond to what you are suggesting.</p>
+
+      <p>You'll both need to be in agreement to finish the child arrangements plan.</p>
+
+      <form action="changes-sent" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
