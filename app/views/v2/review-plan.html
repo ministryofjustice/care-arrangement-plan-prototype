@@ -13,11 +13,43 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
       <h1 class="govuk-heading-l">Child arrangement plan for Jay and Robyn</h1>
 
-      <h2 class="govuk-heading-m">The arrangement plan</h2>
-
-
-      <!-- Where will the children live -->
+      <h2 class="govuk-heading-m">Who the plan is for</h2>
       <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="review-live-with" aria-describedby="child-arrangement-plan-1-status">
+              The children
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To be reviewed
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="review-live-with" aria-describedby="child-arrangement-plan-1-status">
+              Who is agreeing this plan?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To be reviewed
+            </strong>
+          </div>
+        </li>
+      </ul>
+      
+
+
+
+
+
+
+      <h2 class="govuk-heading-m">The arrangements</h2>
+      <ul class="govuk-task-list">
+        <!-- Where will the children live -->
         {% if data['review-live-with'] == 'yes' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
@@ -56,12 +88,12 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
         </li>
         {% endif %}
-
+  
 
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-2-status">
-              Who will the children visit?
+              When will visits happen?
             </a>
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-2-status">
@@ -94,7 +126,34 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </strong>
           </div>
         </li>
+      </ul>
 
+
+
+
+
+      <h2 class="govuk-heading-m">Other things</h2>
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-4-status">
+              What other things matter?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To be reviewed
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Decision making</h2>
+      <ul class="govuk-task-list">
         <!-- Agree changes -->
         {% if data['review-changes'] == 'yes' %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -134,12 +193,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </div>
           </li>
         {% endif %}
-      </ul>
 
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">Confirm the arrangement</h2>
-
-      <ul class="govuk-task-list">
+      
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
