@@ -71,7 +71,17 @@
 
           </dt>
           <dd class="govuk-summary-list__value">
-            Jay and Robyn will live with Heather on weekdays.
+
+            {% if data['review-live-with'] == 'change' %}
+
+              {{ data['change-children-live-with'] }}
+
+            {% else %}  
+
+              Jay and Robyn will live with Heather on weekdays.
+
+            {% endif %}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -144,7 +154,7 @@
             How will you agree changes?
 
             {% if data['review-changes'] == 'change' %}
-              <div class="govuk-!-padding-top-3">
+              <div class="govuk-!-padding-top-3 govuk-!-margin-bottom-3">
                 <strong class="govuk-tag govuk-tag--yellow">
                   Changes made
                 </strong>
@@ -153,7 +163,16 @@
 
           </dt>
           <dd class="govuk-summary-list__value">
-            Let’s give each other at least 48 hours notice if plans need to change. We should agree changes by text message.
+
+            {% if data['review-changes'] == 'change' %}
+
+              {{ data['change-changes'] }}
+
+            {% else %}  
+
+              Let’s give each other at least 48 hours notice if plans need to change. We should agree changes by text message.
+
+            {% endif %}
             
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -192,7 +211,7 @@
       <form action="changes-sent" method="post" novalidate>
 
         {{ govukButton({
-          text: "Accept and send"
+          text: "Send"
         }) }}
 
       </form>
