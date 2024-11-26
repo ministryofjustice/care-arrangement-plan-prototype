@@ -11,6 +11,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <form class="form" action="check-your-plan" method="post">
+
       <h1 class="govuk-heading-l">Child arrangement plan for Jay and Robyn</h1>
 
       <h2 class="govuk-heading-m">Who the plan is for</h2>
@@ -23,7 +25,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
@@ -35,7 +37,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
@@ -72,7 +74,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
               <strong class="govuk-tag govuk-tag--yellow">
-                Change suggested
+                Changes made
               </strong>
             </div>
           </li>
@@ -85,7 +87,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
@@ -100,7 +102,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-2-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
@@ -112,7 +114,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-3-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
@@ -124,7 +126,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
@@ -144,7 +146,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
@@ -164,8 +166,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
                 How will you agree changes?
               </a>
             </div>
-            <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
-              Completed
+            <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+              <strong class="govuk-tag govuk-tag--green">
+                Agreed
+              </strong>
             </div>
           </li>
         {% elif data['review-changes'] == 'change' %}
@@ -177,7 +181,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
               <strong class="govuk-tag govuk-tag--yellow">
-                Change suggested
+                Changes made
               </strong>
             </div>
           </li>
@@ -190,7 +194,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
               <strong class="govuk-tag govuk-tag--blue">
-                To be reviewed
+                To review
               </strong>
             </div>
           </li>
@@ -205,15 +209,19 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="company-details-5-status">
             <strong class="govuk-tag govuk-tag--blue">
-              To be reviewed
+              To review
             </strong>
           </div>
         </li>
       </ul>
 
       <div class="govuk-!-margin-top-5">
-        {{ govukButton({ text: "Check your plan", href: "check-your-plan" }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
       </div>
+
+    </form>
 
     </div>
   </div>
