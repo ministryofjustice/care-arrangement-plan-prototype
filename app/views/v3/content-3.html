@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What do the children want and need? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What do the children want and need?
+      </h1>
+
+      <p>
+        Your child arrangement plan should put what the children want and need first. Sticking to what’s been agreed will help give children a sense of stability and security.
+      </p>
+
+     <p>Remember, the aim is to make sure your children are as happy as they can be.</p>
+      
+
+      {{ govukCheckboxes({
+        name: "childrens-needs",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "farm",
+            text: "I will put my children’s needs first"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "review-plan"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

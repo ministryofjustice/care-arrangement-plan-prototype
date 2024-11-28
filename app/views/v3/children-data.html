@@ -1,0 +1,261 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  About the children  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+        {% if data['number-of-children'] == '1' %}
+            About the child
+        {% else %}
+            About the children
+        {% endif %}
+    </h1>
+
+    <form class="form" action="adults" method="post">
+
+        <!-- one child -->
+        {% if data['number-of-children'] == '1' %}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the child"
+                },
+                id: "first-child-name",
+                name: "first-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the child"
+                },
+                id: "first-child-age",
+                name: "first-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+        {% elif data['number-of-children'] == '2' %}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the first child"
+                },
+                id: "first-child-name",
+                name: "first-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the first child"
+                },
+                id: "first-child-age",
+                name: "first-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the second child"
+                },
+                id: "second-child-name",
+                name: "second-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the second child"
+                },
+                id: "second-child-age",
+                name: "second-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+        {% elif data['number-of-children'] == '3' %}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the first child"
+                },
+                id: "first-child-name",
+                name: "first-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the first child"
+                },
+                id: "first-child-age",
+                name: "first-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the second child"
+                },
+                id: "second-child-name",
+                name: "second-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the second child"
+                },
+                id: "second-child-age",
+                name: "second-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the third child"
+                },
+                id: "third-child-name",
+                name: "third-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the third child"
+                },
+                id: "third-child-age",
+                name: "third-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+        {% elif data['number-of-children'] == '4' %}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the first child"
+                },
+                id: "first-child-name",
+                name: "first-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the first child"
+                },
+                id: "first-child-age",
+                name: "first-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the second child"
+                },
+                id: "second-child-name",
+                name: "second-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the second child"
+                },
+                id: "second-child-age",
+                name: "second-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the third child"
+                },
+                id: "third-child-name",
+                name: "third-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the third child"
+                },
+                id: "third-child-age",
+                name: "third-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the fourth child"
+                },
+                id: "fourth-child-name",
+                name: "fourth-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the fourth child"
+                },
+                id: "fourth-child-age",
+                name: "fourth-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+        {% else %}
+
+            <!-- Default to two children -->
+            {{ govukInput({
+                label: {
+                text: "First name of the first child"
+                },
+                id: "first-child-name",
+                name: "first-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the first child"
+                },
+                id: "first-child-age",
+                name: "first-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "First name of the second child"
+                },
+                id: "second-child-name",
+                name: "second-child-name"
+            }) }}
+
+            {{ govukInput({
+                label: {
+                text: "Age of the second child"
+                },
+                id: "second-child-age",
+                name: "second-child-age",
+                classes: "govuk-input--width-4"
+            }) }}
+
+
+        {% endif %}
+
+        
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

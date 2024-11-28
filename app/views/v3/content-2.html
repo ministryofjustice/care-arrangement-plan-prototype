@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are the children safe? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Are the children safe?
+      </h1>
+
+      <p>
+        Has there been:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>any form of domestic abuse or violence, even if the abuse was not directed at the children</li>
+        <li>actual or attempted child abduction</li>
+        <li>child abuse or neglect</li>
+        <li>misuse of drugs, alcohol or other substances</li>
+        <li>any other safety or welfare concerns that place anyone at significant risk of harm</li>
+      </ul>
+      
+
+      {{ govukCheckboxes({
+        name: "children-safe",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "farm",
+            text: "The children have not experienced any safety concerns"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "content-3"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

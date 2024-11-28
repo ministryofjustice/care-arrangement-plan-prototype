@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How often will the children be staying overnight with Richard? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="how-often-during-week" method="post">
+
+        {{ govukRadios({
+          name: "how-often-overnight",
+          fieldset: {
+            legend: {
+              text: "How often will the children be staying overnight with Richard? ",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Never",
+              text: "Never"
+            },
+            {
+              value: "On a weekly basis",
+              text: "On a weekly basis"
+            },
+            {
+              value: "Every other week",
+              text: "Every other week"
+            },
+            {
+              value: "Once a month",
+              text: "Once a month"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement"
+            }
+            
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Where will the children live? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="how-often-overnight" method="post">
+
+        {{ govukRadios({
+          name: "where-children-live",
+          fieldset: {
+            legend: {
+              text: "Where will the children live?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Choose where the children will live most of the time"
+          },
+          items: [
+            {
+              value: "With Heather",
+              text: "With Heather"
+            },
+            {
+              value: "With Richard",
+              text: "With Richard"
+            },
+            {
+              value: "Split equally between Heather and Richard",
+              text: "Split equally between Heather and Richard"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

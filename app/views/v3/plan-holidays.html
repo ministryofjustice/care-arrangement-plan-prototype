@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What will happen during holidays? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What will happen during holidays?
+      </h1>
+
+      <p>What are you going to do for the school holidays, including half terms? Older children may also have periods of study leave, or work experience.  
+       </p> 
+      
+
+      <form class="form" action="plan-create" method="post">
+
+
+      {{ govukTextarea({
+        name: "holidays",
+        id: "holidays",
+        label: {
+          classes: "govuk-label--m",
+          isPageHeading: true
+        }
+      }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

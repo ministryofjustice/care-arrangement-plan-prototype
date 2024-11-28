@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How will you agree changes?
+      </h1>
+
+      <p>There will be times when plans will need to change, such as if one parent is too unwell to care for children.</p> 
+      
+      <p>Think about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>how changes should be agreed. For example, by email.</li>
+        <li>how much notice you must give the other parent</li>
+      </ul>
+
+      
+
+      
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s">Heather has suggested:</h3> 
+        <p>Let’s give each other at least 48 hours notice if plans need to change. We should agree changes by text message.</p>
+      </div>
+
+   
+      
+        <hr class="govuk-section-break govuk-section-break--m">
+
+
+       
+
+      <form class="form" action="review-changes" method="post">
+
+
+        {{ govukRadios({
+          name: "review-changes",
+          fieldset: {
+            legend: {
+              text: "Do you agree?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I agree"
+            },
+            {
+              value: "change",
+              text: "I'd like to suggest a change"
+            }
+          ]
+        }) }}
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <p><a href="review-plan">Skip this section for now</a></p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
