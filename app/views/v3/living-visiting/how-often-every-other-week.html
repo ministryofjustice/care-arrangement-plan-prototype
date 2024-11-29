@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-How often will the children be staying overnight with Richard? – {{ serviceName }} – GOV.UK Prototype Kit
+How often during the week will the children be staying overnight with Richard?  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,23 +16,22 @@ How often will the children be staying overnight with Richard? – {{ serviceNam
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-      <form class="form" action="how-often-overnight-check" method="post">
+      <form class="form" action="when-during-week" method="post">
 
         {% set anotherHtml %}
-          {{ govukTextarea({
-            name: "another-arrangement-overnight",
-            id: "another-arrangement-overnight",
-            label: {
-              text: "Describe the arrangement"
-            }
-          }) }}
-        {% endset -%}
+        {{ govukTextarea({
+          name: "another-arrangement-during-week",
+          id: "another-arrangement-during-week",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
 
 
 
         {{ govukRadios({
-          name: "how-often-overnight-check",
+          name: "how-often-during-week",
           fieldset: {
             legend: {
               text: "How often will the children be staying overnight with Richard? ",
@@ -42,20 +41,16 @@ How often will the children be staying overnight with Richard? – {{ serviceNam
           },
           items: [
             {
-              value: "Never",
-              text: "Never"
+              value: "1 night every other week",
+              text: "1 night every other week"
             },
             {
-              value: "On a weekly basis",
-              text: "On a weekly basis"
+              value: "2 nights every other week",
+              text: "2 nights every other week"
             },
             {
-              value: "Every other week",
-              text: "Every other week"
-            },
-            {
-              value: "Once a month",
-              text: "Once a month"
+              value: "3 nights every other week",
+              text: "3 nights every other week"
             },
             {
               divider: "or"
@@ -67,7 +62,6 @@ How often will the children be staying overnight with Richard? – {{ serviceNam
                 html: anotherHtml
               }
             }
-            
           ]
         }) }}
 
