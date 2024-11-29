@@ -4,7 +4,12 @@
 What do the children want and need? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
 
 {% block content %}
 
@@ -36,7 +41,7 @@ What do the children want and need? – {{ serviceName }} – GOV.UK Prototype K
 
       {{ govukButton({
         text: "Continue",
-        href: "review-plan"
+        href: "number-of-children"
       }) }}
 
     </div>

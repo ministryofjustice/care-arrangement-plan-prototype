@@ -29,6 +29,8 @@
         <!-- one child -->
         {% if data['number-of-children'] == '1' %}
 
+        <p>Your child's name will be shown on your child arrangement plan but will not be stored.</p>
+
             {{ govukInput({
                 label: {
                 text: "First name of the child"
@@ -47,6 +49,8 @@
             }) }}
 
         {% elif data['number-of-children'] == '2' %}
+
+        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             {{ govukInput({
                 label: {
@@ -83,6 +87,8 @@
             }) }}
 
         {% elif data['number-of-children'] == '3' %}
+
+        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             {{ govukInput({
                 label: {
@@ -136,6 +142,8 @@
             }) }}
 
         {% elif data['number-of-children'] == '4' %}
+
+        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             {{ govukInput({
                 label: {
@@ -206,6 +214,8 @@
             }) }}
 
         {% else %}
+
+        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             <!-- Default to two children -->
             {{ govukInput({
