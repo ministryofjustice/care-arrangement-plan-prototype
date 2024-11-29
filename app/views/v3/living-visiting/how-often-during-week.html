@@ -18,6 +18,18 @@ How often during the week will the children be staying overnight with Richard?  
 
       <form class="form" action="when-during-week" method="post">
 
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-during-week",
+          id: "another-arrangement-during-week",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
+
+
+
         {{ govukRadios({
           name: "how-often-during-week",
           fieldset: {
@@ -42,7 +54,10 @@ How often during the week will the children be staying overnight with Richard?  
             },
             {
               value: "Another arrangement",
-              text: "Another arrangement"
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
             }
           ]
         }) }}

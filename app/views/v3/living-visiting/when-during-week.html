@@ -20,6 +20,18 @@
 
       <form class="form" action="not-overnight-time" method="post">
 
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-when-during-week",
+          id: "another-arrangement-when-during-week",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
+
+
+
         {{ govukRadios({
           name: "whereDoYouLive",
           fieldset: {
@@ -63,7 +75,10 @@
             },
             {
               value: "Another arrangement",
-              text: "Another arrangement"
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
             }
           ]
         }) }}

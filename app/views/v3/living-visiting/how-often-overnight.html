@@ -19,6 +19,18 @@ How often will the children be staying overnight with Richard? – {{ serviceNam
 
       <form class="form" action="how-often-during-week" method="post">
 
+        {% set anotherHtml %}
+          {{ govukTextarea({
+            name: "another-arrangement-overnight",
+            id: "another-arrangement-overnight",
+            label: {
+              text: "Describe the arrangement"
+            }
+          }) }}
+        {% endset -%}
+
+
+
         {{ govukRadios({
           name: "how-often-overnight",
           fieldset: {
@@ -47,7 +59,10 @@ How often will the children be staying overnight with Richard? – {{ serviceNam
             },
             {
               value: "Another arrangement",
-              text: "Another arrangement"
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
             }
             
           ]

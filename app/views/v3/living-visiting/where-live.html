@@ -20,6 +20,19 @@
 
       <form class="form" action="how-often-overnight" method="post">
 
+
+        {% set anotherHtml %}
+          {{ govukTextarea({
+            name: "another-arrangement-where-live",
+            id: "another-arrangement-where-live",
+            label: {
+              text: "Describe the arrangement"
+            }
+          }) }}
+        {% endset -%}
+
+
+
         {{ govukRadios({
           name: "where-children-live",
           fieldset: {
@@ -47,7 +60,10 @@
             },
             {
               value: "Another arrangement",
-              text: "Another arrangement"
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
             }
           ]
         }) }}
