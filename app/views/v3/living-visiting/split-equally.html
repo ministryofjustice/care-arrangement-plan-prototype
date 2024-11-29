@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Where will the children live? – {{ serviceName }} – GOV.UK Prototype Kit
+How will the children's living arrangements be split evenly?  – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,47 +16,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      
 
-      <form class="form" action="where-live" method="post">
-
-
-        {% set anotherHtml %}
-          {{ govukTextarea({
-            name: "another-arrangement-where-live",
-            id: "another-arrangement-where-live",
-            label: {
-              text: "Describe the arrangement"
-            }
-          }) }}
-        {% endset -%}
-
-
+      <form class="form" action="anything-else" method="post">
 
         {{ govukRadios({
-          name: "where-live",
+          name: "whereDoYouLive",
           fieldset: {
             legend: {
-              text: "Where will the children live?",
+              text: "How will the children's living arrangements be split evenly? ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
-          hint: {
-            text: "Choose where the children will live most of the time"
-          },
           items: [
             {
-              value: "With Heather",
-              text: "With Heather"
+              value: "They will spend 4 nights with one person and 3 nights with the other for each alternate week",
+              text: "They will spend 4 nights with one person and 3 nights with the other for each alternate week"
             },
             {
-              value: "With Richard",
-              text: "With Richard"
-            },
-            {
-              value: "Split equally between Heather and Richard",
-              text: "Split equally between Heather and Richard"
+              value: "They will spend 7 nights of the week with one person, and then the next 7 with the other",
+              text: "They will spend 7 nights of the week with one person, and then the next 7 with the other"
             },
             {
               divider: "or"
@@ -70,6 +49,7 @@
             }
           ]
         }) }}
+
 
         {{ govukButton({
           text: "Continue"

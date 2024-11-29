@@ -29,3 +29,20 @@ router.post('/v2/review-changes', function (req, res) {
     res.redirect('suggest-change-changes')
   } 
 });
+
+
+router.post('/v3/living-visiting/where-live', function (req, res) {
+  const editChoice = req.session.data['where-live']
+
+  if (editChoice === 'With Heather') {
+    res.redirect('how-often-overnight')
+  } else if (editChoice === 'With Richard') {
+    res.redirect('how-often-overnight')
+  } else if (editChoice === 'Split equally between Heather and Richard') {
+    res.redirect('split-equally')
+  } else if (editChoice === 'Another arrangement') {
+    res.redirect('how-often-overnight')
+  }   
+});
+
+
