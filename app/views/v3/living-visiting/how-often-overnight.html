@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-How often will the children be staying overnight with Richard? – {{ serviceName }} – GOV.UK Prototype Kit
+Will the children stay overnight ​with Richard? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@ How often will the children be staying overnight with Richard? – {{ serviceNam
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="how-often-overnight-check" method="post">
+      <form class="form" action="how-often-overnight" method="post">
 
         {% set anotherHtml %}
           {{ govukTextarea({
@@ -32,30 +32,30 @@ How often will the children be staying overnight with Richard? – {{ serviceNam
 
 
         {{ govukRadios({
-          name: "how-often-overnight-check",
+          name: "how-often-overnight",
           fieldset: {
             legend: {
-              text: "How often will the children be staying overnight with Richard? ",
+              text: "How often will the children stay overnight with Richard?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "Never",
-              text: "Never"
+              value: "There are no current plans for overnight stays",
+              text: "There are no current plans for overnight stays"
             },
             {
-              value: "On a weekly basis",
-              text: "On a weekly basis"
+              value: "Yes, every week",
+              text: "Yes, every week"
             },
             {
-              value: "Every other week",
-              text: "Every other week"
+              value: "Yes, every other wwek",
+              text: "Yes, every other week"
             },
             {
-              value: "Once a month",
-              text: "Once a month"
+              value: "Yes, every month",
+              text: "Yes, every month"
             },
             {
               divider: "or"

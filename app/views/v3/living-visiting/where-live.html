@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Where will the children live? – {{ serviceName }} – GOV.UK Prototype Kit
+Where will the children mostly live?​ – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -37,13 +37,10 @@
           name: "where-children-live",
           fieldset: {
             legend: {
-              text: "Where will the children live?",
+              text: "Where will the children mostly live?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
-          },
-          hint: {
-            text: "Choose where the children will live most of the time"
           },
           items: [
             {
@@ -55,8 +52,8 @@
               text: "With Richard"
             },
             {
-              value: "Split equally between Heather and Richard",
-              text: "Split equally between Heather and Richard"
+              value: "They’ll spend equal time with Heather and Richard​",
+              text: "They’ll spend equal time with Heather and Richard​"
             },
             {
               divider: "or"
@@ -76,6 +73,8 @@
         }) }}
 
       </form>
+
+      <p><a href="#">Skip this question</a></p>
 
     </div>
   </div>

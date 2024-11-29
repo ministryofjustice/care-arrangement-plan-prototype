@@ -38,7 +38,7 @@ router.post('/v3/living-visiting/where-children-live', function (req, res) {
     res.redirect('how-often-overnight')
   } else if (editChoice === 'With Richard') {
     res.redirect('how-often-overnight')
-  } else if (editChoice === 'Split equally between Heather and Richard') {
+  } else if (editChoice === 'They’ll spend equal time with Heather and Richard​') {
     res.redirect('split-equally')
   } else if (editChoice === 'Another arrangement') {
     res.redirect('#')
@@ -46,16 +46,16 @@ router.post('/v3/living-visiting/where-children-live', function (req, res) {
 });
 
 
-router.post('/v3/living-visiting/how-often-overnight-check', function (req, res) {
-  const editChoice = req.session.data['how-often-overnight-check']
+router.post('/v3/living-visiting/how-often-overnight', function (req, res) {
+  const editChoice = req.session.data['how-often-overnight']
 
-  if (editChoice === 'Never') {
+  if (editChoice === 'There are no current plans for overnight stays') {
     res.redirect('how-often-overnight')
-  } else if (editChoice === 'On a weekly basis') {
-    res.redirect('how-often-during-week')
-  } else if (editChoice === 'Every other week') {
-    res.redirect('how-often-every-other-week')
-  } else if (editChoice === 'Once a month') {
+  } else if (editChoice === 'Yes, every week') {
+    res.redirect('which-days-overnight')
+  } else if (editChoice === 'Yes, every other week') {
+    res.redirect('which-days-overnight')
+  } else if (editChoice === 'Yes, every month') {
     res.redirect('how-often-month')
   } else if (editChoice === 'Another arrangement') {
     res.redirect('#')

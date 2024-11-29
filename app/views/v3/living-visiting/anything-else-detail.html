@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+What else is important to include about visits or overnight stays?​ – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,12 +25,12 @@
             name: "moreDetail",
             id: "more-detail",
             label: {
-              text: "Additional detail about overnight stays and visits",
+              text: "What else is important to include about visits or overnight stays?​",
               classes: "govuk-label--l",
               isPageHeading: true
             },
             hint: {
-              text: "Pick up times, drop off times, grandparents"
+              text: "For example, pick up times​"
             }
           }) }}
 
@@ -40,6 +40,8 @@
 
 
       </form>
+
+      <p><a href="#">Skip this question</a></p>
 
     </div>
   </div>
