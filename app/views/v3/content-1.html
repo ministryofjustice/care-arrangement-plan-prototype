@@ -9,12 +9,18 @@
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
+
+
 {% endblock %}
 
 {% block content %}
 
+{{ govukExitThisPage() }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      
 
       <h1 class="govuk-heading-l">
         Do you feel safe and confident?
@@ -26,22 +32,34 @@
 
       <!-- I feel confident that I discuss things without feeling intimidated. -->
 
-      {{ govukCheckboxes({
-        name: "adult-sage",
-        fieldset: {
-        },
-        items: [
-          {
-            value: "farm",
-            text: "I feel safe to continue, I feel confident that I can discuss things without feeling intimidated"
-          }
-        ]
-      }) }}
+      <form class="form" action="content-1" method="post">
 
-      {{ govukButton({
-        text: "Continue",
-        href: "content-2"
-      }) }}
+        {{ govukRadios({
+          name: "safe-check-1",
+          fieldset: {
+            legend: {
+              text: "Do you want to proceed?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
     </div>
   </div>
 

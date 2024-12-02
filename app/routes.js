@@ -63,3 +63,23 @@ router.post('/v3/living-visiting/how-often-overnight', function (req, res) {
 });
 
 
+router.post('/v3/content-1', function (req, res) {
+  const editChoice = req.session.data['safe-check-1']
+
+  if (editChoice === 'Yes') {
+    res.redirect('content-2')
+  } else if (editChoice === 'No') {
+    res.redirect('safe-check-content-1-no')
+  } 
+});
+
+
+router.post('/v3/content-2', function (req, res) {
+  const editChoice = req.session.data['safe-check-2']
+
+  if (editChoice === 'Yes') {
+    res.redirect('content-3')
+  } else if (editChoice === 'No') {
+    res.redirect('safe-check-content-2-no')
+  } 
+});

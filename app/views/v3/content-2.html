@@ -13,6 +13,8 @@ Are the children safe? – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
+{{ govukExitThisPage() }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -31,24 +33,37 @@ Are the children safe? – {{ serviceName }} – GOV.UK Prototype Kit
         <li>misuse of drugs, alcohol or other substances</li>
         <li>any other safety or welfare concerns that place anyone at significant risk of harm</li>
       </ul>
+
+      <form class="form" action="content-2" method="post">
       
+        {{ govukRadios({
+          name: "safe-check-2",
+          fieldset: {
+            legend: {
+              text: "Do you want to proceed?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
 
-      {{ govukCheckboxes({
-        name: "children-safe",
-        fieldset: {
-        },
-        items: [
-          {
-            value: "farm",
-            text: "The children have not experienced any safety concerns"
-          }
-        ]
-      }) }}
+        
 
-      {{ govukButton({
-        text: "Continue",
-        href: "content-3"
-      }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
 
     </div>
   </div>
