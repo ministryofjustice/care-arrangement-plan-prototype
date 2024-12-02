@@ -53,18 +53,31 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
       <h2 class="govuk-heading-m">The arrangements</h2>
       <ul class="govuk-task-list">
        
+        {% if data['same-for-all'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="living-visiting/same-for-all" aria-describedby="child-arrangement-plan-1-status">
+              <a class="govuk-link govuk-task-list__link" href="living-visiting/check-your-answers" aria-describedby="child-arrangement-plan-1-status">
                 Living and visiting
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                <strong class="govuk-tag govuk-tag--blue">
-                   Incomplete
-                </strong>
+                   Completed
             </div>
           </li>
+          {% else %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="living-visiting/same-for-all" aria-describedby="child-arrangement-plan-1-status">
+                  Living and visiting
+                </a>
+              </div>
+              <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">
+                    Incomplete
+                  </strong>
+              </div>
+            </li>
+          {% endif %}
         
     
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
