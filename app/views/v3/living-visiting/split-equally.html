@@ -19,6 +19,18 @@ How will the children's living arrangements be split evenly?  – {{ serviceName
 
       <form class="form" action="anything-else" method="post">
 
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-split-equally",
+          id: "another-arrangement-split-equally",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
+
+
+
         {{ govukRadios({
           name: "whereDoYouLive",
           fieldset: {
