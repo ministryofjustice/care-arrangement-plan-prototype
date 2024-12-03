@@ -24,12 +24,13 @@
         {% endif %}
     </h1>
 
+    <p>We don’t store this information or share it with other government departments.​</p>
     <form class="form" action="adults" method="post">
 
         <!-- one child -->
         {% if data['number-of-children'] == '1' %}
 
-        <p>Your child's name will be shown on your child arrangement plan but will not be stored.</p>
+        
 
             {{ govukInput({
                 label: {
@@ -50,7 +51,6 @@
 
         {% elif data['number-of-children'] == '2' %}
 
-        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             {{ govukInput({
                 label: {
@@ -88,7 +88,6 @@
 
         {% elif data['number-of-children'] == '3' %}
 
-        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             {{ govukInput({
                 label: {
@@ -143,7 +142,6 @@
 
         {% elif data['number-of-children'] == '4' %}
 
-        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             {{ govukInput({
                 label: {
@@ -215,7 +213,6 @@
 
         {% else %}
 
-        <p>Your children's names will be shown on your child arrangement plan but will not be stored.</p>
 
             <!-- Default to two children -->
             {{ govukInput({
