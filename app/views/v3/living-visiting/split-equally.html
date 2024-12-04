@@ -17,7 +17,7 @@ How will the children's living arrangements be split evenly?  – {{ serviceName
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="anything-else" method="post">
+      <form class="form" action="anything-else-detail" method="post">
 
         {% set anotherHtml %}
         {{ govukTextarea({
@@ -32,7 +32,7 @@ How will the children's living arrangements be split evenly?  – {{ serviceName
 
 
         {{ govukRadios({
-          name: "whereDoYouLive",
+          name: "split-equally-options",
           fieldset: {
             legend: {
               text: "How will the children's living arrangements be split evenly? ",

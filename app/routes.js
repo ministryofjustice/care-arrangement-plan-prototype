@@ -38,7 +38,7 @@ router.post('/v3/living-visiting/where-children-live', function (req, res) {
     res.redirect('how-often-overnight')
   } else if (editChoice === 'With Richard') {
     res.redirect('how-often-overnight')
-  } else if (editChoice === 'They’ll spend equal time with Heather and Richard​') {
+  } else if (editChoice === 'They will spend equal time with Heather and Richard') {
     res.redirect('split-equally')
   } else if (editChoice === 'Another arrangement') {
     res.redirect('#')

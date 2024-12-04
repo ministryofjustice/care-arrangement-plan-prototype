@@ -154,6 +154,35 @@
 
         {% endif %}
         <!-- End of Children living with Heather -->
+
+
+        <!-- Children split equally -->
+        {% if data['where-children-live'] == 'They will spend equal time with Heather and Richard' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How will the children's living arrangements be split evenly?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['split-equally-options'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how will the children's living arrangements be split evenly?</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What else is important to include about visits or overnight stays?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['anything-else'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+          </dd>
+        </div>
+        {% endif %}
+        <!-- End of Children split equally -->
+
       </dl>
       
 
