@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
         Check your plan
       </h1>
 
-      <p>This is the child arrangements plan you are suggesting to Heather.</p>
+      <p>This is the child arrangements plan you will share with Richard.</p>
 
 
       <h2 class="govuk-heading-m">
@@ -200,18 +200,18 @@
 
 
 
-      <h2 class="govuk-heading-m">
-        Now send your suggestions
+      <!--<h2 class="govuk-heading-m">
+        Share the plan
       </h2>
 
       <p>Heather will have a chance to respond to what you are suggesting.</p>
 
-      <p>You'll both need to be in agreement to finish the child arrangements plan.</p>
+      <p>You'll both need to be in agreement to finish the child arrangements plan.</p>-->
 
-      <form action="changes-sent" method="post" novalidate>
+      <form action="share" method="post" novalidate>
 
         {{ govukButton({
-          text: "Send"
+          text: "Continue"
         }) }}
 
       </form>
