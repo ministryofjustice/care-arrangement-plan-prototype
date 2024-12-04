@@ -94,3 +94,14 @@ router.post('/v3/content-2', function (req, res) {
     res.redirect('safe-check-content-2-no')
   } 
 });
+
+
+router.post('/v3/living-visiting/not-overnight-stays-check', function (req, res) {
+  const editChoice = req.session.data['not-overnight-stays-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('which-days-daytime-visits')
+  } else if (editChoice === 'No') {
+    res.redirect('anything-else-detail')
+  }   
+});
