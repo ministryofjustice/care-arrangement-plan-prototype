@@ -105,3 +105,14 @@ router.post('/v3/living-visiting/not-overnight-stays-check', function (req, res)
     res.redirect('anything-else-detail')
   }   
 });
+
+
+router.post('/v3/court', function (req, res) {
+  const editChoice = req.session.data['court-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('court-content')
+  } else if (editChoice === 'No') {
+    res.redirect('children-data')
+  }   
+});
