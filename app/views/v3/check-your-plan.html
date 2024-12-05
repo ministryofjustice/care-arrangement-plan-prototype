@@ -21,6 +21,8 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
 
       <p>This is the child arrangements plan you will share with Richard.</p>
 
+      <p>We will email you a copy of the completed plan. You will also be able to download or print a copy on the next page.</p>
+
 
       <h2 class="govuk-heading-m">
         Who the plan is for
@@ -59,45 +61,16 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Where will the children live?
-
-            {% if data['review-live-with'] == 'change' %}
-              <div class="govuk-!-padding-top-3 govuk-!-margin-bottom-3">
-                <strong class="govuk-tag govuk-tag--yellow">
-                  Changes made
-                </strong>
-              </div>
-            {% endif %}
-
+            Living and visiting
           </dt>
           <dd class="govuk-summary-list__value">
-
-            {% if data['review-live-with'] == 'change' %}
-
-              {{ data['change-children-live-with'] }}
-
-            {% else %}  
-
-              Jay and Robyn will live with Heather on weekdays.
-
-            {% endif %}
-
+            The children will live with Heather and will be staying overnight with Richard once a week as a flexible arrangement.
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            When will visits happen?
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Jay and Robyn will see Richard every other weekend starting from 12th December 2025.
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-          </dd>
-        </div>
+       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             What will happen during holidays?
@@ -152,44 +125,19 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             How will you agree changes?
-
-            {% if data['review-changes'] == 'change' %}
-              <div class="govuk-!-padding-top-3 govuk-!-margin-bottom-3">
-                <strong class="govuk-tag govuk-tag--yellow">
-                  Changes made
-                </strong>
-              </div>
-            {% endif %}
-
           </dt>
           <dd class="govuk-summary-list__value">
 
-            {% if data['review-changes'] == 'change' %}
 
-              {{ data['change-changes'] }}
+              Let's give each other at least 48 hours notice if plans need to change. We should agree changes by text message.
 
-            {% else %}  
-
-              Let’s give each other at least 48 hours notice if plans need to change. We should agree changes by text message.
-
-            {% endif %}
             
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Agree to the arrangements
-          </dt>
-          <dd class="govuk-summary-list__value">
-            We agree to review this arrangement every 6 months.
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-          </dd>
-        </div>
+        
       </dl>
 
 
