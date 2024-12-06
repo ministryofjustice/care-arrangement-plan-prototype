@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Plan created – {{ serviceName }} – GOV.UK Prototype Kit
+Your plan is ready – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -10,19 +10,14 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "Plan created"
+        titleText: "Your plan is ready"
       }) }}
 
-      <p>This is based on the information you have provided.</p>
-
-      <p>We have emailed you a copy of your plan.</p>
+      <p>Now send your suggested plan to Heather.</p>
 
 
-      <h2 class="govuk-heading-m">
-        What do you want to do next?
-      </h2>
 
-      <p>To share your plan you can:</p>
+      <p>You can:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="#">Download a copy</a></li>
@@ -30,6 +25,9 @@
         <li><a href="#">Print a copy</a></li>
       </ul>
 
+      <p>You'll both need to be in agreement to finish the child arrangements plan. It's best to get agreement in writing, even if it's just on an email.</p>
+
+      <p>Remember, although it's best to agree changes to your arrangements without going to court, only your original court order can be enforced.</p>
 
       <!--<h2 class="govuk-heading-m">
         Save the plan
