@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Do you already have a court order in place about your child arrangements? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,10 +22,13 @@
           name: "court-check",
           fieldset: {
             legend: {
-              text: "Have you already been to court?",
+              text: "Do you already have a court order in place about your child arrangements?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
+          },
+          hint: {
+            text: "This could include a prohibited steps, specific issue or consent order.​"
           },
           items: [
             {
