@@ -113,6 +113,6 @@ router.post('/v3/court', function (req, res) {
   if (editChoice === 'Yes') {
     res.redirect('court-content')
   } else if (editChoice === 'No') {
-    res.redirect('children-data')
+    res.redirect('number-of-children')
   }   
 });
