@@ -137,17 +137,23 @@
                 </dd>
               </div>
               {% endif %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                What else is important to include about visits or overnight stays?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['anything-else'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-              </dd>
-            </div>
+
+              {% if data['skip'] %}
+
+              {% else  %}
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    What else is important to include about visits or overnight stays?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['anything-else'] }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                  </dd>
+                </div>
+              {% endif %}
+
             {% endif %}
             <!-- End of overnight stays on a weekly basis -->
 
