@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Where will the children mostly live?​ – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="where-children-live" method="post">
+
+
+        {% set anotherHtml %}
+          {{ govukTextarea({
+            name: "another-arrangement-where-live",
+            id: "another-arrangement-where-live",
+            label: {
+              text: "Describe the arrangement"
+            }
+          }) }}
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          name: "where-children-live",
+          fieldset: {
+            legend: {
+              text: "Where will the children mostly live?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "With Heather",
+              text: "With Heather"
+            },
+            {
+              value: "With Richard",
+              text: "With Richard"
+            },
+            {
+              value: "They will spend equal time with Heather and Richard",
+              text: "They'll spend equal time with Heather and Richard"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p><a href="#">Skip this question</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

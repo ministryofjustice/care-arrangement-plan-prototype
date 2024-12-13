@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="how-often-overnight" method="post">
+
+        {% set anotherHtml %}
+          {{ govukTextarea({
+            name: "another-arrangement-overnight",
+            id: "another-arrangement-overnight",
+            label: {
+              text: "Describe the arrangement"
+            }
+          }) }}
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          name: "how-often-overnight",
+          fieldset: {
+            legend: {
+              text: "Will the children stay overnight with Richard?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "There are no current plans for overnight stays",
+              text: "There are no current plans for overnight stays"
+            },
+            {
+              value: "Yes, every week",
+              text: "Yes, every week"
+            },
+            {
+              value: "Yes, every other wwek",
+              text: "Yes, every other week"
+            },
+            {
+              value: "Yes, every month",
+              text: "Yes, every month"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
+            }
+            
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

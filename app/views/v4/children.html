@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  About the children  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      About the children
+    </h1>
+
+    <form class="form" action="adults" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "First name of the first child"
+        },
+        id: "first-child-name",
+        name: "first-child-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Age of the first child"
+        },
+        id: "first-child-age",
+        name: "first-child-age",
+        classes: "govuk-input--width-4"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "First name of the second child"
+        },
+        id: "second-child-name",
+        name: "second-child-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Age of the second child"
+        },
+        id: "second-child-age",
+        name: "second-child-age",
+        classes: "govuk-input--width-4"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,338 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Version 4" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-padding-bottom-9">
+
+    <h1 class="govuk-heading-l">
+      Version 4
+    </h1>
+
+    {{govukTag({
+      text: "In progress",
+      classes: "govuk-tag--blue"
+    })}}
+
+    </div>
+  </div>
+
+  {{ govukButton({
+    text: "View full flow - v4",
+    href: "start"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+    <h2 class="govuk-heading-m">Page list</h2>
+
+   <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Link</th>
+          <th scope="col" class="govuk-table__header">Error page</th>
+          <th scope="col" class="govuk-table__header">Confidence</th>
+          <th scope="col" class="govuk-table__header">Notes</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="start" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Start page</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="content-1" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Disclaimer 1 - Safe and confident</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="safe-check-content-1-no" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Disclaimer 1 - Offramp</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="content-2" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Disclaimer 2 - Children safe</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">
+              Low
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="safe-check-content-2-no" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Disclaimer 2 - Offramp</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="content-3" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Disclaimer 3 - Children's needs</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              High
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="court" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Already have a court order in place?</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Green
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="court-content" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Original court order</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Green
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="number-of-children" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">How many children is this for?</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Green
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="children-data" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">About the children</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              Green
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="adults" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Who is using this service?</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+             Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="email-address" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">What is your email address?</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="save-progress" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Save your progress</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="make-a-plan" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Make a child arrangement plan - task list</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              High
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="living-visiting/same-for-all" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal"> Full flow - where will the children live?</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="check-your-plan" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Check your plan</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+              High
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="share" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Plan created - confirmation</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--red">
+              Low
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+       
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="plan-text-document" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Plan as text page</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <a href="plan-text-document-unbranded" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-normal">Plan as text page - unbranded</a>
+          </td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Medium
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+
+  
+
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Design and research history</h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Date</th>
+              <th scope="col" class="govuk-table__header">Changes</th>
+              <th scope="col" class="govuk-table__header">Rationale</th>
+              </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+       
+            <tr class="govuk-table__row">
+              <th class="govuk-table__cell">13 December 2024</th>
+              <td class="govuk-table__cell">Version 4 prototype created.</td>
+              <td class="govuk-table__cell"></td>
+            </tr> 
+            </tbody>
+          </table>
+
+  </div>
+</div>
+
+{% endblock %}
