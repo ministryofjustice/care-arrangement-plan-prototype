@@ -13,7 +13,15 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
       <form class="form" action="check-your-plan" method="post">
 
-      <h1 class="govuk-heading-l">Child arrangement plan for Jay and Robyn</h1>
+        {% if data['number-of-children'] == '1' %}
+          <h1 class="govuk-heading-l">Child arrangement plan for {{ data['first-child-name'] }}</h1>
+        {% elif data['number-of-children'] == '2' %}
+          <h1 class="govuk-heading-l">Child arrangement plan for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}</h1>
+        {% elif data['number-of-children'] == '3' %}
+          <h1 class="govuk-heading-l">Child arrangement plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}</h1>
+        {% elif data['number-of-children'] == '4' %}
+          <h1 class="govuk-heading-l">Child arrangement plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}</h1>
+        {% endif %}
 
       <h2 class="govuk-heading-m">Who the plan is for</h2>
       <ul class="govuk-task-list">
@@ -23,10 +31,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               The children
             </a>
           </div>
-          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-            
-              Completed
-            
+          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">          
+              Completed 
           </div>
         </li>
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -35,11 +41,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               Who is using this service?
             </a>
           </div>
-          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-            
+          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">  
                 Completed
-              
-         
           </div>
         </li>
       </ul>

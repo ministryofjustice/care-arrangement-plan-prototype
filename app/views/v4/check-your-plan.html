@@ -32,10 +32,18 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
             The children
           </dt>
           <dd class="govuk-summary-list__value">
-            Jay, Robyn
+            {% if data['number-of-children'] == '1' %}
+              {{ data['first-child-name'] }}
+            {% elif data['number-of-children'] == '2' %}
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}
+            {% elif data['number-of-children'] == '3' %}
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }}
+            {% elif data['number-of-children'] == '4' %}
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }}, {{ data['fourth-child-name'] }}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> the children</span></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -43,10 +51,10 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
             Who is agreeing this plan?
           </dt>
           <dd class="govuk-summary-list__value">
-            Heather, Richard
+            {{ data['first-name-adult'] }}, {{ data['first-name-other-adult'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> who is agreeing this plan?</span></a>
           </dd>
         </div>
       </dl>
