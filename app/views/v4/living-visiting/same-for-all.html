@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Will the arrangements be the same for Jay and Robyn?​ – {{ serviceName }} – GOV.UK Prototype Kit
+Will the arrangements be the same for Jay and Robyn? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,8 +13,19 @@ Will the arrangements be the same for Jay and Robyn?​ – {{ serviceName }} �
 
 {% block content %}
 
+<!-- Redirect to skip this page if only one child -->
+{% if data['number-of-children'] == '1' %}
+<script>
+    window.location.href = 'where-live'
+</script>
+{% endif %}
+
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+
 
 
 
@@ -24,7 +35,7 @@ Will the arrangements be the same for Jay and Robyn?​ – {{ serviceName }} �
           name: "same-for-all",
           fieldset: {
             legend: {
-              text: "Will the arrangements be the same for Jay and Robyn?​",
+              text: "Will the arrangements be the same for Jay and Robyn?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
