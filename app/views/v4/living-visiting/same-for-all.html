@@ -13,12 +13,7 @@ Will the arrangements be the same for Jay and Robyn? – {{ serviceName }} – G
 
 {% block content %}
 
-<!-- Redirect to skip this page if only one child -->
-{% if data['number-of-children'] == '1' %}
-<script>
-    window.location.href = 'where-live'
-</script>
-{% endif %}
+
 
 
 
@@ -26,31 +21,51 @@ Will the arrangements be the same for Jay and Robyn? – {{ serviceName }} – G
     <div class="govuk-grid-column-two-thirds">
 
 
-
-
-
       <form class="form" action="where-live" method="post">
 
-        {{ govukRadios({
-          name: "same-for-all",
-          fieldset: {
-            legend: {
-              text: "Will the arrangements be the same for Jay and Robyn?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes"
-            },
-            {
-              value: "No",
-              text: "No"
-            }
-          ]
-        }) }}
+      <!-- Redirect to skip this page if only one child -->
+      {% if data['number-of-children'] == '1' %}
+        <script>
+            window.location.href = 'where-live'
+        </script>
+      {% endif %}
+
+      
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <!-- Add childrens names to question heading -->
+              {% if data['number-of-children'] == '2' %}
+                <h1 class="govuk-fieldset__heading">
+                  Will the arrangements be the same for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}?
+                </h1>
+              {% elif data['number-of-children'] == '3' %}
+                <h1 class="govuk-fieldset__heading">
+                  Will the arrangements be the same for {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}?
+                </h1>
+              {% elif data['number-of-children'] == '4' %}
+                <h1 class="govuk-fieldset__heading">
+                  Will the arrangements be the same for {{ data['first-child-name'] }}, {{ data['second-child-name'] }},  {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}?
+                </h1>
+              {% endif %}
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="same-for-all" name="same-for-all" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="same-for-all">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="same-for-all-2" name="same-for-all" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="same-for-all-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
 
         {{ govukButton({
           text: "Continue"
