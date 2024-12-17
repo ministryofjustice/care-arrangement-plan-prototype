@@ -39,13 +39,9 @@ Will the arrangements be the same for Jay and Robyn? – {{ serviceName }} – G
                 <h1 class="govuk-fieldset__heading">
                   Will the arrangements be the same for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}?
                 </h1>
-              {% elif data['number-of-children'] == '3' %}
+              {% else %}
                 <h1 class="govuk-fieldset__heading">
-                  Will the arrangements be the same for {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}?
-                </h1>
-              {% elif data['number-of-children'] == '4' %}
-                <h1 class="govuk-fieldset__heading">
-                  Will the arrangements be the same for {{ data['first-child-name'] }}, {{ data['second-child-name'] }},  {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}?
+                  Will the arrangements be the same for all the children?
                 </h1>
               {% endif %}
             </legend>
