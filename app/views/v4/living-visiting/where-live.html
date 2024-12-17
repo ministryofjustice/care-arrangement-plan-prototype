@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Where will the children mostly live?​ – {{ serviceName }} – GOV.UK Prototype Kit
+Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -45,16 +45,16 @@ Where will the children mostly live?​ – {{ serviceName }} – GOV.UK Prototy
           },
           items: [
             {
-              value: "With Heather",
-              text: "With Heather"
+              value: "With adult-a",
+              text: "With " +  data['first-name-adult'] 
             },
             {
-              value: "With Richard",
-              text: "With Richard"
+              value: "With adult-b",
+              text: "With " +  data['first-name-other-adult']
             },
             {
-              value: "They will spend equal time with Heather and Richard",
-              text: "They'll spend equal time with Heather and Richard"
+              value: "equal time",
+              text: "They'll spend equal time with " + data['first-name-adult'] + " and " + data['first-name-other-adult']
             },
             {
               divider: "or"
@@ -81,3 +81,5 @@ Where will the children mostly live?​ – {{ serviceName }} – GOV.UK Prototy
   </div>
 
 {% endblock %}
+
+

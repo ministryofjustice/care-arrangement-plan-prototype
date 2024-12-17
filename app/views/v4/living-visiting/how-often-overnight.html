@@ -29,43 +29,88 @@ Will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK 
           }) }}
         {% endset -%}
 
+        <!-- If statement to switch adult names in the question -->
+        {% if data['where-children-live'] == 'With adult-a' %}
 
-
-        {{ govukRadios({
-          name: "how-often-overnight",
-          fieldset: {
-            legend: {
-              text: "Will the children stay overnight with Richard?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "There are no current plans for overnight stays",
-              text: "There are no current plans for overnight stays"
-            },
-            {
-              value: "Yes, every week",
-              text: "Yes, every week"
-            },
-            {
-              value: "Yes, every other wwek",
-              text: "Yes, every other week"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "Another arrangement",
-              text: "Another arrangement",
-              conditional: {
-                html: anotherHtml
+          {{ govukRadios({
+            name: "how-often-overnight",
+            fieldset: {
+              legend: {
+                text: "Will the children stay overnight with " + data['first-name-other-adult'] + "?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
               }
-            }
-            
-          ]
-        }) }}
+            },
+            items: [
+              {
+                value: "There are no current plans for overnight stays",
+                text: "There are no current plans for overnight stays"
+              },
+              {
+                value: "Yes, every week",
+                text: "Yes, every week"
+              },
+              {
+                value: "Yes, every other wwek",
+                text: "Yes, every other week"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Another arrangement",
+                text: "Another arrangement",
+                conditional: {
+                  html: anotherHtml
+                }
+              }
+              
+            ]
+          }) }}
+
+        {% else %}
+
+
+          {{ govukRadios({
+            name: "how-often-overnight",
+            fieldset: {
+              legend: {
+                text: "Will the children stay overnight with " + data['first-name-adult'] + "?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "There are no current plans for overnight stays",
+                text: "There are no current plans for overnight stays"
+              },
+              {
+                value: "Yes, every week",
+                text: "Yes, every week"
+              },
+              {
+                value: "Yes, every other wwek",
+                text: "Yes, every other week"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Another arrangement",
+                text: "Another arrangement",
+                conditional: {
+                  html: anotherHtml
+                }
+              }
+              
+            ]
+          }) }}
+
+
+        {% endif %}
+
+
 
         {{ govukButton({
           text: "Continue"

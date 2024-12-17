@@ -125,11 +125,11 @@ router.post('/v3/court', function (req, res) {
 router.post('/v4/living-visiting/where-children-live', function (req, res) {
   const editChoice = req.session.data['where-children-live']
 
-  if (editChoice === 'With Heather') {
+  if (editChoice === 'With adult-a') {
     res.redirect('how-often-overnight')
-  } else if (editChoice === 'With Richard') {
+  } else if (editChoice === 'With adult-b') {
     res.redirect('how-often-overnight')
-  } else if (editChoice === 'They will spend equal time with Heather and Richard') {
+  } else if (editChoice === 'equal time') {
     res.redirect('split-equally')
   } else if (editChoice === 'Another arrangement') {
     res.redirect('#')
