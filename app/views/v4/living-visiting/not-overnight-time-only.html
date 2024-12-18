@@ -19,26 +19,54 @@ Will the children be spending time with Richard without staying overnight? – {
 
       <form class="form" action="not-overnight-time-only" method="post">
 
-        {{ govukRadios({
-          name: "not-overnight-stays-check",
-          fieldset: {
-            legend: {
-              text: "Will the children be spending time with Richard during the day?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "Yes",
-              text: "Yes"
+         <!-- If statement to switch adult names in the question -->
+         {% if data['where-children-live'] == 'With adult-a' %}
+
+          {{ govukRadios({
+            name: "not-overnight-stays-check",
+            fieldset: {
+              legend: {
+                text: "Will the children be spending time with "  + data['first-name-other-adult'] + " during the day?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
             },
-            {
-              value: "No",
-              text: "No"
-            }
-          ]
-        }) }}
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
+
+        {% else %}
+
+          {{ govukRadios({
+            name: "not-overnight-stays-check",
+            fieldset: {
+              legend: {
+                text: "Will the children be spending time with "  + data['first-name-adult'] + " during the day?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
+
+        {% endif %}
 
         {{ govukButton({
           text: "Continue"

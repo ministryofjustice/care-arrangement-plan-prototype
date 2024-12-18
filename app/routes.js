@@ -146,10 +146,8 @@ router.post('/v4/living-visiting/how-often-overnight', function (req, res) {
     res.redirect('which-days-overnight')
   } else if (editChoice === 'Yes, every other week') {
     res.redirect('which-days-overnight')
-  } else if (editChoice === 'Yes, every month') {
-    res.redirect('how-often-month')
   } else if (editChoice === 'Another arrangement') {
-    res.redirect('#')
+    res.redirect('not-overnight-time')
   }    
 });
 
