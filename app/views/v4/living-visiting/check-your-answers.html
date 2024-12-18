@@ -28,7 +28,15 @@
               Where will the child mostly live?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['where-children-live'] }}
+              {% if data['where-children-live'] == 'With adult-a' %}
+                With {{ data['first-name-adult'] }}
+              {% elif data['where-children-live'] == 'With adult-b' %}
+                With {{ data['first-name-other-adult'] }}
+              {% elif data['where-children-live'] == 'equal time' %}
+                They'll spend equal time with {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
+              {% else %}
+                {{ data['another-arrangement-where-live'] }}
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
@@ -57,7 +65,11 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Where will the children mostly live?
+              {% if data['number-of-children'] == '1' %}
+                Where will the child mostly live?
+              {% else %}
+                Where will the children mostly live?
+              {% endif %}
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['where-children-live'] == 'With adult-a' %}
@@ -81,7 +93,11 @@
         {% if data['where-children-live'] == 'With adult-a' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Will the children stay overnight with {{ data['first-name-other-adult'] }}?
+            {% if data['number-of-children'] == '1' %}
+              Will the child stay overnight with {{ data['first-name-other-adult'] }}?
+            {% else %}
+              Will the children stay overnight with {{ data['first-name-other-adult'] }}?
+            {% endif %}
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['how-often-overnight'] }}
@@ -96,7 +112,11 @@
             {% if data['how-often-overnight'] == 'There are no current plans for overnight stays' %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Will the children be spending time with {{ data['first-name-other-adult'] }} during the day?
+                {% if data['number-of-children'] == '1' %}
+                  Will the child be spending time with {{ data['first-name-other-adult'] }} during the day?
+                {% else %}
+                  Will the children be spending time with {{ data['first-name-other-adult'] }} during the day?
+                {% endif %}
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['not-overnight-stays-check'] }}
@@ -148,7 +168,11 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Will the children also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                {% if data['number-of-children'] == '1' %}
+                  Will the child also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                {% else %}
+                  Will the children also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                {% endif %}
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['not-overnight-stays-check'] }}
@@ -192,6 +216,7 @@
 
         {% endif %}
         <!-- End of Children living with adult a -->
+
 
 
 

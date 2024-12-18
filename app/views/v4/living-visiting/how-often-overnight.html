@@ -19,6 +19,73 @@ Will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK 
 
       <form class="form" action="how-often-overnight" method="post">
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                
+                <!-- If statement for only child or multiple children-->
+                {% if data['number-of-children'] == '1' %}
+
+                    <!-- If statement to switch adult names in the question -->
+                    {% if data['where-children-live'] == 'With adult-a' %}
+                      Will the child stay overnight with {{ data['first-name-other-adult'] }}?
+                    {% else %}
+                      Will the child stay overnight with {{ data['first-name-adult'] }}?
+                    {% endif %}
+
+                {% else %}
+
+                  <!-- If statement to switch adult names in the question -->
+                  {% if data['where-children-live'] == 'With adult-a' %}
+                      Will the children stay overnight with {{ data['first-name-other-adult'] }}?
+                    {% else %}
+                      Will the children stay overnight with {{ data['first-name-adult'] }}?
+                    {% endif %}
+
+                {% endif %}
+
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight" name="how-often-overnight" type="radio" value="There are no current plans for overnight stays">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight">
+                  There are no current plans for overnight stays
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight-2" name="how-often-overnight" type="radio" value="Yes, every week">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight-2">
+                  Yes, every week
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight-3" name="how-often-overnight" type="radio" value="Yes, every other week">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight-3">
+                  Yes, every other week
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight-4" name="how-often-overnight" type="radio" value="text" data-aria-controls="conditional-how-often-overnight-4">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight-4">
+                  Another arrangement
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-overnighte-4">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="more-detail">
+                    Describe the arrangement
+                  </label>
+                  <textarea class="govuk-textarea" id="another-arrangement-where-live" name="another-arrangement-where-live" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- 
         {% set anotherHtml %}
           {{ govukTextarea({
             name: "another-arrangement-overnight",
@@ -29,7 +96,7 @@ Will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK 
           }) }}
         {% endset -%}
 
-        <!-- If statement to switch adult names in the question -->
+        If statement to switch adult names in the question 
         {% if data['where-children-live'] == 'With adult-a' %}
 
           {{ govukRadios({
@@ -109,8 +176,7 @@ Will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK 
 
 
         {% endif %}
-
-
+        -->
 
         {{ govukButton({
           text: "Continue"

@@ -19,55 +19,52 @@ Will the children also spend time with Richard without staying overnight? – {{
 
       <form class="form" action="not-overnight-stays-check" method="post">
 
-        <!-- If statement to switch adult names in the question -->
-        {% if data['where-children-live'] == 'With adult-a' %}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
 
-          {{ govukRadios({
-            name: "not-overnight-stays-check",
-            fieldset: {
-              legend: {
-                text: "Will the children also spend time with " + data['first-name-other-adult'] + " without staying overnight?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes"
-              },
-              {
-                value: "No",
-                text: "No"
-              }
-            ]
-          }) }}
+                <!-- If statement for only child or multiple children-->
+                {% if data['number-of-children'] == '1' %}
 
-        {% else %}
+                    <!-- If statement to switch adult names in the question -->
+                    {% if data['where-children-live'] == 'With adult-a' %}
+                      Will the child also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                    {% else %}
+                      Will the child also spend time with {{ data['first-name-adult'] }} without staying overnight?
+                    {% endif %}
 
-          {{ govukRadios({
-            name: "not-overnight-stays-check",
-            fieldset: {
-              legend: {
-                text: "Will the children also spend time with " + data['first-name-adult'] + " without staying overnight?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "Yes",
-                text: "Yes"
-              },
-              {
-                value: "No",
-                text: "No"
-              }
-            ]
-          }) }}
+                {% else %}
 
-        {% endif %}
+                  <!-- If statement to switch adult names in the question -->
+                  {% if data['where-children-live'] == 'With adult-a' %}
+                      Will the children also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                    {% else %}
+                      Will the children also spend time with {{ data['first-name-adult'] }} without staying overnight?
+                    {% endif %}
 
+                {% endif %}
+                
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-overnight-stays-check" name="not-overnight-stays-check" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="not-overnight-stays-check">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-overnight-stays-check-2" name="not-overnight-stays-check" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="not-overnight-stays-check-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      
 
         {{ govukButton({
           text: "Continue"
