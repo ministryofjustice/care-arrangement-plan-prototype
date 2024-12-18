@@ -226,7 +226,11 @@
         {% if data['where-children-live'] == 'equal time' %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            How will the children's living arrangements be split evenly?
+            {% if data['number-of-children'] == '1' %}
+              How will the child's living arrangements be split evenly?
+            {% else %}  
+              How will the children's living arrangements be split evenly?
+            {% endif %}
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['split-equally-options'] }}
