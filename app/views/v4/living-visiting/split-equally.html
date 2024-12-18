@@ -29,46 +29,90 @@ How will the children's living arrangements be split evenly?  – {{ serviceName
         }) }}
       {% endset -%}
 
+         <!-- If statement for only child or multiple children-->
+         {% if data['number-of-children'] == '1' %}
 
-
-        {{ govukRadios({
-          name: "split-equally-options",
-          fieldset: {
-            legend: {
-              text: "How will the children's living arrangements be split evenly? ",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "they will spend one week in one household and the next week in the other",
-              text: "they will spend one week in one household and the next week in the other"
-            },
-            {
-              value: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)",
-              text: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)"
-            },
-            {
-              value: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) ",
-              text: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) "
-            },
-            {
-              value: "the children stay in one home, and the adults move in and out",
-              text: "the children stay in one home, and the adults move in and out"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "Another arrangement",
-              text: "Another arrangement",
-              conditional: {
-                html: anotherHtml
+          {{ govukRadios({
+            name: "split-equally-options",
+            fieldset: {
+              legend: {
+                text: "How will the child's living arrangements be split evenly? ",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
               }
-            }
-          ]
-        }) }}
+            },
+            items: [
+              {
+                value: "they will spend one week in one household and the next week in the other",
+                text: "they will spend one week in one household and the next week in the other"
+              },
+              {
+                value: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)",
+                text: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)"
+              },
+              {
+                value: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) ",
+                text: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) "
+              },
+              {
+                value: "the child stays in one home, and the adults move in and out",
+                text: "the child stays in one home, and the adults move in and out"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Another arrangement",
+                text: "Another arrangement",
+                conditional: {
+                  html: anotherHtml
+                }
+              }
+            ]
+          }) }}
+
+        {% else %}
+
+          {{ govukRadios({
+            name: "split-equally-options",
+            fieldset: {
+              legend: {
+                text: "How will the children's living arrangements be split evenly? ",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "they will spend one week in one household and the next week in the other",
+                text: "they will spend one week in one household and the next week in the other"
+              },
+              {
+                value: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)",
+                text: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)"
+              },
+              {
+                value: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) ",
+                text: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) "
+              },
+              {
+                value: "the children stay in one home, and the adults move in and out",
+                text: "the children stay in one home, and the adults move in and out"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Another arrangement",
+                text: "Another arrangement",
+                conditional: {
+                  html: anotherHtml
+                }
+              }
+            ]
+          }) }}
+
+        {% endif %}
 
 
         {{ govukButton({
