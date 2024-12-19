@@ -76,8 +76,11 @@ On which days will daytime visits happen?​  – {{ serviceName }} – GOV.UK P
           },
           {
             value: "none",
-            text: "A different arrangement​",
-            behaviour: "exclusive"
+            text: "A different arrangement",
+            behaviour: "exclusive",
+            conditional: {
+              html: anotherHtml
+            }
           }
         ]
       }) }}

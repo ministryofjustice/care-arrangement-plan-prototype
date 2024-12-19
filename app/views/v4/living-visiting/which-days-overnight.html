@@ -77,7 +77,10 @@ On which days will overnights happen?​  – {{ serviceName }} – GOV.UK Proto
           {
             value: "none",
             text: "A different arrangement​",
-            behaviour: "exclusive"
+            behaviour: "exclusive",
+            conditional: {
+              html: anotherHtml
+            }
           }
         ]
       }) }}

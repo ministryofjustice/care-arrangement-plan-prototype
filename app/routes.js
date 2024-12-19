@@ -131,7 +131,7 @@ router.post('/v4/living-visiting/where-children-live', function (req, res) {
     res.redirect('how-often-overnight')
   } else if (editChoice === 'equal time') {
     res.redirect('split-equally')
-  } else if (editChoice === 'Another arrangement') {
+  } else if (editChoice === 'another arrangement') {
     res.redirect('check-your-answers')
   }   
 });
@@ -146,8 +146,8 @@ router.post('/v4/living-visiting/how-often-overnight', function (req, res) {
     res.redirect('which-days-overnight')
   } else if (editChoice === 'Yes, every other week') {
     res.redirect('which-days-overnight')
-  } else if (editChoice === 'Another arrangement') {
-    res.redirect('not-overnight-time')
+  } else if (editChoice === 'another arrangement overnight') {
+    res.redirect('not-overnight-time-only')
   }    
 });
 
