@@ -26,7 +26,7 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
               <h1 class="govuk-fieldset__heading">
                 <!-- If statement for only child or multiple children-->
                 {% if data['number-of-children'] == '1' %}
-                  Where will the child mostly live?
+                  Where will {{ data['first-child-name'] }} mostly live?
                 {% else %}
                   Where will the children mostly live?
                 {% endif %}
@@ -48,7 +48,7 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="where-children-live-3" name="where-children-live" type="radio" value="equal time">
                 <label class="govuk-label govuk-radios__label" for="where-children-live-3">
-                  They'll spend equal time with {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
+                  {{ data['first-child-name'] }} will spend equal time with {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>

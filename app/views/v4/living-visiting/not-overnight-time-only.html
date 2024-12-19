@@ -29,9 +29,9 @@ Will the children be spending time with Richard without staying overnight? – {
 
                     <!-- If statement to switch adult names in the question -->
                     {% if data['where-children-live'] == 'With adult-a' %}
-                      Will the child be spending time with {{ data['first-name-other-adult'] }} during the day?
+                      Will {{ data['first-child-name'] }} be spending time with {{ data['first-name-other-adult'] }} during the day?
                     {% else %}
-                      Will the child be spending time with {{ data['first-name-adult'] }} during the day?
+                      Will {{ data['first-child-name'] }} be spending time with {{ data['first-name-adult'] }} during the day?
                     {% endif %}
 
                 {% else %}

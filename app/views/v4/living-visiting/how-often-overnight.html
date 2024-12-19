@@ -29,9 +29,9 @@ Will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK 
 
                     <!-- If statement to switch adult names in the question -->
                     {% if data['where-children-live'] == 'With adult-a' %}
-                      Will the child stay overnight with {{ data['first-name-other-adult'] }}?
+                      Will {{ data['first-child-name'] }} stay overnight with {{ data['first-name-other-adult'] }}?
                     {% else %}
-                      Will the child stay overnight with {{ data['first-name-adult'] }}?
+                      Will {{ data['first-child-name'] }} stay overnight with {{ data['first-name-adult'] }}?
                     {% endif %}
 
                 {% else %}
