@@ -135,7 +135,11 @@
                   On which days will daytime visits happen?
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['daytime-visit-days'] }}
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
@@ -180,7 +184,11 @@
                   On which days will daytime visits happen?
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['daytime-visit-days'] }}
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
@@ -209,7 +217,11 @@
                 On which days will overnights happen?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['when-overnight'] }}
+                {% if data['when-overnight'] == 'none' %}
+                    {{ data['another-arrangement-overnight-stays'] }}
+                  {% else %}
+                    {{ data['when-overnight'] }}
+                  {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will overnights happen?</span></a>
@@ -236,13 +248,29 @@
                   On which days will daytime visits happen?
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['daytime-visit-days'] }}
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
                 </dd>
               </div>
               {% endif %}
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What else is important to include about visits or overnight stays?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['anything-else'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
 
             {% endif %}
             <!-- End of overnight stays on a weekly basis -->
@@ -304,7 +332,11 @@
                   On which days will daytime visits happen?
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['daytime-visit-days'] }}
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
@@ -348,7 +380,11 @@
                    On which days will daytime visits happen?
                  </dt>
                  <dd class="govuk-summary-list__value">
-                   {{ data['daytime-visit-days'] }}
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
                  </dd>
                  <dd class="govuk-summary-list__actions">
                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
@@ -377,7 +413,11 @@
                 On which days will overnights happen?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['when-overnight'] }}
+                  {% if data['when-overnight'] == 'none' %}
+                    {{ data['another-arrangement-overnight-stays'] }}
+                  {% else %}
+                    {{ data['when-overnight'] }}
+                  {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will overnights happen?</span></a>
@@ -404,7 +444,11 @@
                   On which days will daytime visits happen?
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['daytime-visit-days'] }}
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
@@ -412,9 +456,7 @@
               </div>
               {% endif %}
 
-              {% if data['skip'] %}
-
-              {% else  %}
+              
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     What else is important to include about visits or overnight stays?
@@ -426,13 +468,13 @@
                     <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
                   </dd>
                 </div>
-              {% endif %}
+              
 
             {% endif %}
             <!-- End of overnight stays on a weekly basis -->
 
         {% endif %}
-        <!-- End of Children living with adult a -->       
+        <!-- End of Children living with adult b -->       
 
 
 
