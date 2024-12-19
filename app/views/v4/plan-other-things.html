@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What other things matter? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What other things matter?
+      </h1>
+
+      <!--<p>Which special days are important to you? </p>
+
+      <p>For example, New Year celebrations, Mother’s day, UK bank holidays.</p> 
+
+      <p>You should also consider holidays that don’t happen every year, such as an extra bank holiday to celebrate a royal event. </p>
+
+      <p>You may also want to think about family birthdays and special events such as graduation ceremonies or military homecomings.</p> -->
+
+
+
+      <form class="form" action="plan-create" method="post">
+
+
+      {{ govukTextarea({
+        name: "special-days",
+        id: "special-days",
+        label: {
+          classes: "govuk-label--m"        }
+      }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
