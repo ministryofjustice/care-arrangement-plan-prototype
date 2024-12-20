@@ -19,8 +19,12 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
         Check your plan
       </h1>
 
-      <p>These are the suggestions you will send to {{ data['first-name-other-adult'] }}.</p>
-
+      {% if data['where-children-live'] == 'With adult-a' %}
+        <p>These are the suggestions you will send to {{ data['first-name-other-adult'] }}.</p>
+      {% else %}
+        <p>These are the suggestions you will send to {{ data['first-name-adult'] }}.</p>
+      {% endif %}
+ 
 
 
       <h2 class="govuk-heading-m">
@@ -71,7 +75,7 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
             Living and visiting
           </dt>
           <dd class="govuk-summary-list__value">
-            The children will live with Heather and will be staying overnight with Richard once a week as a flexible arrangement.
+            
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -83,7 +87,7 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
             What will happen during holidays?
           </dt>
           <dd class="govuk-summary-list__value">
-            Heather and Richard agree to make plans with Jay and Robin about what will happen during the school holidays, at least 3 weeks before each holiday.
+           
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -94,7 +98,7 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
             What will happen on special days?
           </dt>
           <dd class="govuk-summary-list__value">
-            Jay and Robyn will stay with Heather for Christmas 2025 and with Richard Christmas 2026 and alternate each year.
+            
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -114,7 +118,7 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
             What other things matter?
           </dt>
           <dd class="govuk-summary-list__value">
-           We will arrange visits with grandparents and other relatives on an ad-hoc basis.
+          
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -135,10 +139,6 @@ Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
           </dt>
           <dd class="govuk-summary-list__value">
 
-
-              Let's give each other at least 48 hours notice if plans need to change. We should agree changes by text message.
-
-            
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>

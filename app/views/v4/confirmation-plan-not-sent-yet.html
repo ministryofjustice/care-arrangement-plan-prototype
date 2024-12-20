@@ -13,7 +13,13 @@ Your plan is ready is to save – {{ serviceName }} – GOV.UK Prototype Kit
         titleText: "Your plan is ready to save"
       }) }}
 
-      <p>Share your plan with XXXX when you are ready. Remember you'll both need to be in agreement to finish the child arrangements plan.</p>
+      {% if data['where-children-live'] == 'With adult-a' %}
+        <p>Share your plan with {{ data['first-name-other-adult'] }} when you are ready. Remember you'll both need to be in agreement to finish the child arrangements plan.</p>
+      {% else %}
+        <p>Share your plan with {{ data['first-name-adult'] }} when you are ready. Remember you'll both need to be in agreement to finish the child arrangements plan.</p>
+      {% endif %}
+
+     
 
       <p>You can:</p>
 
