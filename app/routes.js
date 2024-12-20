@@ -205,3 +205,14 @@ router.post('/v4/court', function (req, res) {
     res.redirect('number-of-children')
   }   
 });
+
+
+router.post('/v4/send-plan-check', function (req, res) {
+  const editChoice = req.session.data['send-plan-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('confirmation-plan-sent')
+  } else if (editChoice === 'Not yet') {
+    res.redirect('confirmation-plan-not-sent-yet')
+  }   
+});
