@@ -19,44 +19,31 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
       
 
-      <form class="form" action="holiday-notice" method="post">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                When will you agree holiday living and visiting arrangements?
-              
-              </h1>
-            </legend>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="holiday-notice-1" name="holiday-notice" type="radio" value="2 weeks">
-                <label class="govuk-label govuk-radios__label" for="arrangements-change-1">
-                  2 weeks
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="holiday-notice-2" name="holiday-notice" type="radio" value="4 weeks">
-                <label class="govuk-label govuk-radios__label" for="arrangements-change-2">
-                  4 weeks
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="holiday-notice-3" name="holiday-notice" type="radio" value="6 weeks">
-                <label class="govuk-label govuk-radios__label" for="arrangements-change-3">
-              6 weeks
-                </label>
-              </div>
-            </div>
+      <form class="form" action="../make-a-plan" method="get">
 
-          </fieldset>
-                 </div>
-        </form>
+     
+        {{ govukTextarea({
+            name: "anything-else",
+            id: "anything-else",
+            label: {
+              text: "How will the arrangements be different in school holidays?",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            hint: {
+              text: "For example, pick up times​"
+            }
+          }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+    
    
-        </div>
 
-        </div>
 
 
 
@@ -114,10 +101,6 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
      
 
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
 
       </form>
 
