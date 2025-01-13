@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Changes sent – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Changes sent"
+      }) }}
+
+      <p>Heather will have a chance to respond to what you are suggesting.</p>
+      <p>Remember, it's best for your children if you can reach an agreement together without going to court.</p>
+
+      <h2 class="govuk-heading-m">
+        What do you want to do next?
+      </h2>
+
+      <p>
+        To share the plan you are working on, you can:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">Download a copy</a></li>
+        <li><a href="#">Email a copy</li>
+        <li><a href="#">Print a copy</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

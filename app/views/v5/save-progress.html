@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Save your progress as you go – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Save your progress as you go</h1>
+
+      <form class="form" action="make-a-plan" method="post">
+
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            
+                <strong data-uipath="you.save.progressAsGo.person.title.alert.p1" class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    <span data-uipath="you.save.progressAsGo.person.title.alert.p1">Your plan will be reset if you are inactive for more than two hours. Provide an email address so your progress can be saved as you go.</span>
+                </strong>
+            
+            
+        </div>
+
+        <p class="govuk-body" data-uipath="save.progressAsGo.person.title.hint.p1">If you choose to save, you will be able to return to your plan at any point over the next 30 days and pick up where you left off.</p>
+
+        <div class="govuk-form-group">
+            <label	class="govuk-label govuk-label--s" data-uipath="emailAddress.label" for="emailAddress" >Email address</label>
+            <div class="govuk-hint" id="emailAddress-hint" data-uipath="emailAddress.label_hint" >We will only use this to send you a copy of your completed plan.</div>
+
+            <input class="govuk-input" data-uipath="emailAddress.field" id="emailAddress" name="emailAddress" type="email" aria-describedby="emailAddress-hint" data-js-disable-browser-autofill="off" autocomplete="email" data-hj-suppress value="">
+        </div>
+        
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p><a href="make-a-plan">I don't want to save my progress as I go</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
