@@ -315,7 +315,7 @@ router.post('/v5/send-plan-check', function (req, res) {
   }   
 });
 
-router.post('/v5/living-visiting/will-arrangements-change', function (req, res) {
+router.post('/v5/living-visiting/arrangements-change', function (req, res) {
   const editChoice = req.session.data['arrangements-change']
 
   if (editChoice === 'Yes') {
