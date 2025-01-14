@@ -195,10 +195,26 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
       <h2 class="govuk-heading-m">Decision making</h2>
       <ul class="govuk-task-list">
+
+
+                  {% if data['big-decisions'] %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="plan-last-minute-changes" aria-describedby="child-arrangement-plan-5-status">
+              How will you agree changes?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
+                Completed
+          </div>
+        </li>
        
+
+    {% else %}
+
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="plan-changes" aria-describedby="hild-arrangement-plan-5-status">
+              <a class="govuk-link govuk-task-list__link" href="plan-last-minute-changes" aria-describedby="hild-arrangement-plan-5-status">
                 How will you agree changes?
               </a>
             </div>
@@ -208,6 +224,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
                  </strong>
             </div>
           </li>
+
+                   {% endif %}
         
 
       
