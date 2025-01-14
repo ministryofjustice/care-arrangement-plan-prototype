@@ -59,7 +59,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
         {% if data['where-children-live'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="living-visiting/check-your-answers" aria-describedby="child-arrangement-plan-1-status">
+              <a class="govuk-link govuk-task-list__link" href="living-visiting/where-live" aria-describedby="child-arrangement-plan-1-status">
                 Living and visiting
               </a>
             </div>
@@ -72,6 +72,33 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               <div class="govuk-task-list__name-and-hint">
                 <a class="govuk-link govuk-task-list__link" href="living-visiting/same-for-all" aria-describedby="child-arrangement-plan-1-status">
                   Living and visiting
+                </a>
+              </div>
+              <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">
+                    Incomplete
+                  </strong>
+              </div>
+            </li>
+          {% endif %}
+
+
+                  {% if data['items-changeover'] %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
+                Handover and dropoff
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+                   Completed
+            </div>
+          </li>
+          {% else %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
+                  Handover and dropoff
                 </a>
               </div>
               <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
@@ -95,7 +122,22 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
              </strong>
           </div>
         </li> -->
+        {% if data['special-days'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-4-status">
+              What will happen on special days?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+            
+                Completed
+         
+          </div>
+        </li>
+
+          {% else %}
+               <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-4-status">
               What will happen on special days?
@@ -107,6 +149,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
              </strong>
           </div>
         </li>
+        {% endif %}
+
       </ul>
 
 
@@ -115,18 +159,34 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
       <h2 class="govuk-heading-m">Other things</h2>
       <ul class="govuk-task-list">
+
+          {% if data['other-things'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="plan-other-things" aria-describedby="child-arrangement-plan-4-status">
               What other things matter?
             </a>
           </div>
-          <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+          <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
+                Completed
+          </div>
+        </li>
+        
+
+        {% else %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="plan-other-things" aria-describedby="child-arrangement-plan-5-status">
+              What other things matter?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
             <strong class="govuk-tag govuk-tag--blue">
                 Incomplete
              </strong>
           </div>
         </li>
+         {% endif %}
       </ul>
 
 
