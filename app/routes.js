@@ -321,8 +321,8 @@ router.post('/v5/living-visiting/arrangements-change', function (req, res) {
   if (editChoice === 'Yes') {
     res.redirect('holiday-arrangement-notice')
   } else if (editChoice === 'No') {
-    res.redirect('confirmation-plan-not-sent-yet')
+    res.redirect('../make-a-plan')
   }  else if (editChoice === 'Dont know') {
-    res.redirect('confirmation-plan-not-sent-yet')
+    res.redirect('../make-a-plan')
   }   
 });
