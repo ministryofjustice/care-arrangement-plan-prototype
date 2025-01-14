@@ -69,7 +69,7 @@ router.post('/v3/living-visiting/not-overnight-time-only', function (req, res) {
   if (editChoice === 'Yes') {
     res.redirect('which-days-daytime-visits')
   } else if (editChoice === 'No') {
-    res.redirect('anything-else-detail-days-only')
+    res.redirect('make-a-plan')
   }   
 });
 
@@ -256,7 +256,7 @@ router.post('/v5/living-visiting/not-overnight-time-only', function (req, res) {
   if (editChoice === 'Yes') {
     res.redirect('which-days-daytime-visits')
   } else if (editChoice === 'No') {
-    res.redirect('anything-else-detail-days-only')
+    res.redirect('../make-a-plan')
   }   
 });
 
@@ -289,7 +289,7 @@ router.post('/v5/living-visiting/not-overnight-stays-check', function (req, res)
   if (editChoice === 'Yes') {
     res.redirect('which-days-daytime-visits')
   } else if (editChoice === 'No') {
-    res.redirect('anything-else-detail')
+    res.redirect('../make-a-plan')
   }   
 });
 
