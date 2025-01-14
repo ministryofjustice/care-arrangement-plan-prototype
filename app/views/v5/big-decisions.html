@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="plan-review" method="post">
+
+
+
+        {{ govukRadios({
+          id: "big-decisions",
+          name: "big-decisions",
+          fieldset: {
+            legend: {
+              text: "How will you make big decisions?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+          hint: {
+              text: "These decisions include choosing a school or agreeing to medical treatment.​"
+            },
+
+          items: [
+            {
+              value: "You will aree big decisions together",
+              text: data['first-name-adult'] + " and " + data['first-name-other-adult'] + " will agree big decisions together"
+            }, 
+            
+            {
+              value: "Adult-a will make a decision",
+              text: data['first-name-adult'] + " will make a decision and then inform " + data['first-name-other-adult'] 
+            },
+            {
+            value: "Adult-a will make a decision",
+              text: data['first-name-other-adult'] + " will make a decision and then inform " + data['first-name-adult']
+            },
+
+                        {
+              value: "Collect by both adults",
+              text: "We don’t need to decide this now "
+            }
+
+
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+  
+
+      </form>
+
+      <p><a href="#">Skip this question</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
+

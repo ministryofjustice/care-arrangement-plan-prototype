@@ -17,8 +17,15 @@ What other things matter? – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        What other things matter?
+        What other things matter to your child?  
       </h1>
+
+      <p class="govuk-body">You may want to agree things such as:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>religious practices, diet, and standard rules across both households</li>
+  <li>extracurricular activities, such as swimming lessons</li>
+  <li>access to other friends and family</li>
+</ul>
 
       <!--<p>Which special days are important to you? </p>
 
@@ -30,12 +37,12 @@ What other things matter? – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-      <form class="form" action="plan-create" method="post">
+      <form class="form" action="make-a-plan" method="post">
 
 
       {{ govukTextarea({
-        name: "special-days",
-        id: "special-days",
+        name: "other-things",
+        id: "other-things",
         label: {
           classes: "govuk-label--m"        }
       }) }}
@@ -47,6 +54,7 @@ What other things matter? – {{ serviceName }} – GOV.UK Prototype Kit
         }) }}
 
       </form>
+            <p><a href="#">Skip this question</a></p>
 
     </div>
   </div>
