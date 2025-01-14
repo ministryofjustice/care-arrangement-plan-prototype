@@ -16,104 +16,53 @@ How will the children's living arrangements be split evenly?  – {{ serviceName
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+<h1 class="govuk-heading-l">Which schedule best meets the children's needs?</h1>
 
-      <form class="form" action="anything-else-detail" method="post">
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Get ideas for managing equal time
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+Here are some common schedules that can benefit children. 
 
-        {% set anotherHtml %}
-        {{ govukTextarea({
-          name: "another-arrangement-split-equally",
-          id: "another-arrangement-split-equally",
-          label: {
-            text: "Describe the arrangement"
-          }
-        }) }}
-      {% endset -%}
+Alternating weeks<br>
+The children will spend one week in one household and the next week in the other.<br>
+<br>
 
-         <!-- If statement for only child or multiple children-->
-         {% if data['number-of-children'] == '1' %}
+2-2-3 schedule<br>
+Children spend two days in one household, two days in the other, then back to the first house for 3 days including the weekend.<br>
+<br>
+3-4-4-3 schedule<br>
+Children spend three days in one household then four days in the other. The next week they switch. <br>
+<br>
+2-2-5-5 schedule <br>
+Children spend two days in one household, then two days in the other. After that they spend five days in one household, then five days in the other.<br>
+  </div>
+</details>
 
-          {{ govukRadios({
-            name: "split-equally-options",
-            fieldset: {
-              legend: {
-                text: "How will " +  data['first-child-name'] + "'s living arrangements be split evenly? ",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "they will spend one week in one household and the next week in the other",
-                text: "they will spend one week in one household and the next week in the other"
-              },
-              {
-                value: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)",
-                text: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)"
-              },
-              {
-                value: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) ",
-                text: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) "
-              },
-              {
-                value: "the child stays in one home, and the adults move in and out",
-                text: "the child stays in one home, and the adults move in and out"
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "Another arrangement",
-                text: "Another arrangement",
-                conditional: {
-                  html: anotherHtml
-                }
-              }
-            ]
-          }) }}
+<p>Waiting for some text here. Waiting for some text here. Waiting for some text here. Waiting for some text here.</p>
 
-        {% else %}
 
-          {{ govukRadios({
-            name: "split-equally-options",
-            fieldset: {
-              legend: {
-                text: "How will the children's living arrangements be split evenly? ",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "they will spend one week in one household and the next week in the other",
-                text: "they will spend one week in one household and the next week in the other"
-              },
-              {
-                value: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)",
-                text: "they will spend two days in one household, two days in the other, then alternating three-day weekends (2-2-3 schedule)"
-              },
-              {
-                value: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) ",
-                text: "they will spend three days in one household, four days in the other, then switching the next week (3-4-4-3 schedule) "
-              },
-              {
-                value: "the children stay in one home, and the adults move in and out",
-                text: "the children stay in one home, and the adults move in and out"
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "Another arrangement",
-                text: "Another arrangement",
-                conditional: {
-                  html: anotherHtml
-                }
-              }
-            ]
-          }) }}
+<div class="govuk-form-group">
+  <!-- <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="more-detail">
+      Can you provide more detail?
+    </label>
+  </h1> -->
+  <!--<div id="more-detail-hint" class="govuk-hint">
+    Do not include personal or financial information, like your National Insurance number or credit card details
+  </div> -->
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
 
-        {% endif %}
 
+
+
+       
+
+      <form class="form" action="../make-a-plan" method="post">
 
         {{ govukButton({
           text: "Continue"
