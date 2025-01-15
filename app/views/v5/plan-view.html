@@ -18,43 +18,76 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
   </div> -->
 </div>
 
-      <h1 class="govuk-heading-l">
-        Proposed child arrangements plan for Jay and Robyn
-      </h1>
+       {% if data['number-of-children'] == '1' %}
+          <h1 class="govuk-heading-l">Proposed child arrangements plan for {{ data['first-child-name'] }}</h1>
+        {% elif data['number-of-children'] == '2' %}
+          <h1 class="govuk-heading-l">Proposed child arrangements plan for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}</h1>
+        {% elif data['number-of-children'] == '3' %}
+          <h1 class="govuk-heading-l">Proposed child arrangements plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}</h1>
+        {% elif data['number-of-children'] == '4' %}
+          <h1 class="govuk-heading-l">Child arrangement plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}</h1>
+        {% endif %}
 
-      <p>This is the child arrangements plan you've created. You must now share the plan with [other-parent] to get their agreement. </p> 
+  
+
+      <p>This is the child arrangements plan you've created. You must now share the plan with {{ data['first-name-other-adult'] }} to get their agreement. </p> 
 
 
 
       <h2 class="govuk-heading-m">Who the plan is for</h2>
       <h3 class="govuk-heading-s">The children</h3>
-      <p>Jay, Robyn</p>
+
+       {% if data['number-of-children'] == '1' %}
+          <p>{{ data['first-child-name'] }}</p>
+        {% elif data['number-of-children'] == '2' %}
+          <p>{{ data['first-child-name'] }}, {{ data['second-child-name'] }}</p>
+        {% elif data['number-of-children'] == '3' %}
+          <p>{{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}</p>
+        {% elif data['number-of-children'] == '4' %}
+          <p class="govuk-heading-l">{{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}</p>
+        {% endif %}
+
+
 
       <h3 class="govuk-heading-s">Who is agreeing this plan?</h3>
-      <p>Heather, Richard</p>
+      <p>{{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}</p>
 
 
 
       <h2 class="govuk-heading-m">The arrangements</h2>
       <h3 class="govuk-heading-s">Living and visiting</h3>
-      <p>The children will live with Heather and will be staying overnight with Richard once a week as a flexible arrangement.</p>
+      <p>The children will be mostly living with {{ data['first-name-adult'] }}</p>
 
-      <h3 class="govuk-heading-s">What will happen during holidays?</h3>
-      <p>Heather and Richard agree to make plans with Jay and Robin about what will happen during the school holidays, at least 3 weeks before each holiday.</p>
+      <p>They will have overnight stays with {{ data['first-name-other-adult'] }} on Wednesdays and Saturdays</p>
+
+      <p>They will visit {{ data['first-name-other-adult'] }} on Mondays but not stay over night</p>
+
+      <h3 class="govuk-heading-s">What will happen during school holidays?</h3>
+      <p>The living arrangements will change during school holidays</p>
+
+      <p>'We will split the time equally during holidays'</p>
+
+      <h3 class="govuk-heading-s">Handover and drop off</h3>
+      <p>Each person collects {{ data['first-child-name'] }} at the start of their access time</p>
+      <p>The change over location for {{ data['first-child-name'] }} is at the school</p>
+       <p>Items need to go between households at changeover are: toothbrush, teddy, school uniform, pyjamas.
+
 
       <h3 class="govuk-heading-s">What will happen on special days?</h3>
-      <p>Jay and Robyn will stay with Heather for Christmas 2025 and with Richard Christmas 2026 and alternate each year.</p>
+      <p>{{ data['first-child-name'] }} will stay with {{ data['first-name-adult'] }} for Christmas 2025 and with {{ data['first-name-other-adult'] }} Christmas 2026 and alternate each year.</p>
 
 
 
-      <h2 class="govuk-heading-m">Other things</h2>
+      <h2 class="govuk-heading-m">Other things that</h2>
       <h3 class="govuk-heading-s">What other things matter?</h3>
       <p>We will arrange visits with grandparents and other relatives on an ad-hoc basis.</p>
 
 
       <h2 class="govuk-heading-m">Decision making</h2>
       <h3 class="govuk-heading-s">How will you agree changes?</h3>
-      <p>Let's give each other at least 48 hours notice if plans need to change. We should agree changes by text message.</p>
+      <p>Last-minute changes should be communicated by text message</p>
+      <p>We should give each other two weeks notice if we want to change long-term arrangements</p>
+      <p>We can review our arrangement in a years time.</p>
 
 
      <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -97,7 +130,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
   <div style="border-top:10px solid #1d70b8;" class="govuk-related-items govuk-!-margin-bottom-4">
   </div>
   <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Now share your plan</h2>
-  <p class="govuk-body govuk-!-margin-bottom-2">Share your proposed plan with [other-parent] to get their agreement.</p>
+  <p class="govuk-body govuk-!-margin-bottom-2">Share your proposed plan with {{ data['first-name-other-adult'] }} to get their agreement.</p>
 
  
         <p><a href="#" class="govuk-link" style="text-decoration: none; text-align: left;">Download the plan</a></p>
