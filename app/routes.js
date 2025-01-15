@@ -256,7 +256,7 @@ router.post('/v5/living-visiting/not-overnight-time-only', function (req, res) {
   if (editChoice === 'Yes') {
     res.redirect('which-days-daytime-visits')
   } else if (editChoice === 'No') {
-    res.redirect('../make-a-plan')
+    res.redirect('will-arrangements-change')
   }   
 });
 
@@ -289,7 +289,7 @@ router.post('/v5/living-visiting/not-overnight-stays-check', function (req, res)
   if (editChoice === 'Yes') {
     res.redirect('which-days-daytime-visits')
   } else if (editChoice === 'No') {
-    res.redirect('../make-a-plan')
+    res.redirect('will-arrangements-change')
   }   
 });
 
