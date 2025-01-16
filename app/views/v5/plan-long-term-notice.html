@@ -38,54 +38,6 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-{% from "govuk/components/select/macro.njk" import govukSelect %}
-
-{{ govukSelect({
-  id: "location",
-  name: "location",
-  label: {
-    text: "Choose number days notice"
-  },
-  
-  items: [
-    {
-      value: "choose",
-      text: "Choose days",
-      selected: true
-    },
-    {
-      value: "one day",
-      text: "One day"
-    },
-    {
-      value: "two days",
-      text: "Two days"
-    },
-    {
-      value: "three days",
-      text: "Three days"
-    },
-    {
-      value: "four days",
-      text: "Four days"
-    },
-    {
-      value: "five days",
-      text: "Five days"
-    },
-    {
-      value: "six days",
-      text: "Six days"
-    }
-    
-  ]
-
-
-}) 
-
-}}
-
-<p>or</p>
 
 
 {% from "govuk/components/select/macro.njk" import govukSelect %}
