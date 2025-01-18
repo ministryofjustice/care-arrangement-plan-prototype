@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Only your original court order is enforceable
+      </h1>
+
+      <p>If you can reach agreement with the other parent or carer, then you do not need to go back to court to change your arrangements.</p>
+
+      <p>However, if the other person does not follow what you agree using this service, the court can only enforce your original court order.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "number-of-children"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

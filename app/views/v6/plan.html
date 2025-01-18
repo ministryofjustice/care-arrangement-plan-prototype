@@ -1,0 +1,223 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Jay and Robyn's child arrangement plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <form class="form" action="share" method="post">
+
+        <h1 class="govuk-heading-l">
+          Child arrangement plan for Jay and Robyn 
+        </h1>
+
+        {{ mojTicketPanel({
+          attributes: {
+            'aria-label': 'Sub navigation 1'
+          },
+          items: [{
+            html: ' 
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+              <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">The children</a>
+            </h2>
+            <p>Jay and Robyn</p>
+            ',
+            attributes: {
+              'aria-label': 'Section 1'
+            },
+            classes: 'moj-ticket-panel__content--blue'
+          }]
+        }) }}
+
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Who is agreeing this arrangement?</a>
+              </h2>
+              <p>Heather and Richard</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Where will the children live?</a>
+              </h2>
+              <p>Jay and Robyn will live with Heather on weekdays</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Who will the children visit?</a>
+              </h2>
+              <p>Jay and Robyn will spend time with Richard</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">When will visits happen?</a>
+              </h2>
+              <p>Jay and Robyn will see Richard every other weekend starting from 12th December 2025</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">What will happen during holidays?</a>
+              </h2>
+              <p>Heather and Richard agree to make plans with Jay and Robin about what will happen during the school holidays, at least 3 weeks before each holiday.</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">What will happen on special days?</a>
+              </h2>
+              <p>Jay and Robyn will stay with Heather for Christmas 2025 and with Richard Christmas 2026 and alternate each year.</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">How will you agree changes?</a>
+              </h2>
+              <p>To change scheduled visit times we agree to 48 hours notice. Other changes to be agreed one week prior to the start of a new school term.</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+          {{ mojTicketPanel({
+            attributes: {
+              'aria-label': 'Sub navigation 1'
+            },
+            items: [{
+              html: ' 
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Confirm the arrangement</a>
+              </h2>
+              <p>Heather and Richard agree to this arrangement. We agree to review this arrangement every 6 months.</p>
+              ',
+              attributes: {
+                'aria-label': 'Section 1'
+              },
+              classes: 'moj-ticket-panel__content--blue'
+            }]
+          }) }}
+
+
+          {{ govukButton({
+            text: "Create and share your plan"
+          }) }}
+
+          </form>
+
+      </div>
+    </div>
+
+  
+
+
+
+
+
+{% endblock %}

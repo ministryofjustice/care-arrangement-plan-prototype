@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What day will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  
+
+      <form class="form" action="not-overnight-time" method="post">
+
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-when-during-week",
+          id: "another-arrangement-when-during-week",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
+
+
+
+        {{ govukRadios({
+          name: "whereDoYouLive",
+          fieldset: {
+            legend: {
+              text: "What day will the children stay overnight with Richard?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Monday",
+              text: "Monday"
+            },
+            {
+              value: "Tuesday",
+              text: "Tuesday"
+            },
+            {
+              value: "Wednesday",
+              text: "Wednesday"
+            },
+            {
+              value: "Thursday",
+              text: "Thursday"
+            },
+            {
+              value: "Friday",
+              text: "Friday"
+            },
+            {
+              value: "Saturday",
+              text: "Saturday"
+            },
+            {
+              value: "Sunday",
+              text: "Sunday"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

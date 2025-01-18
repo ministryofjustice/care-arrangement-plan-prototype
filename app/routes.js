@@ -326,3 +326,114 @@ router.post('/v5/living-visiting/arrangements-change', function (req, res) {
     res.redirect('../make-a-plan')
   }   
 });
+
+
+
+// Version 6 //
+
+router.post('/v6/living-visiting/where-children-live', function (req, res) {
+  const editChoice = req.session.data['where-children-live']
+
+  if (editChoice === 'With adult-a') {
+    res.redirect('how-often-overnight')
+  } else if (editChoice === 'With adult-b') {
+    res.redirect('how-often-overnight')
+  } else if (editChoice === 'equal time') {
+    res.redirect('split-equally')
+  } else if (editChoice === 'another arrangement') {
+    res.redirect('check-your-answers')
+  }   
+});
+
+
+router.post('/v6/living-visiting/how-often-overnight', function (req, res) {
+  const editChoice = req.session.data['how-often-overnight']
+
+  if (editChoice === 'There are no current plans for overnight stays') {
+    res.redirect('not-overnight-time-only')
+  } else if (editChoice === 'Yes, every week') {
+    res.redirect('which-days-overnight')
+  } else if (editChoice === 'Yes, every other week') {
+    res.redirect('which-days-overnight')
+  } else if (editChoice === 'another arrangement overnight') {
+    res.redirect('not-overnight-time-only')
+  }    
+});
+
+
+router.post('/v6/living-visiting/not-overnight-time-only', function (req, res) {
+  const editChoice = req.session.data['not-overnight-stays-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('which-days-daytime-visits')
+  } else if (editChoice === 'No') {
+    res.redirect('will-arrangements-change')
+  }   
+});
+
+
+router.post('/v6/content-1', function (req, res) {
+  const editChoice = req.session.data['safe-check-1']
+
+  if (editChoice === 'Yes') {
+    res.redirect('content-2')
+  } else if (editChoice === 'No') {
+    res.redirect('safe-check-content-1-no')
+  } 
+});
+
+
+router.post('/v6/content-2', function (req, res) {
+  const editChoice = req.session.data['safe-check-2']
+
+  if (editChoice === 'Yes') {
+    res.redirect('content-3')
+  } else if (editChoice === 'No') {
+    res.redirect('safe-check-content-2-no')
+  } 
+});
+
+
+router.post('/v6/living-visiting/not-overnight-stays-check', function (req, res) {
+  const editChoice = req.session.data['not-overnight-stays-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('which-days-daytime-visits')
+  } else if (editChoice === 'No') {
+    res.redirect('will-arrangements-change')
+  }   
+});
+
+
+router.post('/v6/court', function (req, res) {
+  const editChoice = req.session.data['court-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('court-content')
+  } else if (editChoice === 'No') {
+    res.redirect('number-of-children')
+  }   
+});
+
+
+router.post('/v6/send-plan-check', function (req, res) {
+  const editChoice = req.session.data['send-plan-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('confirmation-plan-sent')
+  } else if (editChoice === 'Not yet') {
+    res.redirect('confirmation-plan-not-sent-yet')
+  }   
+});
+
+router.post('/v6/living-visiting/arrangements-change', function (req, res) {
+  const editChoice = req.session.data['arrangements-change']
+
+  if (editChoice === 'Yes') {
+    res.redirect('holiday-arrangement-notice')
+  } else if (editChoice === 'No') {
+    res.redirect('../make-a-plan')
+  }  else if (editChoice === 'Dont know') {
+    res.redirect('../make-a-plan')
+  }   
+});
