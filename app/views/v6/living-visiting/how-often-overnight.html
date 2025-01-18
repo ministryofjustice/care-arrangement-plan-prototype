@@ -1,0 +1,193 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Will the children stay overnight with Richard? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="how-often-overnight" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                
+                <!-- If statement for only child or multiple children-->
+                {% if data['number-of-children'] == '1' %}
+
+                    <!-- If statement to switch adult names in the question -->
+                    {% if data['where-children-live'] == 'With adult-a' %}
+                      Will {{ data['first-child-name'] }} stay overnight with {{ data['first-name-other-adult'] }}?
+                    {% else %}
+                      Will {{ data['first-child-name'] }} stay overnight with {{ data['first-name-adult'] }}?
+                    {% endif %}
+
+                {% else %}
+
+                  <!-- If statement to switch adult names in the question -->
+                  {% if data['where-children-live'] == 'With adult-a' %}
+                      Will the children stay overnight with {{ data['first-name-other-adult'] }}?
+                    {% else %}
+                      Will the children stay overnight with {{ data['first-name-adult'] }}?
+                    {% endif %}
+
+                {% endif %}
+
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight" name="how-often-overnight" type="radio" value="There are no current plans for overnight stays">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight">
+                  There are no current plans for overnight stays
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight-2" name="how-often-overnight" type="radio" value="Yes, every week">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight-2">
+                  Yes, every week
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight-3" name="how-often-overnight" type="radio" value="Yes, every other week">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight-3">
+                  Yes, every other week
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-often-overnight-4" name="how-often-overnight" type="radio" value="another arrangement overnight" data-aria-controls="conditional-how-often-overnight-4">
+                <label class="govuk-label govuk-radios__label" for="how-often-overnight-4">
+                  Another arrangement
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-often-overnight-4">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="more-detail">
+                    Describe the arrangement
+                  </label>
+                  <textarea class="govuk-textarea" id="another-arrangement-overnight" name="another-arrangement-overnight" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+       
+
+        <!-- 
+        {% set anotherHtml %}
+          {{ govukTextarea({
+            name: "another-arrangement-overnight",
+            id: "another-arrangement-overnight",
+            label: {
+              text: "Describe the arrangement"
+            }
+          }) }}
+        {% endset -%}
+
+        If statement to switch adult names in the question 
+        {% if data['where-children-live'] == 'With adult-a' %}
+
+          {{ govukRadios({
+            name: "how-often-overnight",
+            fieldset: {
+              legend: {
+                text: "Will the children stay overnight with " + data['first-name-other-adult'] + "?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "There are no current plans for overnight stays",
+                text: "There are no current plans for overnight stays"
+              },
+              {
+                value: "Yes, every week",
+                text: "Yes, every week"
+              },
+              {
+                value: "Yes, every other week",
+                text: "Yes, every other week"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Another arrangement",
+                text: "Another arrangement",
+                conditional: {
+                  html: anotherHtml
+                }
+              }
+              
+            ]
+          }) }}
+
+        {% else %}
+
+
+          {{ govukRadios({
+            name: "how-often-overnight",
+            fieldset: {
+              legend: {
+                text: "Will the children stay overnight with " + data['first-name-adult'] + "?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "There are no current plans for overnight stays",
+                text: "There are no current plans for overnight stays"
+              },
+              {
+                value: "Yes, every week",
+                text: "Yes, every week"
+              },
+              {
+                value: "Yes, every other wwek",
+                text: "Yes, every other week"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Another arrangement",
+                text: "Another arrangement",
+                conditional: {
+                  html: anotherHtml
+                }
+              }
+              
+            ]
+          }) }}
+
+
+        {% endif %}
+        -->
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

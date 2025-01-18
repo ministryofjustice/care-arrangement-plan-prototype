@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  When will additional daytime visits happen? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="anything-else" method="post">
+
+        {{ govukCheckboxes({
+          name: "daytime-visit-days",
+          fieldset: {
+            legend: {
+              text: "When will additional daytime visits happen?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "The children are staying with Richard on Fridays, so select the additional visit days."
+          },
+          items: [
+            {
+              value: "Monday",
+              text: "Monday"
+            },
+            {
+              value: "Tuesday",
+              text: "Tuesday"
+            },
+            {
+              value: "Wednesday",
+              text: "Wednesday"
+            },
+            {
+              value: "Thursday",
+              text: "Thursday"
+            },
+            {
+              value: "Sunday",
+              text: "Sunday"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Flexible arrangement",
+              text: "Flexible arrangement"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Plan agreed – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Plan agreed"
+      }) }}
+
+      <p>It's great that you were able to agree a child arrangements plan together.</p>
+
+      <p>You can come back to the child arrangement plans service if you want to agree changes to the plan in the future.</p>
+
+      <h2 class="govuk-heading-m">
+        What do you want to do next?
+      </h2>
+
+      <p>
+        To share the plan, you can:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">Download a copy</a></li>
+        <li><a href="#">Email a copy</li>
+        <li><a href="#">Print a copy</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How will the children's living arrangements be split evenly?  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Which schedule best meets the children's needs?</h1>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Get ideas for managing equal time
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+Here are some common schedules that can benefit children.<br>
+<br>
+
+<b>Alternating weeks</b><br>
+The children will spend one week in one household and the next week in the other.<br>
+<br>
+
+<b>2-2-3 schedule</b><br>
+Children spend two days in one household, two days in the other, then back to the first house for 3 days including the weekend.<br>
+<br>
+<b>4-4-3 schedule</b><br>
+Children spend three days in one household then four days in the other. The next week they switch. <br>
+<br>
+<b>2-2-5-5 schedule </b><br>
+Children spend two days in one household, then two days in the other. After that they spend five days in one household, then five days in the other.<br>
+  </div>
+</details>
+
+<p>An exact split of time between two households does not always suit a child's best interests.</p>
+
+
+<div class="govuk-form-group">
+  <!-- <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--l" for="more-detail">
+      Can you provide more detail?
+    </label>
+  </h1> -->
+  <!--<div id="more-detail-hint" class="govuk-hint">
+    Do not include personal or financial information, like your National Insurance number or credit card details
+  </div> -->
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+
+
+
+       
+
+      <form class="form" action="will-arrangements-change" method="post">
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+
+      <p><a href="#">Skip this question</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
