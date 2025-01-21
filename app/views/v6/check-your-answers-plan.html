@@ -460,17 +460,35 @@
                 </dd>
               </div>
               {% endif %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                What else is important to include about visits or overnight stays?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['anything-else'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-              </dd>
-            </div>
+
+             <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Will the arrangements change during school holidays?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ data['arrangements-change'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+
+
+          {% if data['arrangements-change'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How will the arrangements be different in school holidays? 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['different-holiday-arrangements'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+              {% endif %}
+
+
             {% endif %}
             <!-- End of no overnight stays -->
 
@@ -621,13 +639,13 @@
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             {% if data['number-of-children'] == '1' %}
-              How will {{ data['first-child-name'] }}'s living arrangements be split evenly?
+              Which schedule best meets {{ data['first-child-name'] }}'s needs?
             {% else %}  
-              How will the children's living arrangements be split evenly?
+              Which schedule best meets the children's needs?
             {% endif %}
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['split-equally-options'] }}
+            {{ data['time-split'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how will the children's living arrangements be split evenly?</span></a>
@@ -667,6 +685,155 @@
         <!-- End of Children split equally -->
 
       </dl>
+
+      <h2 class="govuk-heading-m">Handover and drop off</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is responsible for collecting the children? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['responsible-for-collecting'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where does handover take place?
+ 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['handover-location'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What items need to go between households at changeover?
+ 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['items-changeover'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+      <h2 class="govuk-heading-m">Special days</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               What will happen on special days? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['special-days'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+      </dl>
+
+
+
+     <h2 class="govuk-heading-m">Other things</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               What other things matter to your child? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['other-things'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+      </dl>
+
+
+        <h2 class="govuk-heading-m">Decision making</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               How should last-minute changes be communicated?  
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['last-minute-changes'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+             <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               How much notice should you give to change long-term arrangements? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['weeks-notice'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+                    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               When will the children’s needs change?  
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['review-years'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+
       
 
       <form action="plan-view" method="post" novalidate>

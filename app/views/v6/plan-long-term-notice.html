@@ -43,40 +43,40 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
 {% from "govuk/components/select/macro.njk" import govukSelect %}
 
 {{ govukSelect({
-  id: "location",
-  name: "location",
+  id: "weeks-notice",
+  name: "weeks-notice",
   label: {
     text: "Choose number of weeks notice"
   },
   
   items: [
     {
-      value: "choose",
+      value: "Choose number of weeks",
       text: "Choose weeks",
       selected: true
     },
     {
-      value: "one week",
+      value: "One week",
       text: "One week"
     },
     {
-      value: "two weeks",
+      value: "Two weeks",
       text: "Two weeks"
     },
     {
-      value: "three weeks",
+      value: "Three weeks",
       text: "Three weeks"
     },
     {
-      value: "four weeks",
+      value: "Four weeks",
       text: "Four weeks"
     },
     {
-      value: "five weeks",
+      value: "Five weeks",
       text: "Five weeks"
     },
     {
-      value: "six weeks",
+      value: "Six weeks",
       text: "Six weeks"
     }
     

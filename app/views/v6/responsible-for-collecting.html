@@ -40,11 +40,11 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
               text: "Each person collects the children at the start of their access time" 
             },
             {
-              value: "Collect by adult-a",
+              value: "Collect by " + data['first-name-adult'],
               text: data['first-name-adult'] + " always collects the children"
             },
             {
-            value: "Collect by adult-b",
+            value: "Collect by " + data['first-name-other-adult'],
               text: data['first-name-other-adult'] + " always collects the children"
             },
 
@@ -54,7 +54,7 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
             },
 
                         {
-              value: "Collect by both adults",
+              value: "We don’t need to decide this now",
               text: "We don’t need to decide this now "
             }
 

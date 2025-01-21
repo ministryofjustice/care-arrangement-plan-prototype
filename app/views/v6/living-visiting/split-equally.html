@@ -45,6 +45,7 @@ Children spend two days in one household, then two days in the other. After that
 
 <p>An exact split of time between two households does not always suit a child's best interests.</p>
 
+      <form class="form" action="will-arrangements-change" method="post">
 
 <div class="govuk-form-group">
   <!-- <h1 class="govuk-label-wrapper">
@@ -55,7 +56,7 @@ Children spend two days in one household, then two days in the other. After that
   <!--<div id="more-detail-hint" class="govuk-hint">
     Do not include personal or financial information, like your National Insurance number or credit card details
   </div> -->
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  <textarea class="govuk-textarea" id="time-split" name="time-split" rows="5" aria-describedby="more-detail-hint"></textarea>
 </div>
 
 
@@ -63,7 +64,6 @@ Children spend two days in one household, then two days in the other. After that
 
        
 
-      <form class="form" action="will-arrangements-change" method="post">
 
         {{ govukButton({
           text: "Continue"

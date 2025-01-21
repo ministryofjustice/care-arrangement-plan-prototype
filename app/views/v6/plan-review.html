@@ -45,36 +45,36 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
 {% from "govuk/components/select/macro.njk" import govukSelect %}
 
 {{ govukSelect({
-  id: "location",
-  name: "location",
+  id: "review-years",
+  name: "review-years",
   label: {
     text: "Review child arrangements in"
   },
   
   items: [
     {
-      value: "choose",
+      value: "Choose number of years",
       text: "Choose number of years",
       selected: true
     },
     {
-      value: "one year",
+      value: "One year",
       text: "One year"
     },
     {
-      value: "two years",
+      value: "Two years",
       text: "Two years"
     },
     {
-      value: "three years",
+      value: "Three years",
       text: "Three years"
     },
     {
-      value: "four years",
+      value: "Four years",
       text: "Four years"
     },
     {
-      value: "five years",
+      value: "Five years",
       text: "Five years"
     }
     
