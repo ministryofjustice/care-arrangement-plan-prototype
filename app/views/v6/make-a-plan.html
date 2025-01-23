@@ -71,7 +71,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% else %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link" href="living-visiting/same-for-all" aria-describedby="child-arrangement-plan-1-status">
+                <a class="govuk-link govuk-task-list__link" href="living-visiting/where-live" aria-describedby="child-arrangement-plan-1-status">
                   Where will the children mostly live? 
                 </a>
               </div>
@@ -84,10 +84,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% endif %}
 
 
-                  {% if data['responsible-for-collecting'] %}
+                  {% if data['how-often-overnight'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="how-often-overnight" aria-describedby="child-arrangement-plan-1-status">
+              <a class="govuk-link govuk-task-list__link" href="living-visiting/how-often-overnight" aria-describedby="child-arrangement-plan-1-status">
                 
           When will visits happen?
 
@@ -100,7 +100,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% else %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
+                <a class="govuk-link govuk-task-list__link" href="living-visiting/how-often-overnight" aria-describedby="child-arrangement-plan-1-status">
                   
           When will visits happen?
 
@@ -118,10 +118,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
   
 
-     {% if data['xxxxx'] %}
+     {% if data['arrangements-change'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-4-status">
+            <a class="govuk-link govuk-task-list__link" href="living-visiting/will-arrangements-change" aria-describedby="child-arrangement-plan-4-status">
               What will happen during school holidays? 
             </a>
           </div>
@@ -135,7 +135,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% else %}
                <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-4-status">
+            <a class="govuk-link govuk-task-list__link" href="living-visiting/will-arrangements-change" aria-describedby="child-arrangement-plan-4-status">
               What will happen during school holidays?
             </a>
           </div>
@@ -161,10 +161,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
     <h2 class="govuk-heading-m">Handover and drop off</h2>
       <ul class="govuk-task-list">
        
-        {% if data['where-children-live'] %}
+        {% if data['responsible-for-collecting'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="living-visiting/where-live" aria-describedby="child-arrangement-plan-1-status">
+              <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
                 Who is responsible for collecting the children? 
               </a>
             </div>
@@ -175,7 +175,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% else %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link" href="living-visiting/same-for-all" aria-describedby="child-arrangement-plan-1-status">
+                <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
                   Who is responsible for collecting the children?
                 </a>
               </div>
@@ -188,11 +188,11 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% endif %}
 
 
-                  {% if data['responsible-for-collecting'] %}
+                  {% if data['handover-location'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
-                HWhere does handover take place? 
+              <a class="govuk-link govuk-task-list__link" href="handover-location" aria-describedby="child-arrangement-plan-1-status">
+                Where does handover take place? 
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
@@ -202,7 +202,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% else %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
+                <a class="govuk-link govuk-task-list__link" href="handover-location" aria-describedby="child-arrangement-plan-1-status">
                   Where does handover take place? 
                 </a>
               </div>
@@ -216,10 +216,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
         
     
 
-        {% if data['special-days'] %}
+        {% if data['items-changeover'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-4-status">
+            <a class="govuk-link govuk-task-list__link" href="items-for-changeover" aria-describedby="child-arrangement-plan-4-status">
               What items need to go between households at changeover? 
             </a>
           </div>
@@ -233,7 +233,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% else %}
                <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-4-status">
+            <a class="govuk-link govuk-task-list__link" href="items-for-changeover" aria-describedby="child-arrangement-plan-4-status">
               What items need to go between households at changeover? 
             </a>
           </div>
@@ -253,10 +253,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
       <h2 class="govuk-heading-m">Special days</h2>
       <ul class="govuk-task-list">
        
-        {% if data['where-children-live'] %}
+        {% if data['special-days'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="living-visiting/where-live" aria-describedby="child-arrangement-plan-1-status">
+              <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-1-status">
                 What will happen on special days?
               </a>
             </div>
@@ -267,7 +267,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% else %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
-                <a class="govuk-link govuk-task-list__link" href="living-visiting/same-for-all" aria-describedby="child-arrangement-plan-1-status">
+                <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-1-status">
                   What will happen on special days?
                 </a>
               </div>
@@ -356,10 +356,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
                    {% endif %}
 
 
-            {% if data['last-minute-changes'] %}
+            {% if data['long-term-notice'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="plan-last-minute-changes" aria-describedby="child-arrangement-plan-5-status">
+            <a class="govuk-link govuk-task-list__link" href="plan-long-term-notice" aria-describedby="child-arrangement-plan-5-status">
               How much notice should you give to change long-term arrangements?
             </a>
           </div>
@@ -372,7 +372,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="plan-last-minute-changes" aria-describedby="hild-arrangement-plan-5-status">
+              <a class="govuk-link govuk-task-list__link" href="plan-long-term-notice" aria-describedby="hild-arrangement-plan-5-status">
                 How much notice should you give to change long-term arrangements?
               </a>
             </div>
@@ -385,10 +385,10 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
                    {% endif %}
 
-            {% if data['last-minute-changes'] %}
+            {% if data['review-years'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="plan-last-minute-changes" aria-describedby="child-arrangement-plan-5-status">
+            <a class="govuk-link govuk-task-list__link" href="plan-review" aria-describedby="child-arrangement-plan-5-status">
               When will the children’s needs change?
             </a>
           </div>
@@ -401,7 +401,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="plan-last-minute-changes" aria-describedby="hild-arrangement-plan-5-status">
+              <a class="govuk-link govuk-task-list__link" href="plan-review" aria-describedby="hild-arrangement-plan-5-status">
                 When will the children’s needs change?
               </a>
             </div>
