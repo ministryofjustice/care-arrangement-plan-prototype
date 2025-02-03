@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Child arrangement plan for Jay and Robyn  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <form class="form" action="plan" method="post">
+
+        <h1 class="govuk-heading-l">
+          Child arrangement plan for Jay and Robyn 
+        </h1>
+
+
+
+        <article class="moj-ticket-panel" aria-label="The children">
+          <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="The children">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+              <a href="adults-edit" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">
+                <a href="children-edit" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">The children</a>
+              </a>
+            </h2>
+            <p class="govuk-body">
+              Jay and Robyn
+            </p>
+          </section>
+        </article>
+
+        
+
+          <article class="moj-ticket-panel" aria-label="Who is agreeing this arrangement?">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Who is agreeing this arrangement?">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="adults-edit" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Who is agreeing this arrangement?</a>
+              </h2>
+              <p class="govuk-body">
+                Heather and Richard
+              </p>
+            </section>
+          </article>
+
+
+
+          <article class="moj-ticket-panel" aria-label="Where will the children live?">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Where will the children live?">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="plan-live-with" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Where will the children live?</a>
+              </h2>
+              <p class="govuk-body">
+                {{ data['children-live-with'] }}
+              </p>
+            </section> 
+          </article>
+
+
+
+          <article class="moj-ticket-panel" aria-label="Who will the children visit?">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Who will the children visit?">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="plan-spend-time" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Who will the children visit?</a>
+              </h2>
+              <p class="govuk-body">
+                {{ data['children-spend-time-with'] }}
+              </p>
+            </section> 
+          </article>
+          
+
+
+          <article class="moj-ticket-panel" aria-label="When will visits happen?">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="When will visits happen?">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="plan-visits" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">When will visits happen?</a>
+              </h2>
+              <p class="govuk-body">
+                {{ data['visits-happen'] }}
+              </p>
+            </section> 
+          </article>
+  
+
+
+          <article class="moj-ticket-panel" aria-label="What will happen during holidays?">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="What will happen during holidays?">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="plan-holidays" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">What will happen during holidays?</a>
+              </h2>
+              <p class="govuk-body">
+                {{ data['holidays'] }}
+              </p>
+            </section> 
+          </article>
+
+
+          <article class="moj-ticket-panel" aria-label="What will happen on special days?">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="What will happen on special days?">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="plan-special-days" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">What will happen on special days?</a>
+              </h2>
+              <p class="govuk-body">
+                {{ data['special-days'] }}
+              </p>
+            </section> 
+          </article>
+
+
+          <article class="moj-ticket-panel" aria-label="How will you agree changes?">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="How will you agree changes?">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="plan-changes" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">How will you agree changes?</a>
+              </h2>
+              <p class="govuk-body">
+                {{ data['agree-changes'] }}
+              </p>
+            </section> 
+          </article>
+
+
+          <article class="moj-ticket-panel" aria-label="Confirm the arrangement">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Confirm the arrangement">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                <a href="plan-confirm" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Confirm the arrangement</a>
+              </h2>
+              <p class="govuk-body">
+                {{ data['confirm'] }}
+              </p>
+            </section> 
+          </article>
+
+
+
+          {{ govukButton({
+            text: "Create and share your plan"
+          }) }}
+
+          </form>
+
+         
+
+          
+      </div>
+    </div>
+
+  
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" style="padding-top:700px">
+        {{ govukButton({
+          text: "X",
+          classes: "govuk-button--secondary",
+          href: "plan-template"
+        }) }}
+      </div>
+    </div>
+
+
+
+
+{% endblock %}

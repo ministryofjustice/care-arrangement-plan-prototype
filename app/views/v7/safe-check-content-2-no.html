@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Getting help - {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+{{ govukExitThisPage() }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <h1 class="govuk-heading-l">
+        Getting help​
+      </h1>
+
+      <p>It may not be appropriate to make child arrangements if there’s any risk of harm to the children.</p>
+
+      <p>Get advice on <a href="https://www.gov.uk/government/publications/coronavirus-covid-19-keeping-children-safe-from-abuse-and-harm/advice-to-parents-and-carers-on-keeping-children-safe-from-abuse-and-harm">protecting children from abuse</a>.</p>
+
+      <p>Citizens Advice Bureau has advice on <a href="https://www.citizensadvice.org.uk/family/making-agreements-about-your-children/making-child-arrangements/#:~:text=You'll%20also%20need%20to,you%20really%20can't%20agree.">making child arrangements when there’s been domestic abuse</a>. </p>
+
+      <p>If you feel confident that making child arrangements won’t put children at risk, <a href="content-3">continue using the service</a>. </p>
+
+
+     
+    </div>
+  </div>
+
+{% endblock %}

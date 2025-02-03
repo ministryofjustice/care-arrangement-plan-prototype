@@ -1,0 +1,165 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Jay and Robyn's child arrangement plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <form class="form" action="plan" method="post">
+
+        <h1 class="govuk-heading-l">
+          Child arrangement plan for Jay and Robyn 
+        </h1>
+
+        {{ govukButton({
+          text: "Print this arrangement plan template",
+          href: "plan-create"
+        }) }}
+
+        {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "The children",
+              classes: "govuk-label--m"
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            label: {
+              text: "Who is agreeing this arrangement?",
+              classes: "govuk-label--m"
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            rows: "8",
+            label: {
+              text: "Where will the children live?",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "State where the children will generally live. For example, the children might spend equal time at both parents’ houses."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            rows: "8",
+            label: {
+              text: "Who will the children visit?",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "If the children generally live with one parent, use this page to describe what happens the rest of the time. For example, the children might spend alternate weekends with the other parent."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            rows: "8",
+            label: {
+              text: "When will visits happen?              ",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "If the children live with one parent but visit another parent or guardian, use this page to describe when this happens.  For example, the children might spend alternate weekends with the other parent."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            rows: "8",
+            label: {
+              text: "What will happen during holidays?",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "What are you going to do for the school holidays, including half terms? Older children may also have periods of study leave, or work experience.  "
+            }
+          }) }}
+
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            rows: "8",
+            label: {
+              text: "What will happen on special days?"              ,
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "Think about which special days are important to you. For example, New Year celebrations or Mother’s day. Who will the children spend time with on these occasions? Remember, some holidays don’t happen every year. For example, an extra bank holiday. You should also think about birthdays and special events such as graduation ceremonies or military homecomings."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            rows: "8",
+            label: {
+              text: "How will you agree changes?",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "There will be times when plans will need to change, such as if one parent is too unwell to care for children. Think about how changes should be agreed. For example, by email. How much notice you must give the other parent."
+            }
+          }) }}
+
+
+          {{ govukTextarea({
+            name: "moreDetail",
+            id: "more-detail",
+            rows: "8",
+            label: {
+              text: "Confirm the arrangement",
+              classes: "govuk-label--m"
+            },
+            hint: {
+              text: "Confirm that you agree to these child arrangement plans. How often do you agree to review these arrangements?"
+            }
+          }) }}
+
+
+          </form>
+
+      </div>
+    </div>
+
+  
+
+
+
+
+
+{% endblock %}

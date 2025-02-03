@@ -1,0 +1,849 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      
+      <h1 class="govuk-heading-l">
+        Check your answers 
+      </h1>
+
+      <h2 class="govuk-heading-m">Who is this pan for</h2>
+
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <!-- One child vesrion -->
+        {% if data['number-of-children'] == '1' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              The children
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['first-child-name'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+                {% elif data['number-of-children'] == '2' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              The children
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+
+          {% elif data['number-of-children'] == '3' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              The children
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+
+            {% elif data['number-of-children'] == '4' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              The children
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+            {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }}, {{ data['fourth-child-name'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+
+        {% endif %}
+
+                  <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is using this service?
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['first-name-adult'] }}, {{ data['first-name-other-adult'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+
+      </dl>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Living and visiting</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <!-- If only child show different question -->
+        {% if data['number-of-children'] == '1' %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where will {{ data['first-child-name'] }} mostly live?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['where-children-live'] == 'With adult-a' %}
+                With {{ data['first-name-adult'] }}
+              {% elif data['where-children-live'] == 'With adult-b' %}
+                With {{ data['first-name-other-adult'] }}
+              {% elif data['where-children-live'] == 'equal time' %}
+                They'll spend equal time with {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
+              {% elif data['where-children-live'] == 'another arrangement' %}
+                {{ data['another-arrangement-where-live'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+        {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               <!-- Add childrens names to question heading if two children or all children if more than 2-->
+              {% if data['number-of-children'] == '2' %}
+                <h1 class="govuk-fieldset__heading">
+                  Will the arrangements be the same for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}?
+                </h1>
+              {% else %}
+                <h1 class="govuk-fieldset__heading">
+                  Will the arrangements be the same for all the children?
+                </h1>
+              {% endif %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['same-for-all'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the arrangements be the same for all the children?</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              {% if data['number-of-children'] == '1' %}
+                Where will {{ data['first-child-name'] }} mostly live?
+              {% else %}
+                Where will the children mostly live?
+              {% endif %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['where-children-live'] == 'With adult-a' %}
+                With {{ data['first-name-adult'] }}
+              {% elif data['where-children-live'] == 'With adult-b' %}
+                With {{ data['first-name-other-adult'] }}
+              {% elif data['where-children-live'] == 'equal time' %}
+                They'll spend equal time with {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
+              {% elif data['where-children-live'] == 'another arrangement' %}
+                {{ data['another-arrangement-where-live'] }}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the children mostly live?</span></a>
+            </dd>
+          </div>
+        {% endif %}
+
+
+        <!-- Children living with adult a -->
+        {% if data['where-children-live'] == 'With adult-a' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {% if data['number-of-children'] == '1' %}
+              Will {{ data['first-child-name'] }} stay overnight with {{ data['first-name-other-adult'] }}?
+            {% else %}
+              Will the children stay overnight with {{ data['first-name-other-adult'] }}?
+            {% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['how-often-overnight'] == 'another arrangement overnight' %}
+              {{ data['another-arrangement-overnight'] }}
+            {% else %}
+              {{ data['how-often-overnight'] }}
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children stay overnight with {{ data['first-name-other-adult'] }}?</span></a>
+          </dd>
+        </div>
+
+
+            <!-- No overnight stays -->
+            {% if data['how-often-overnight'] == 'There are no current plans for overnight stays' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {% if data['number-of-children'] == '1' %}
+                  Will {{ data['first-child-name'] }} be spending time with {{ data['first-name-other-adult'] }} during the day?
+                {% else %}
+                  Will the children be spending time with {{ data['first-name-other-adult'] }} during the day?
+                {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['not-overnight-stays-check'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children be spending time with {{ data['first-name-other-adult'] }} during the day?</span></a>
+              </dd>
+            </div>
+              {% if data['not-overnight-stays-check'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  On which days will daytime visits happen?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+              {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What else is important to include about visits or overnight stays?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['anything-else'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </dd>
+            </div>
+            {% endif %}
+            <!-- End of no overnight stays -->
+
+
+            <!-- Overnight stays on another arrangement -->
+            {% if data['how-often-overnight'] == 'another arrangement overnight' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {% if data['number-of-children'] == '1' %}
+                  Will {{ data['first-child-name'] }} be spending time with {{ data['first-name-other-adult'] }} during the day?
+                {% else %}
+                  Will the children be spending time with {{ data['first-name-other-adult'] }} during the day?
+                {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['not-overnight-stays-check'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children be spending time with {{ data['first-name-other-adult'] }} during the day?</span></a>
+              </dd>
+            </div>
+              {% if data['not-overnight-stays-check'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  On which days will daytime visits happen?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+              {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What else is important to include about visits or overnight stays?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['anything-else'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </dd>
+            </div>
+            {% endif %}
+            <!-- End of stays on another arrangement -->
+
+
+            <!-- Overnight stays on a weekly basis -->
+            {% if data['how-often-overnight'] == 'Yes, every week' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                On which days will overnights happen?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['when-overnight'] == 'none' %}
+                    {{ data['another-arrangement-overnight-stays'] }}
+                  {% else %}
+                    {{ data['when-overnight'] }}
+                  {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will overnights happen?</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {% if data['number-of-children'] == '1' %}
+                  Will {{ data['first-child-name'] }} also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                {% else %}
+                  Will the children also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['not-overnight-stays-check'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children also spend time with {{ data['first-name-other-adult'] }} without staying overnight?</span></a>
+              </dd>
+            </div>
+              {% if data['not-overnight-stays-check'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  On which days will daytime visits happen?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+              {% endif %}
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Will the arrangements change during school holidays?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ data['arrangements-change'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+
+
+          {% if data['arrangements-change'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How will the arrangements be different in school holidays? 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['different-holiday-arrangements'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+
+           {% endif %}
+
+
+            {% endif %}
+            <!-- End of overnight stays on a weekly basis -->
+
+            
+
+        {% endif %}
+        <!-- End of Children living with adult a -->
+
+
+
+
+
+
+
+
+
+
+
+         <!-- Children living with adult b -->
+        {% if data['where-children-live'] == 'With adult-b' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {% if data['number-of-children'] == '1' %}
+              Will {{ data['first-child-name'] }} stay overnight with {{ data['first-name-adult'] }}?
+            {% else %}
+              Will the children stay overnight with {{ data['first-name-adult'] }}?
+            {% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['how-often-overnight'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children stay overnight with {{ data['first-name-adult'] }}?</span></a>
+          </dd>
+        </div>
+
+
+            <!-- No overnight stays -->
+            {% if data['how-often-overnight'] == 'There are no current plans for overnight stays' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {% if data['number-of-children'] == '1' %}
+                  Will {{ data['first-child-name'] }} be spending time with {{ data['first-name-adult'] }} during the day?
+                {% else %}
+                  Will the children be spending time with {{ data['first-name-adult'] }} during the day?
+                {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['not-overnight-stays-check'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children be spending time with {{ data['first-name-adult'] }} during the day?</span></a>
+              </dd>
+            </div>
+              {% if data['not-overnight-stays-check'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  On which days will daytime visits happen?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+              {% endif %}
+
+             <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Will the arrangements change during school holidays?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ data['arrangements-change'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+
+
+          {% if data['arrangements-change'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How will the arrangements be different in school holidays? 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['different-holiday-arrangements'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+              {% endif %}
+
+
+            {% endif %}
+            <!-- End of no overnight stays -->
+
+             <!-- Overnight stays on another arrangement -->
+             {% if data['how-often-overnight'] == 'another arrangement overnight' %}
+             <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+                 {% if data['number-of-children'] == '1' %}
+                   Will {{ data['first-child-name'] }} be spending time with {{ data['first-name-adult'] }} during the day?
+                 {% else %}
+                   Will the children be spending time with {{ data['first-name-adult'] }} during the day?
+                 {% endif %}
+               </dt>
+               <dd class="govuk-summary-list__value">
+                 {{ data['not-overnight-stays-check'] }}
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children be spending time with {{ data['first-name-adult'] }} during the day?</span></a>
+               </dd>
+             </div>
+               {% if data['not-overnight-stays-check'] == 'Yes' %}
+               <div class="govuk-summary-list__row">
+                 <dt class="govuk-summary-list__key">
+                   On which days will daytime visits happen?
+                 </dt>
+                 <dd class="govuk-summary-list__value">
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
+                 </dd>
+                 <dd class="govuk-summary-list__actions">
+                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                 </dd>
+               </div>
+               {% endif %}
+             <div class="govuk-summary-list__row">
+               <dt class="govuk-summary-list__key">
+                 What else is important to include about visits or overnight stays?
+               </dt>
+               <dd class="govuk-summary-list__value">
+                 {{ data['anything-else'] }}
+               </dd>
+               <dd class="govuk-summary-list__actions">
+                 <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+               </dd>
+             </div>
+             {% endif %}
+             <!-- End of stays on another arrangement -->
+
+
+            <!-- Overnight stays on a weekly basis -->
+            {% if data['how-often-overnight'] == 'Yes, every week' %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                On which days will overnights happen?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  {% if data['when-overnight'] == 'none' %}
+                    {{ data['another-arrangement-overnight-stays'] }}
+                  {% else %}
+                    {{ data['when-overnight'] }}
+                  {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will overnights happen?</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                {% if data['number-of-children'] == '1' %}
+                  Will {{ data['first-child-name'] }} also spend time with {{ data['first-name-adult'] }} without staying overnight?
+                {% else %}
+                  Will the children also spend time with {{ data['first-name-adult'] }} without staying overnight?
+                {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['not-overnight-stays-check'] }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the children also spend time with {{ data['first-name-other-adult'] }} without staying overnight?</span></a>
+              </dd>
+            </div>
+              {% if data['not-overnight-stays-check'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  On which days will daytime visits happen?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['daytime-visit-days'] == 'none' %}
+                    {{ data['another-arrangement-daytime-visits'] }}
+                  {% else %}
+                    {{ data['daytime-visit-days'] }}
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+              {% endif %}
+
+              
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Will the arrangements change during school holidays?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ data['arrangements-change'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+
+
+          {% if data['arrangements-change'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How will the arrangements be different in school holidays? 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['different-holiday-arrangements'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+
+           {% endif %}
+              
+
+            {% endif %}
+            <!-- End of overnight stays on a weekly basis -->
+
+        {% endif %}
+        <!-- End of Children living with adult b -->       
+
+
+
+
+
+
+
+
+        <!-- Children split equally -->
+        {% if data['where-children-live'] == 'equal time' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {% if data['number-of-children'] == '1' %}
+              Which schedule best meets {{ data['first-child-name'] }}'s needs?
+            {% else %}  
+              Which schedule best meets the children's needs?
+            {% endif %}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['time-split'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> how will the children's living arrangements be split evenly?</span></a>
+          </dd>
+        </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Will the arrangements change during school holidays?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ data['arrangements-change'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+
+
+          {% if data['arrangements-change'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How will the arrangements be different in school holidays? 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['different-holiday-arrangements'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+
+           {% endif %}
+
+
+        {% endif %}
+        <!-- End of Children split equally -->
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Handover and drop off</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is responsible for collecting the children? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['responsible-for-collecting'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Where does handover take place?
+ 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['handover-location'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What items need to go between households at changeover?
+ 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['items-changeover'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+      <h2 class="govuk-heading-m">Special days</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               What will happen on special days? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['special-days'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+      </dl>
+
+
+
+     <h2 class="govuk-heading-m">Other things</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               What other things matter to your child? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['other-things'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+      </dl>
+
+
+        <h2 class="govuk-heading-m">Decision making</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               How should last-minute changes be communicated?  
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['last-minute-changes'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+             <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               How much notice should you give to change long-term arrangements? 
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['long-term-notice'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+
+                    <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+               When will the children’s needs change?  
+            </dt>
+            <dd class="govuk-summary-list__value">
+
+              {{ data['review-years'] }}
+
+              
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> where will the child live?</span></a>
+            </dd>
+          </div>
+        </dl>
+
+
+
+
+      
+
+      <form action="plan-view" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Finding the right route for you – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+{{ govukExitThisPage() }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <h1 class="govuk-heading-l">
+        Finding the right route for you
+      </h1>
+
+      <p>This service may not be right for you if you’ve experienced domestic abuse.</p>
+
+      <p>Find out <a href="https://www.gov.uk/guidance/domestic-abuse-how-to-get-help#recognise-domestic-abuse">how to recognise domestic abuse</a>.</p>
+
+      <p>Get help and advice on <a href="https://www.citizensadvice.org.uk/family/making-agreements-about-your-children/making-child-arrangements/#:~:text=You'll%20also%20need%20to,you%20really%20can't%20agree.">making child arrangements when there’s been domestic abuse</a>.</p>
+
+      <p>If you feel confident that you can discuss things without feeling intimidated, <a href="content-2">continue using the service</a>. </p>
+
+
+     
+    </div>
+  </div>
+
+{% endblock %}

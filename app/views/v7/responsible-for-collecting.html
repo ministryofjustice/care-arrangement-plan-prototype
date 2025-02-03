@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="handover-location" method="post">
+
+
+
+
+        {{ govukRadios({
+          name: "responsible-for-collecting",
+          id: "responsible-for-collecting",
+          fieldset: {
+            legend: {
+              text: "Who is responsible for collecting the children?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+          items: [
+            {
+              value: "Each person collects the children at the start of their access time",
+              text: "Each person collects the children at the start of their access time" 
+            },
+            {
+              value: "Collect by " + data['first-name-adult'],
+              text: data['first-name-adult'] + " always collects the children"
+            },
+            {
+            value: "Collect by " + data['first-name-other-adult'],
+              text: data['first-name-other-adult'] + " always collects the children"
+            },
+
+            {
+              value: "Both adults can collect",
+              text: "Both " + data['first-name-adult'] + " and " + data['first-name-other-adult'] + " can collect the children"
+            },
+
+                        {
+              value: "We don’t need to decide this now",
+              text: "We don’t need to decide this now "
+            }
+
+
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+  
+
+      </form>
+
+      <p><a href="#">Skip this question</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
+

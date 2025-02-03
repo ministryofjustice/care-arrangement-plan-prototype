@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <!-- <h1 class="govuk-heading-l">
+        How will you agree changes?
+      </h1>
+
+      <p>There will be times when plans will need to change, such as if one parent is too unwell to care for children.</p> 
+      
+      <p>Think about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>how changes should be agreed. For example, by email.</li>
+        <li>how much notice you must give the other parent</li>
+      </ul> -->
+
+     <h1 class="govuk-heading-l">How much notice should you give to change long-term arrangements?</h1>
+     <p>You may want to change arrangements well ahead of time, such as to plan a holiday.</p>
+
+     <form class="form" action="plan-review" method="post">
+
+
+
+
+
+
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "long-term-notice",
+  name: "long-term-notice",
+  label: {
+    text: "Choose number of weeks notice"
+  },
+  
+  items: [
+    {
+      value: "Choose number of weeks",
+      text: "Choose weeks",
+      selected: true
+    },
+    {
+      value: "One week",
+      text: "One week"
+    },
+    {
+      value: "Two weeks",
+      text: "Two weeks"
+    },
+    {
+      value: "Three weeks",
+      text: "Three weeks"
+    },
+    {
+      value: "Four weeks",
+      text: "Four weeks"
+    },
+    {
+      value: "Five weeks",
+      text: "Five weeks"
+    },
+    {
+      value: "Six weeks",
+      text: "Six weeks"
+    }
+    
+  ]
+
+
+}) 
+
+}}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+            <p><a href="#">Skip this question</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

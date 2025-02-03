@@ -1,0 +1,228 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-your-plan" method="post">
+
+      <h1 class="govuk-heading-l">Child arrangement plan for Jay and Robyn</h1>
+
+      <h2 class="govuk-heading-m">Who the plan is for</h2>
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-1-status">
+              The children
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-1-status">
+              Who is agreeing this plan?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+      </ul>
+      
+
+
+
+
+
+
+      <h2 class="govuk-heading-m">The arrangements</h2>
+      <ul class="govuk-task-list">
+        <!-- Where will the children live -->
+        {% if data['review-live-with'] == 'yes' %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="review-live-with" aria-describedby="child-arrangement-plan-1-status">
+                Where will the children live?
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+              <strong class="govuk-tag govuk-tag--green">
+                Agreed
+              </strong>
+            </div>
+          </li>
+        {% elif data['review-live-with'] == 'change' %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="review-suggest-change-live-with" aria-describedby="child-arrangement-plan-1-status">
+                Where will the children live?
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+              <strong class="govuk-tag govuk-tag--yellow">
+                Changes made
+              </strong>
+            </div>
+          </li>
+        {% else %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="review-live-with" aria-describedby="child-arrangement-plan-1-status">
+              Where will the children live?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+        {% endif %}
+  
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-2-status">
+              When will visits happen?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-2-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-3-status">
+              What will happen during holidays?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-3-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-4-status">
+              What will happen on special days?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Other things</h2>
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-4-status">
+              What other things matter?
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+
+
+
+
+      <h2 class="govuk-heading-m">Decision making</h2>
+      <ul class="govuk-task-list">
+        <!-- Agree changes -->
+        {% if data['review-changes'] == 'yes' %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="review-changes" aria-describedby="hild-arrangement-plan-5-status">
+                How will you agree changes?
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+              <strong class="govuk-tag govuk-tag--green">
+                Agreed
+              </strong>
+            </div>
+          </li>
+        {% elif data['review-changes'] == 'change' %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="review-suggest-change-changes" aria-describedby="hild-arrangement-plan-5-status">
+                How will you agree changes?
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
+              <strong class="govuk-tag govuk-tag--yellow">
+                Changes made
+              </strong>
+            </div>
+          </li>
+        {% else %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="review-changes" aria-describedby="hild-arrangement-plan-5-status">
+                How will you agree changes?
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                To review
+              </strong>
+            </div>
+          </li>
+        {% endif %}
+
+      
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+              Agree to the arrangement
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="company-details-5-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              To review
+            </strong>
+          </div>
+        </li>
+      </ul>
+
+      <div class="govuk-!-margin-top-5">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </div>
+
+    </form>
+
+    </div>
+  </div>
+{% endblock %}

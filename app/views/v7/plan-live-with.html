@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Where will the children live? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Where will the children live?
+      </h1>
+
+      <p>State where the children will generally live.</p> 
+      
+      <p>For example, the children might spend equal time at both parents’ houses.</p>
+
+
+       
+
+      <form class="form" action="plan-create" method="post">
+
+
+      {{ govukTextarea({
+        name: "children-live-with",
+        id: "children-live-with",
+        label: {
+          classes: "govuk-label--m",
+          isPageHeading: true
+        }
+      }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
