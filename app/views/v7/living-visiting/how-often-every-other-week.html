@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How often during the week will the children be staying overnight with Richard?  – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="when-during-week" method="post">
+
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-during-week",
+          id: "another-arrangement-during-week",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
+
+
+
+        {{ govukRadios({
+          name: "how-often-during-week",
+          fieldset: {
+            legend: {
+              text: "How often will the children be staying overnight with Richard? ",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "1 night every other week",
+              text: "1 night every other week"
+            },
+            {
+              value: "2 nights every other week",
+              text: "2 nights every other week"
+            },
+            {
+              value: "3 nights every other week",
+              text: "3 nights every other week"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

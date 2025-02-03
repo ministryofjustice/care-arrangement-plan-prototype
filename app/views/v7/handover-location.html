@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="items-for-changeover" method="post">
+
+
+        {{ govukRadios({
+          name: "handover-location",
+          id: "handover-location",
+          fieldset: {
+            legend: {
+              text: "Where does handover take place?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+
+          hint: {
+    text: "It may be easier for children if the handover takes place at a neutral location such as a park or railway station."
+  },
+
+          items: [
+            {
+              value: "Neutral location",
+              text: "At a neutral location" 
+            },
+            {
+              value: "At Home",
+              text:  "At home"
+            },
+            {
+            value: "At school",
+              text: "At school"
+            },
+
+            {
+              value: "Someone else will manage handover, such as a grandparent",
+              text: "Someone else will manage handover, such as a grandparent"
+            },
+
+                        {
+              value: "We don’t need to decide this now",
+              text: "We don’t need to decide this now"
+            }
+
+
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+  
+
+      </form>
+
+      <p><a href="#">Skip this question</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
+

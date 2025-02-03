@@ -1,0 +1,174 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Check your plan
+      </h1>
+
+      {% if data['where-children-live'] == 'With adult-a' %}
+        <p>These are the suggestions you will send to {{ data['first-name-other-adult'] }}.</p>
+      {% else %}
+        <p>These are the suggestions you will send to {{ data['first-name-adult'] }}.</p>
+      {% endif %}
+ 
+
+
+      <h2 class="govuk-heading-m">
+        Who the plan is for
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            The children
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['number-of-children'] == '1' %}
+              {{ data['first-child-name'] }}
+            {% elif data['number-of-children'] == '2' %}
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}
+            {% elif data['number-of-children'] == '3' %}
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }}
+            {% elif data['number-of-children'] == '4' %}
+              {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }}, {{ data['fourth-child-name'] }}
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> the children</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who is agreeing this plan?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['first-name-adult'] }}, {{ data['first-name-other-adult'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> who is agreeing this plan?</span></a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        The arrangements
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Living and visiting
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What will happen during holidays?
+          </dt>
+          <dd class="govuk-summary-list__value">
+           
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What will happen on special days?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Other things
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What other things matter?
+          </dt>
+          <dd class="govuk-summary-list__value">
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+
+
+
+      <h2 class="govuk-heading-m">
+        Decision making
+      </h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How will you agree changes?
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+        
+      </dl>
+
+
+
+
+
+
+
+
+
+     
+
+    <!--  <p>If you've finished making your plan, {{ data['first-name-other-adult'] }} will have a chance to respond to what you are suggesting.</p>
+
+      <p>You'll both need to be in agreement to finish the child arrangements plan.</p>-->
+
+      <form action="send-plan" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
