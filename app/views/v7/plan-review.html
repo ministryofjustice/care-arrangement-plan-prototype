@@ -36,60 +36,39 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
   You can also review these arrangements at an earlier time if they no longer meet your children’s needs.
 </div>
 
-     <form class="form" action="make-a-plan" method="post">
+   
 
 
-   <p>Children's needs change as they grow. Put a time when you will review this agreement to check it is still what’s best for the children.</p>
+   <p>Children's needs change as they grow. When should you review this agreement to check it is still what's best for the children.</p>
 
 
-{% from "govuk/components/select/macro.njk" import govukSelect %}
+<div class="govuk-date-input" id="months-review">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="review-months">
+            Months
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
 
-{{ govukSelect({
-  id: "review-years",
-  name: "review-years",
-  label: {
-    text: "Review child arrangements in"
-  },
-  
-  items: [
-    {
-      value: "Choose number of years",
-      text: "Choose number of years",
-      selected: true
-    },
-    {
-      value: "One year",
-      text: "One year"
-    },
-    {
-      value: "Two years",
-      text: "Two years"
-    },
-    {
-      value: "Three years",
-      text: "Three years"
-    },
-    {
-      value: "Four years",
-      text: "Four years"
-    },
-    {
-      value: "Five years",
-      text: "Five years"
-    }
-    
-  ]
+<p>or</p>
 
-
-}) 
-
-}}
+      <div class="govuk-date-input" id="years-review">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="review-years">
+            Years
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
 
 
 
 
 
-
+  <form class="form" action="make-a-plan" method="post">
         {{ govukButton({
           text: "Continue"
         }) }}
