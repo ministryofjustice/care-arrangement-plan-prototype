@@ -17,14 +17,19 @@ What other things matter? – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        What other things matter to your child?  
+                {% if data['number-of-children'] == '1' %}
+                    What other things matter to {{ data['first-child-name'] }}
+                  {% else %}
+                    What other things matter to your children?
+                  {% endif %}  
       </h1>
 
       <p class="govuk-body">You may want to agree things such as:</p>
 <ul class="govuk-list govuk-list--bullet">
-  <li>religious practices, diet, and standard rules across both households</li>
-  <li>extracurricular activities, such as swimming lessons</li>
-  <li>access to other friends and family</li>
+  <li>Religious practices, diet, and standard rules across both households</li>
+  <li>Extra-curricular activities, such as swimming lessons</li>
+  <li>Access to other friends and family</li>
+  <li>Other types of contact, such as video calls</li>
 </ul>
 
       <!--<p>Which special days are important to you? </p>
