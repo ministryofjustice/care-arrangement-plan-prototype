@@ -19,44 +19,43 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
       
 
-      <form class="form" action="handover-location" method="post">
+      <form class="form" action="responsible-for-collecting" method="post">
 
 
 
 
         {{ govukRadios({
-          name: "responsible-for-collecting",
-          id: "responsible-for-collecting",
+          name: "collection-responibility",
+          id: "collection-responibility",
           fieldset: {
             legend: {
-              text: "Who is responsible for collecting the children?",
+              text: "How will the children get between households?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
 
           items: [
+
+
             {
-              value: "Each person collects the children at the start of their access time",
-              text: "Each person collects the children at the start of their access time" 
+            value: data['first-name-other-adult'] + " collects the children",
+              text: data['first-name-other-adult'] + " collects the children"
             },
-            {
-              value: "Collect by " + data['first-name-adult'],
-              text: data['first-name-adult'] + " always collects the children"
-            },
-            {
-            value: "Collect by " + data['first-name-other-adult'],
-              text: data['first-name-other-adult'] + " always collects the children"
+
+             {
+            value: data['first-name-adult'] + " collects the children",
+              text: data['first-name-adult'] + " collects the children"
             },
 
             {
-              value: "Both adults can collect",
-              text: "Both " + data['first-name-adult'] + " and " + data['first-name-other-adult'] + " can collect the children"
+              value: "Another arrangement",
+              text: "Another arrangement"
             },
 
                         {
               value: "We don’t need to decide this now",
-              text: "We don’t need to decide this now "
+              text: "We don’t need to decide this now"
             }
 
 

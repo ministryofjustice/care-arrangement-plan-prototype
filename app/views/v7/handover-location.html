@@ -22,49 +22,53 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
       <form class="form" action="items-for-changeover" method="post">
 
 
-        {{ govukRadios({
-          name: "handover-location",
-          id: "handover-location",
-          fieldset: {
-            legend: {
-              text: "Where does handover take place?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+
+
+
+      {{ govukCheckboxes({
+        name: "handover-location",
+        id: "handover-location",
+        fieldset: {
+          legend: {
+            text: "Where does handover take place?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "It may be easier for children if the handover takes place at a neutral location such as a park or railway station."
+        },
+        items: [
+          {
+            value: "Neutral location",
+            text: "Neutral location"
           },
-
-
-          hint: {
-    text: "It may be easier for children if the handover takes place at a neutral location such as a park or railway station."
-  },
-
-          items: [
-            {
-              value: "Neutral location",
-              text: "At a neutral location" 
-            },
-            {
-              value: "At Home",
-              text:  "At home"
-            },
-            {
+          {
+            value: "At " + data['first-name-adult'] + "'s home'",
+            text: "At " + data['first-name-adult'] + "'s home"
+          },
+                    {
+            value: "At " + data['first-name-other-adult'] + "'s home",
+            text: "At " + data['first-name-other-adult'] + "'s home"
+          },
+          {
             value: "At school",
-              text: "At school"
-            },
+            text: "At school"
+          },
+          {
+            value: "Someone else will manage handover, such as a grandparent",
+            text: "Someone else will manage handover, such as a grandparent"
+          },
+          {
+            value: "We do not need to decide this now",
+            text: "We do not need to decide this now"
+          }
+          
 
-            {
-              value: "Someone else will manage handover, such as a grandparent",
-              text: "Someone else will manage handover, such as a grandparent"
-            },
 
-                        {
-              value: "We don’t need to decide this now",
-              text: "We don’t need to decide this now"
-            }
+        ]
+      }) }}
 
-
-          ]
-        }) }}
 
         {{ govukButton({
           text: "Continue"

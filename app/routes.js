@@ -546,3 +546,13 @@ router.post('/v7/living-visiting/arrangements-change', function (req, res) {
     res.redirect('../make-a-plan')
   }   
 });
+
+router.post('/v7/responsible-for-collecting', function (req, res) {
+  const editChoice = req.session.data['collection-responibility']
+
+  if (editChoice === 'Another arrangement') {
+    res.redirect('changeover-other-arrangement')
+  } else {
+    res.redirect('handover-location')
+  } 
+});
