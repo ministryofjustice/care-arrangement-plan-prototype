@@ -22,7 +22,15 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
       <form class="form" action="items-for-changeover" method="post">
 
 
-
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "someone-else-handover",
+          id: "someone-else-handover",
+          label: {
+            text: "Name of the person who will manage handover"
+          }
+        }) }}
+      {% endset -%}
 
 
       {{ govukCheckboxes({
@@ -55,15 +63,15 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
             value: "At school",
             text: "At school"
           },
+
           {
             value: "Someone else will manage handover, such as a grandparent",
-            text: "Someone else will manage handover, such as a grandparent"
-          },
-          {
-            value: "We do not need to decide this now",
-            text: "We do not need to decide this now"
+            text: "Someone else will manage handover, such as a grandparent",
+            behaviour: "exclusive",
+            conditional: {
+              html: anotherHtml
+            }
           }
-          
 
 
         ]

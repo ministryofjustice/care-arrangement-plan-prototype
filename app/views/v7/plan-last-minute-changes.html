@@ -32,7 +32,9 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
      <form class="form" action="plan-long-term-notice" method="post">
 
 
-        {{ govukRadios({
+
+
+        {{ govukCheckboxes({
           name: "last-minute-changes",
           id: "last-minute-changes",
           fieldset: {
@@ -42,32 +44,28 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
               classes: "govuk-fieldset__legend--l"
             }
           },
-
-
           hint: {
-    text: "There will be times when plans will need to change, such as if one parent is suddenly unwell and cannot collect a child from school."
-  },
-
+            text: "There will be times when plans will need to change, such as if one parent is suddenly unwell and cannot collect a child from school."
+          },
           items: [
             {
               value: "By text message",
-              text: "By text message" 
+              text: "By text message"
             },
             {
               value: "With a phone call",
-              text:  "With a phone call"
+              text: "With a phone call"
             },
             {
-            value: "By email",
+              value: "By email",
               text: "By email"
             },
-
             {
               value: "Using a parenting app",
               text: "Using a parenting app"
             }
-
-
+    
+  
           ]
         }) }}
 

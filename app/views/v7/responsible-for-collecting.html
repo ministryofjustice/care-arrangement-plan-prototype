@@ -19,9 +19,17 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
       
 
-      <form class="form" action="responsible-for-collecting" method="post">
+      <form class="form" action="handover-location" method="post">
 
-
+       {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-collection",
+          id: "another-arrangement-collection",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
 
 
         {{ govukRadios({
@@ -50,14 +58,10 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
             {
               value: "Another arrangement",
-              text: "Another arrangement"
-            },
-
-                        {
-              value: "We don’t need to decide this now",
-              text: "We don’t need to decide this now"
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml}
             }
-
 
           ]
         }) }}

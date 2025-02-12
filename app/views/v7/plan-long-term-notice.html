@@ -29,67 +29,53 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
         <li>how much notice you must give the other parent</li>
       </ul> -->
 
-     <h1 class="govuk-heading-l">How much notice should you give to change long-term arrangements?</h1>
-     <p>You may want to change arrangements well ahead of time, such as to plan a holiday.</p>
 
      <form class="form" action="plan-review" method="post">
 
 
 
 
-
-
-
-{% from "govuk/components/select/macro.njk" import govukSelect %}
-
-{{ govukSelect({
-  id: "long-term-notice",
+       {{ govukRadios({
+          id: "long-term-notice",
   name: "long-term-notice",
-  label: {
-    text: "Choose number of weeks notice"
-  },
-  
-  items: [
-    {
-      value: "Choose number of weeks",
-      text: "Choose weeks",
-      selected: true
-    },
-    {
-      value: "One week",
-      text: "One week"
-    },
-    {
-      value: "Two weeks",
-      text: "Two weeks"
-    },
-    {
-      value: "Three weeks",
-      text: "Three weeks"
-    },
-    {
-      value: "Four weeks",
-      text: "Four weeks"
-    },
-    {
-      value: "Five weeks",
-      text: "Five weeks"
-    },
-    {
-      value: "Six weeks",
-      text: "Six weeks"
-    }
-    
-  ]
-
-
-}) 
-
-}}
+          fieldset: {
+            legend: {
+              text: "How much notice should you give to change long-term arrangements?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+           hint: {
+            text: "Sometimes you may need to plan a long way ahead. For example, if you want to plan a holiday during time you do not usually spend with the children."
+          },
+          items: [
+            {
+              value: "2 weeks",
+              text: "2 weekss"
+            },
+                        {
+              value: "4 weeks",
+              text: "4 weeks"
+            },
+                      {
+              value: "6 weeks",
+              text: "6 weekss"
+            },
+                        {
+              value: "8 weeks",
+              text: "8 weeks"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
           text: "Continue"
         }) }}
+
 
       </form>
             <p><a href="#">Skip this question</a></p>
