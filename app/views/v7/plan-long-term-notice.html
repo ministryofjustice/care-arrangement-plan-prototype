@@ -32,7 +32,15 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
 
      <form class="form" action="plan-review" method="post">
 
-
+       {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-long-term",
+          id: "another-arrangement-long-term",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
 
 
        {{ govukRadios({
@@ -67,7 +75,9 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
             },
             {
               value: "Another arrangement",
-              text: "Another arrangement"
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml}
             }
           ]
         }) }}
@@ -78,7 +88,7 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
 
 
       </form>
-            <p><a href="#">Skip this question</a></p>
+            <p><a href="#">We do not need to decide this</a></p>
 
     </div>
   </div>

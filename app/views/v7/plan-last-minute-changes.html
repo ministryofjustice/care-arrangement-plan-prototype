@@ -31,7 +31,15 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
 
      <form class="form" action="plan-long-term-notice" method="post">
 
-
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "last-minute-another-arrangement",
+          id: "last-minute-another-arrangement",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
 
 
         {{ govukCheckboxes({
@@ -45,8 +53,8 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
             }
           },
           hint: {
-            text: "There will be times when plans will need to change, such as if one parent is suddenly unwell and cannot collect a child from school."
-          },
+            text: "There will be times when plans will need to change, such as if one parent is suddenly unwell and cannot collect a child from school. Select all that apply."
+          }, 
           items: [
             {
               value: "By text message",
@@ -63,7 +71,14 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
             {
               value: "Using a parenting app",
               text: "Using a parenting app"
-            }
+            },
+
+                      {
+            value: "Another arrangement",
+            text: "Another arrangement",
+            behaviour: "exclusive",
+            conditional: {html: anotherHtml}
+          }
     
   
           ]
@@ -75,7 +90,7 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
   
 
       </form>
-            <p><a href="#">Skip this question</a></p>
+            <p><a href="#">We do not need to decide this</a></p>
 
     </div>
   </div>
