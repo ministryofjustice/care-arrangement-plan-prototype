@@ -116,33 +116,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
   
 
-     {% if data['arrangements-change'] %}
-        <li class="govuk-task-list__item govuk-task-list__item--with-link">
-          <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="living-visiting/will-arrangements-change" aria-describedby="child-arrangement-plan-4-status">
-              What will happen during school holidays? 
-            </a>
-          </div>
-          <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
-            
-                Completed
-         
-          </div>
-        </li>
-
-          {% else %}
-               <li class="govuk-task-list__item govuk-task-list__item--with-link">
-          <div class="govuk-task-list__name-and-hint">
-            
-              What will happen during school holidays?
- 
-          </div>
-            <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="child-arrangement-plan-1-status">
-                Cannot start yet
-              </div>
-            </li>
-        </li>
-        {% endif %}
+   
 
 
 
@@ -158,7 +132,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
     <h2 class="govuk-heading-m">Handover and drop off</h2>
       <ul class="govuk-task-list">
        
-        {% if data['responsible-for-collecting'] %}
+        {% if data['collection-responibility'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
@@ -211,6 +185,34 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </li>
           {% endif %}
         
+
+          {% if data['arrangements-change'] %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="living-visiting/will-arrangements-change" aria-describedby="child-arrangement-plan-4-status">
+              What will happen during school holidays? 
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
+            
+                Completed
+         
+          </div>
+        </li>
+
+          {% else %}
+               <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            
+              What will happen during school holidays?
+ 
+          </div>
+            <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="child-arrangement-plan-1-status">
+                Cannot start yet
+              </div>
+            </li>
+        </li>
+        {% endif %}
     
 
         {% if data['items-changeover'] %}
