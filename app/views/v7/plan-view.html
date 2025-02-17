@@ -11,7 +11,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
       <div class="govuk-panel govuk-panel--confirmation">
   <h1 class="govuk-panel__title">
-    Your plan is ready to share
+    Your proposed plan is ready to share
   </h1>
   <!--<div class="govuk-panel__body">
     Your reference number<br><strong>HDJ2123F</strong>
@@ -30,8 +30,15 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
   
 
-      <p>This is the child arrangements plan you've created. You must now share the plan with {{ data['first-name-other-adult'] }} to get their agreement. </p> 
+      <p>You've created a proposed child arrangements plan. You must now share the plan with {{ data['first-name-other-adult'] }} to get their agreement.</p> 
 
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">What to do next</h2>
+<p>Send this proposed child 
+arrangements plan to [Name]. {{ data['first-name-other-adult'] }} will have the chance to respond.</p>
+
+<h2 class="govuk-heading-s govuk-!-margin-bottom-2">If {{ data['first-name-other-adult'] }} does not respond</h2>
+<p>If {{ data['first-name-other-adult'] }} does not respond, you can try mediation. The next step would be to apply for a court order.</p>
+<p>Find out more about what to do if you cannot agree. </p>
 
 
       <h2 class="govuk-heading-m">Who the plan is for</h2>
@@ -117,7 +124,6 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
 
 
-<!-- test again -->
 
 
 
@@ -139,7 +145,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
   <div style="border-top:10px solid #1d70b8;" class="govuk-related-items govuk-!-margin-bottom-4">
   </div>
   <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Now share your plan</h2>
-  <p class="govuk-body govuk-!-margin-bottom-2">Share your proposed plan with {{ data['first-name-other-adult'] }} to get their agreement.</p>
+  <p class="govuk-body govuk-!-margin-bottom-2">Send this proposed child 
+arrangements plan to {{ data['first-name-other-adult'] }}.</p>
 
  
         <p><a href="#" class="govuk-link" style="text-decoration: none; text-align: left;">Download the plan</a></p>
