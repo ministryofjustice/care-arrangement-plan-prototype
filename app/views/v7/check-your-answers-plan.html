@@ -20,7 +20,7 @@
         Check your answers 
       </h1>
 
-      <h2 class="govuk-heading-m">Who is this pan for</h2>
+      <h2 class="govuk-heading-m">Who is this plan for</h2>
 
 
 
@@ -142,26 +142,7 @@
             </dd>
           </div>
         {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-               <!-- Add childrens names to question heading if two children or all children if more than 2-->
-              {% if data['number-of-children'] == '2' %}
-                <h1 class="govuk-fieldset__heading">
-                  Will the arrangements be the same for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}?
-                </h1>
-              {% else %}
-                <h1 class="govuk-fieldset__heading">
-                  Will the arrangements be the same for all the children?
-                </h1>
-              {% endif %}
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['same-for-all'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> will the arrangements be the same for all the children?</span></a>
-            </dd>
-          </div>
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               {% if data['number-of-children'] == '1' %}
@@ -686,7 +667,7 @@
 
       </dl>
 
-      <h2 class="govuk-heading-m">Handover and drop off</h2>
+      <h2 class="govuk-heading-m">Handovers and holidays</h2>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -720,9 +701,37 @@
             </dd>
           </div>
 
+                       <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Will the arrangements change during school holidays?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                {{ data['arrangements-change'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> on which days will daytime visits happen?</span></a>
+                </dd>
+              </div>
+
+
+          {% if data['arrangements-change'] == 'Yes' %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How will the arrangements be different in school holidays? 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['different-holiday-arrangements'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                </dd>
+              </div>
+
+           {% endif %}
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              What items need to go between households at changeover?
+              What items need to go between households?
  
             </dt>
             <dd class="govuk-summary-list__value">

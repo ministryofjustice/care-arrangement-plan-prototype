@@ -450,7 +450,7 @@ router.post('/v7/living-visiting/where-children-live', function (req, res) {
   } else if (editChoice === 'equal time') {
     res.redirect('split-equally')
   } else if (editChoice === 'another arrangement') {
-    res.redirect('check-your-answers')
+    res.redirect('../make-a-plan')
   }   
 });
 

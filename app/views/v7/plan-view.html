@@ -34,7 +34,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">What to do next</h2>
 <p>Send this proposed child 
-arrangements plan to [Name]. {{ data['first-name-other-adult'] }} will have the chance to respond.</p>
+arrangements plan to {{ data['first-name-other-adult'] }}. {{ data['first-name-other-adult'] }} will have the chance to respond.</p>
 
 <h2 class="govuk-heading-s govuk-!-margin-bottom-2">If {{ data['first-name-other-adult'] }} does not respond</h2>
 <p>If {{ data['first-name-other-adult'] }} does not respond, you can try mediation. The next step would be to apply for a court order.</p>
@@ -51,7 +51,7 @@ arrangements plan to [Name]. {{ data['first-name-other-adult'] }} will have the 
       </h2>
     </div>
     <div id="accordion-default-content-1" class="govuk-accordion__section-content">
-      <p class="govuk-body">Spomething goes here</p>
+       {% include "v7/cover-info-include.html"%}
     </div>
   </div>
   <div class="govuk-accordion__section">
