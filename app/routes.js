@@ -458,15 +458,13 @@ router.post('/v7/living-visiting/where-children-live', function (req, res) {
 router.post('/v7/living-visiting/how-often-overnight', function (req, res) {
   const editChoice = req.session.data['how-often-overnight']
 
-  if (editChoice === 'There are no current plans for overnight stays') {
+  if (editChoice === 'No') {
     res.redirect('not-overnight-time-only')
-  } else if (editChoice === 'Yes, every week') {
+  } else if (editChoice === 'Yes') {
     res.redirect('which-days-overnight')
-  } else if (editChoice === 'Yes, every other week') {
+  } else if (editChoice === 'Yes') {
     res.redirect('which-days-overnight')
-  } else if (editChoice === 'another arrangement overnight') {
-    res.redirect('not-overnight-time-only')
-  }    
+  } 
 });
 
 
