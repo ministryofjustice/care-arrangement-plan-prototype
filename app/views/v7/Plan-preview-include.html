@@ -1,14 +1,3 @@
-      
-{% extends "layouts/main.html" %}
-
-{% block pageTitle %}
-Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-
-{% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
 
  
 
@@ -25,7 +14,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
 
-     <h2 class="govuk-heading-m">About this child arrangements proposal</h2>
+     <h2 class="govuk-heading-l">About this child arrangements proposal</h2>
 
 <p class="govuk-body">{{ data['first-name-adult'] }} said:</p>
 <ul class="govuk-list govuk-list--bullet">
@@ -46,22 +35,166 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 <p>{{ data['first-name-adult'] }} has suggested that the children mostly live at {{ data['first-name-adult'] }}'s home.</p>
 
 
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest where the children will mostly live
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+
 <h3 class="govuk-heading-s">Will the children stay overnight with {{ data['first-name-other-adult'] }}? </h3>
 
 <p>{{ data['first-name-adult'] }} has suggested that the children stay overnight with {{ data['first-name-other-adult'] }} every week.</p>
+
+
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest what should happen about overnight visits
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
 
 
 <h3 class="govuk-heading-s">On which days will overnights happen?</h3>
 
 <p>{{ data['first-name-adult'] }} has suggested that the children stay overnight with {{ data['first-name-other-adult'] }} every Monday and Wednesday.</p>
 
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest which days overnight visits should happen
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+
+
 <h3 class="govuk-heading-s">Will the children do daytime visits with {{ data['first-name-other-adult'] }}?</h3>
 
 <p>{{ data['first-name-adult'] }} has suggested that the children will not do daytime visits with {{ data['first-name-other-adult'] }}.</p>
 
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest when daytime visits will happen
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
 
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<h3 class="govuk-heading-s">End of section</h3>
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    You can use this space to write your agreed compromise for the living and visiting section
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
 
@@ -71,12 +204,78 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
 <p>{{ data['first-name-adult'] }} suggests that {{ data['first-name-adult'] }} drops off the children.</p>
 
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest how the children get between households
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
 
 <h3 class="govuk-heading-s">Where does handover take place?</h3>
 
 <p>It may be easier for children if the handover takes place at a neutral location such as a park or railway station.</p>
 
 <p>{{ data['first-name-adult'] }} suggests that someone else manages the handover.</p>
+
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest where handover takes place
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
 
 
 <h3 class="govuk-heading-s">Who will manage the handover?</h3>
@@ -85,12 +284,78 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
 <p>{{ data['first-name-adult'] }} suggested that handover will be managed by Aunt Alice.</p>
 
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest who manages handover  
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
 
 <h3 class="govuk-heading-s">Will these arrangements change during school holidays? </h3>
 
 <p>{{ data['first-name-adult'] }}'s suggestion:<br>
 
 These arrangements do not need to change during school holidays. </p>
+
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest how the arrangements change during school holidays
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
 
 
 <h3 class="govuk-heading-s">What items need to go between households?</h3>
@@ -106,6 +371,51 @@ School uniform which you have WASHED AND IRONED the night before. I need their i
 
 
 
+
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest what items need to go between households
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+
+
+<h3 class="govuk-heading-s">End of section</h3>
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    You can use this space to write your agreed compromise for the handovers and holidays section
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
@@ -119,6 +429,48 @@ School uniform which you have WASHED AND IRONED the night before. I need their i
 <p>{{ data['first-name-adult'] }}'s suggestion:<br>
 
 The kids to spend alternate Christmas with each of us. NY you can have. Easter I will take them abroad. Mother’s Day obviously.</p>
+
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest what will happen on special days
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+
+<h3 class="govuk-heading-s">End of section</h3>
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    You can use this space to write your agreed compromise for the special days section
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
 
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -142,6 +494,48 @@ The kids to spend alternate Christmas with each of us. NY you can have. Easter I
 
 Take them to swimming every week and don’t be late. Also I want to video call with the kids every night you have them.</p>
 
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest what other things matter to your children
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+
+<h3 class="govuk-heading-s">End of section</h3>
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    You can use this space to write your agreed compromise for the other things section
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -160,6 +554,39 @@ Take them to swimming every week and don’t be late. Also I want to video call 
     <li>by email</li>
   </ul>
 
+  <p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest how last-minute changes should be communicated
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
 
  <h3 class="govuk-heading-s">How much notice should you give to change long-term arrangements?</h3>
 
@@ -168,6 +595,39 @@ Take them to swimming every week and don’t be late. Also I want to video call 
  
 
 <p>{{ data['first-name-adult'] }} suggested you give each other 6 weeks notice.</p>
+
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest how much notice you should give to change long-term arrangements 
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
 
 
  <h3 class="govuk-heading-s">When will the children’s needs change?</h3>
@@ -178,29 +638,63 @@ Take them to swimming every week and don’t be late. Also I want to video call 
 
  
 
-<p>{{ data['first-name-adult'] }} that you both review this agreement in 6 week’s time.</p> 
+<p>{{ data['first-name-adult'] }} that you both review this agreement in 6 week’s time.</p>
+
+<p class="govuk-body govuk-!-margin-bottom-2">Do you agree?</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group">
+
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-yes">
+            Yes
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="panswer-yes" name="answer-yes" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="answer-no">
+            No
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="answer-no" name="answer-no" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    If you do not agree, suggest when you think the children’s needs will change
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+<h3 class="govuk-heading-s">End of section</h3>
+<div class="govuk-form-group govuk-!-margin-bottom-9">
+  <label class="govuk-label" for="more-detail">
+    You can use this space to write your agreed compromise for the decision making section
+  </label>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
+<h2 class="govuk-heading-m">What happens now?</h2>
 
+<p>Now send this proposed child arrangements plan back to {{ data['first-name-adult'] }}. You should try to create a written record of what you have both agreed.</p> 
+ 
+
+<p>If you are unable to reach agreement about your child arrangements, you can try mediation. The next step would be to apply for a court order.</p>
+<p>https://www.gov.uk/looking-after-children-divorce</p>
 
 
  
 
 
 
-
-
-
-
-      <form action="share" method="post" novalidate>
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
-      </form>
-
-</div>
-
-  </div>
-{% endblock %}
+ 
