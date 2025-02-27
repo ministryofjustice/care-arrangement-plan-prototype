@@ -27,8 +27,11 @@
 
         {{ govukInput({
           label: {
-            text: "First name of parent or carer"
+            text: "Your first name"
           },
+          hint: {
+    text: "If you are answering these questions for someone else, enter their first name"
+  },
           id: "first-name-adult",
           name: "first-name-adult"
         }) }}
