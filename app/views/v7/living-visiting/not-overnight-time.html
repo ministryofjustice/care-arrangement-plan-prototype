@@ -27,21 +27,25 @@ Will the children also spend time with Richard without staying overnight? – {{
                 <!-- If statement for only child or multiple children-->
                 {% if data['number-of-children'] == '1' %}
 
+
                     <!-- If statement to switch adult names in the question -->
                     {% if data['where-children-live'] == 'With adult-a' %}
-                      Will {{ data['first-child-name'] }} also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                      Will {{ data['first-child-name'] }} do daytime visits with {{ data['first-name-other-adult'] }}?
                     {% else %}
-                      Will {{ data['first-child-name'] }} also spend time with {{ data['first-name-adult'] }} without staying overnight?
+                      Will {{ data['first-child-name'] }} do daytime visits with {{ data['first-name-adult'] }}?
                     {% endif %}
 
                 {% else %}
 
                   <!-- If statement to switch adult names in the question -->
                   {% if data['where-children-live'] == 'With adult-a' %}
-                      Will the children also spend time with {{ data['first-name-other-adult'] }} without staying overnight?
+                      Will the children do daytime visits with {{ data['first-name-other-adult'] }}?
                     {% else %}
-                      Will the children also spend time with {{ data['first-name-adult'] }} without staying overnight?
+                      Will the children do daytime visits with {{ data['first-name-adult'] }}?
                     {% endif %}
+
+
+
 
                 {% endif %}
                 
