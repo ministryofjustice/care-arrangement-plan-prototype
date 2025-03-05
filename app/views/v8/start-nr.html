@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>Use this service to make or change a child arrangements plan for Jay and Robyn. The child arrangement plan is not finished until you and Heather both reach agreement.</p>
+
+      <p>Use this service to decide:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>where your child lives</li>
+        <li>when your child spends time with each parent</li>
+        <li>when and what other types of contact take place (such as phone calls)</li>
+      </ul>
+
+      <p>Do not use this service if:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>there’s been any domestic abuse</li>
+        <li>you have concerns about child abuse or neglect</li>
+        <li>the other parent has a drug or alcohol problem that's affecting your children</li>
+      </ul>
+
+
+      <!--<p>A parenting plan is a written plan to prepare, discuss and agree arrangements. It's not legally binding but it can help you make plans that meet your children's needs.</p>
+
+      <p>Using a parenting plan:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>helps you know what's expected of you</li>
+        <li>confirms your agreements (for example, where your children will live)</li>
+        <li>works as a record for you to go back to</li>
+      </ul>-->
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "content-1",
+        isStartButton: true
+      }) }}
+
+     
+
+      <!--<h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+
+      <p>
+        You can also <a href="#">register by post</a>.
+      </p>
+
+      <p>
+        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+      </p>
+
+      <p>
+        You can’t register for this service if you’re in the UK illegally.
+      </p>-->
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <!--<aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>-->
+
+    </div>
+  </div>
+
+{% endblock %}

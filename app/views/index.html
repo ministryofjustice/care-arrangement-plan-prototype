@@ -41,14 +41,33 @@
       </thead>
       <tbody class="govuk-table__body">
 
+
+      <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            <a href="/v8/" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Version 8</a>
+          </th>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "In progress",
+                classes: "govuk-tag--blue"
+              })}}
+          </td>
+          <td class="govuk-table__cell">
+            Sprint 9
+          </td>
+          <td class="govuk-table__cell">
+            5th March 2025
+          </td>
+        </tr>
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
             <a href="/v7/" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Version 7</a>
           </th>
             <td class="govuk-table__cell">
               {{govukTag({
-                text: "In progress",
-                classes: "govuk-tag--blue"
+                text: "Tested",
+                classes: "govuk-tag--green"
               })}}
           </td>
           <td class="govuk-table__cell">
@@ -66,8 +85,8 @@
           </th>
             <td class="govuk-table__cell">
               {{govukTag({
-                text: "In progress",
-                classes: "govuk-tag--blue"
+                text: "Tested",
+                classes: "govuk-tag--green"
               })}}
           </td>
           <td class="govuk-table__cell">

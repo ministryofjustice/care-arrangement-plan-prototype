@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Jay and Robyn's child arrangement plan – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <form class="form" action="share" method="post">
+
+        <h1 class="govuk-heading-l">
+          Jay and Robyn's child arrangement plan
+        </h1>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">
+            The children
+        </h2>
+        <p>
+            Jay and Robyn.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+        <h2 class="govuk-heading-m">
+            Who is agreeing this arrangement
+        </h2>
+        <p>
+            Heather and Richard.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+        <h2 class="govuk-heading-m">
+            Who they will live with
+        </h2>
+        <p>
+            Jay and Robyn will live with Heather on weekdays.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+        <h2 class="govuk-heading-m">
+            Who they will spend time with
+        </h2>
+        <p>
+            Jay and Robyn will spend time with Richard.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+        <h2 class="govuk-heading-m">
+            When visits will happen
+        </h2>
+        <p>
+            Jay and Robyn will see Richard every other weekend starting from 12th December 2025.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+        <h2 class="govuk-heading-m">
+            What happens during holidays
+        </h2>
+        <p>
+            Heather and Richard agree to make plans with Jay and Robin about what will happen during the school holidays, at least 3 weeks before each holiday.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+        <h2 class="govuk-heading-m">
+            What happens on special days
+        </h2>
+        <p>
+            Jay and Robyn will stay with Heather for Christmas 2025 and with Richard Christmas 2026 and alternate each year.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+        <h2 class="govuk-heading-m">
+            How to agree changes
+        </h2>
+        <p>
+            To change scheduled visit times we agree to 48 hours notice. Other changes to be agreed one week prior to the start of a new school term.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+
+        <h2 class="govuk-heading-m">
+            Confirm the arrangement
+        </h2>
+        <p>
+            Heather and Richard agree to this arrangement. We agree to review this arrangement every 6 months.
+        </p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          {{ govukButton({
+            text: "Create and share your plan"
+          }) }}
+
+          </form>
+
+      </div>
+    </div>
+
+  
+
+
+
+
+
+{% endblock %}
