@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Your plan is ready is to save – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Your plan is ready to save"
+      }) }}
+
+      {% if data['where-children-live'] == 'With adult-a' %}
+        <p>Share your plan with {{ data['first-name-other-adult'] }} when you are ready. Remember you'll both need to be in agreement to finish the child arrangements plan.</p>
+      {% else %}
+        <p>Share your plan with {{ data['first-name-adult'] }} when you are ready. Remember you'll both need to be in agreement to finish the child arrangements plan.</p>
+      {% endif %}
+
+     
+
+      <p>You can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">download the plan</a></li>
+        <li><a href="#">email the plan</a></li>
+        <li><a href="#">print it</a></li>
+      </ul>
+
+      <p>You'll both need to be in agreement to finish the child arrangements plan. It's best to get agreement in writing, even if it's just on an email.</p>
+
+      {% if data['court-check'] == 'Yes' %}
+        <p>Remember, although it's best to agree changes to your arrangements without going to court, only your original court order can be enforced.</p>
+      {% endif %}
+
+
+    </div>
+  </div>
+
+{% endblock %}

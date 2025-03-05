@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <!-- <h1 class="govuk-heading-l">
+        How will you agree changes?
+      </h1>
+
+      <p>There will be times when plans will need to change, such as if one parent is too unwell to care for children.</p> 
+      
+      <p>Think about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>how changes should be agreed. For example, by email.</li>
+        <li>how much notice you must give the other parent</li>
+      </ul> -->
+
+     <form class="form" action="plan-long-term-notice" method="post">
+
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "last-minute-another-arrangement",
+          id: "last-minute-another-arrangement",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
+
+
+        {{ govukCheckboxes({
+          name: "last-minute-changes",
+          id: "last-minute-changes",
+          fieldset: {
+            legend: {
+              text: "How should last-minute changes be communicated?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "There will be times when plans will need to change, such as if one parent is suddenly unwell and cannot collect a child from school. Select all that apply."
+          }, 
+          items: [
+            {
+              value: "By text message",
+              text: "By text message"
+            },
+            {
+              value: "With a phone call",
+              text: "With a phone call"
+            },
+            {
+              value: "By email",
+              text: "By email"
+            },
+            {
+              value: "Using a parenting app",
+              text: "Using a parenting app"
+            },
+
+                      {
+            value: "Another arrangement",
+            text: "Another arrangement",
+            behaviour: "exclusive",
+            conditional: {html: anotherHtml}
+          }
+    
+  
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+  
+
+      </form>
+            <p><a href="#">We do not need to decide this</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

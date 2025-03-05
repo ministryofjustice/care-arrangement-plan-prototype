@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Version 5" %}
+{% set pageName="Version 8" %}
 
 {% block header %}
   <!-- Blank header with no service name for the start page -->
@@ -17,31 +17,43 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-!-padding-bottom-9">
+  <div class="govuk-grid-column-full govuk-!-padding-bottom-1">
 
     <h1 class="govuk-heading-l">
-      Version 7
+      Version 8
     </h1>
 
     {{govukTag({
-      text: "Tested",
-      classes: "govuk-tag--green"
+      text: "In progress",
+      classes: "govuk-tag--blue"
     })}}
 
     </div>
   </div>
 
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">Initiator journey - propsed plan creation</h2>
+
   {{ govukButton({
-    text: "View full flow - v7",
+    text: "Initiator - start new plan",
     href: "start"
   }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Responder journey - review proposed plan</h2>
+
+  {{ govukButton({
+    text: "Responder - review plan",
+    href: "start"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {{ govukInsetText({
-        text: "NB You must enter children and adult names at the start to ensure v7 works correctly."
-      }) }}
 
 
     <h2 class="govuk-heading-m">Page list</h2>

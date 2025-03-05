@@ -1,0 +1,148 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="where-children-live" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                <!-- If statement for only child or multiple children-->
+                {% if data['number-of-children'] == '1' %}
+                  Where will {{ data['first-child-name'] }} mostly live?
+                {% else %}
+                  Where will the children mostly live?
+                {% endif %}
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-children-live" name="where-children-live" type="radio" value="With adult-a">
+                <label class="govuk-label govuk-radios__label" for="where-children-live">
+                  With {{ data['first-name-adult'] }}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-children-live-2" name="where-children-live" type="radio" value="With adult-b">
+                <label class="govuk-label govuk-radios__label" for="where-children-live-2">
+                  With {{ data['first-name-other-adult'] }}
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-children-live-3" name="where-children-live" type="radio" value="equal time">
+                <label class="govuk-label govuk-radios__label" for="where-children-live-3">
+                  {% if data['number-of-children'] == '1' %}
+                    {{ data['first-child-name'] }} will spend equal time with {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
+                  {% else %}
+                    They will split time between {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
+                  {% endif %}
+                  
+                </label>
+              </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-children-live-4" name="where-children-live" type="radio" value="another arrangement" data-aria-controls="conditional-where-children-live-4">
+                <label class="govuk-label govuk-radios__label" for="where-children-live-4">
+                  Another arrangement
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-where-children-live-4">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="more-detail">
+                    Describe the arrangement
+                  </label>
+                  <textarea class="govuk-textarea" id="another-arrangement-where-live" name="another-arrangement-where-live" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+        <!--
+        {% set anotherHtml %}
+        {{ govukTextarea({
+          name: "another-arrangement-where-live",
+          id: "another-arrangement-where-live",
+          label: {
+            text: "Describe the arrangement"
+          }
+        }) }}
+      {% endset -%}
+
+
+
+        {{ govukRadios({
+          name: "where-children-live",
+          fieldset: {
+            legend: {
+              text: "Where will the child mostly live?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+
+          items: [
+            {
+              value: "With adult-a",
+              text: "With " +  data['first-name-adult'] 
+            },
+            {
+              value: "With adult-b",
+              text: "With " +  data['first-name-other-adult']
+            },
+            {
+              value: "equal time",
+              text: "They'll spend equal time with " + data['first-name-adult'] + " and " + data['first-name-other-adult']
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml
+              }
+            }
+          ]
+        }) }}
+
+        -->
+
+
+     
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,96 @@
+
+       {% if data['number-of-children'] == '1' %}
+          <h2 class="govuk-heading-m">Proposed child arrangements plan for {{ data['first-child-name'] }}</h2>
+        {% elif data['number-of-children'] == '2' %}
+          <h2 class="govuk-heading-m">Proposed child arrangements plan for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}</h2>
+        {% elif data['number-of-children'] == '3' %}
+          <h2 class="govuk-heading-m">Proposed child arrangements plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}</h2>
+        {% elif data['number-of-children'] == '4' %}
+          <h2 class="govuk-heading-m">Proposed child arrangements plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}</h2>
+        {% endif %}
+
+
+       {% if data['number-of-children'] == '1' %}
+          <p>{{ data['first-name-adult'] }} is asking that you work together to come up with a plan for how to look after {{ data['first-child-name'] }}. These proposed child arrangements aim to find a way you can both work together to make {{ data['first-child-name'] }} as happy and secure as possible.</p>
+
+        {% elif data['number-of-children'] == '2' %}
+          <p>{{ data['first-name-adult'] }} is asking that you work together to come up with a plan for how to look after {{ data['first-child-name'] }} and {{ data['second-child-name'] }}. These proposed child arrangements aim to find a way you can both work together to make {{ data['first-child-name'] }} and {{ data['second-child-name'] }} as happy and secure as possible.</p>
+
+        {% elif data['number-of-children'] == '3' %}
+          <p>{{ data['first-name-adult'] }} is asking that you work together to come up with a plan for how to look after {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}. These proposed child arrangements aim to find a way you can both work together to make {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }} as happy and secure as possible.</p>
+
+        {% elif data['number-of-children'] == '4' %}
+          <p>{{ data['first-name-adult'] }} is asking that you work together to come up with a plan for how to look after {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}. These proposed child arrangements aim to find a way you can both work together to make {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }} as happy and secure as possible.</p>
+
+        {% endif %}
+
+
+
+<p class="govuk-body">You do not need to accept what {{ data['first-name-adult'] }} is proposing. Instead you can:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>use this form to suggest changes to what {{ data['first-name-adult'] }} is proposing</li>
+  <li>start your own proposed child arrangements plan using the propose a child arrangements plan service on GOV.UK, or by finding a similar service</li>
+  <li>make a written plan of your own without using any service or template</li>
+</ul>
+
+    
+
+<h3 class="govuk-heading-s">Why you should work with {{ data['first-name-adult'] }} to make a plan</h3>
+<p>It’s best if you and {{ data['first-name-adult'] }} work together to plan what arrangements are best for the children. If you can agree on a plan, you may be able to avoid court.</p>
+
+<h3 class="govuk-heading-s">As you have a court order in place</h3>
+
+<p>{{ data['first-name-adult'] }} has told us that there is a court order in place about your child arrangements. If you can reach agreement with {{ data['first-name-adult'] }}, then you do not need to go back to court to change your arrangements. However, a court can only enforce the child arrangements that are in your court order.</p>
+
+<h3 class="govuk-heading-s">If you have prohibited steps order or a specific issue order</h3>
+<p>Check any legal documents sent to you by a judge to see whether you have a prohibited steps order or a specific issue order (section 8).</p>
+
+<p class="govuk-body govuk-!-font-weight-bold">Top tips</p>
+
+<p class="govuk-body">You do not need to accept what {{ data['first-name-adult'] }} is proposing. Instead you can:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>One of the main reasons people end up in court is that they are not willing to compromise to reach agreement. It may help you avoid court if you can work with {{ data['first-name-adult'] }} to find a compromise that’s best for your children.</li>
+  <li>Get your children’s input into the arrangements you are making so that they feel included and their needs are met.</li>
+  <li>Remember to always put your children’s needs and feelings first.</li>
+<li>It may not be in the children’s best interests to split time exactly between households.</li>
+</ul>
+
+
+<h3 class="govuk-heading-s">If you need more information about divorce and separation</h3>
+
+<p class="govuk-body">Check GOV.UK to find what support is available including:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Separating or divorcing: what you need to do</li>
+
+   <li> Making child arrangements if you divorce or separate</li>
+
+    <li>Getting emotional support</li>
+</ul>
+
+
+<h3 class="govuk-heading-s">Safety check</h3>
+
+<p>To make child arrangements you need to be able to state your needs and views without feeling intimidated. Do not continue with this process if you think the other parent is a threat to you or your children's safety.</p>
+
+<p>Do not continue with this process if there has been:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+
+   <li>any form of domestic abuse or violence, even if the abuse was not directed at the children</li>
+
+    <li>actual or attempted child abduction</li>
+
+    <li>child abuse or neglect</li>
+
+    <li>misuse of drugs, alcohol or other substances</li>
+    <li>any other safety or welfare concerns that place anyone at significant risk of harm</li>
+</ul>
+
+<p>Instead you should find another way to make arrangements by visiting <a href="*"> https://helpwithchildarrangements.service.justice.gov.uk</a></p>
+
+
+<h3 class="govuk-heading-s">Getting help with abuse and domestic violence</h3>
+
+<p>To find out more about what is child abuse and neglect, visit <a href="*">https://www.nspcc.org.uk/what-is-child-abuse</a></p>
+
+<p>If you're unsure whether you're a victim of domestic abuse, visit <a href="*"> https://www.nhs.uk/live-well/getting-help-for-domestic-violence</a></p>

@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Who is using this service? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        About the adults who will care for the children
+      </h1>
+
+      <p>We do not store this information or share it with other government departments.</p>
+
+
+      <form class="form" action="make-a-plan" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Your first name"
+          },
+          hint: {
+    text: "If you are answering these questions for someone else, enter their first name"
+  },
+          id: "first-name-adult",
+          name: "first-name-adult"
+        }) }}
+  
+  
+        {{ govukInput({
+          label: {
+            text: "First name of the other parent or carer"
+          },
+          id: "first-name-other-adult",
+          name: "first-name-other-adult"
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
