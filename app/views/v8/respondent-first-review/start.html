@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Negotiation tools and services",
+        href: "#"
+      },
+      {
+        text: " Make or change a child arrangements plan "
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+   <!--   <h2 class="govuk-heading-m">
+        About this service
+      </h2> -->
+      
+<p>Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. 
+</p>
+
+      <p>This service helps you work out your child arrangements without having to go to court.</p>
+      <p>You’ll end up with a proposed plan that you can share with another parent or carer to ask their agreement.</p>
+
+      <p>Use this service to propose:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>where your children live</li>
+        <li>when your children spend time with each parent</li>
+        <li>handovers, holidays and whatever else matters to your children</li>
+      </ul>
+
+     
+      <p>This service is useful if:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you are separated or divorced from your children’s other parent and have no child arrangements plan in place yet</li>
+        <li>you want to propose changes to your existing arrangements, even if you have a court order in place</li>
+      </ul>
+
+
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "task-list",
+        isStartButton: true
+      }) }}
+
+      <p>You can also <a href="*" class="govuk-link">download a template child arrangements plan.</a></p>
+
+      <p>If you think the other parent is a threat to you or your children's safety, you should not use this service. <a href="">Find another way to make arrangements</a>. </p>
+        
+      <p><a href="">Find out more about child abuse and neglect</a></p> 
+        
+      <p><a href="">Find out more about signs of domestic violence</a> if you're unsure whether you're a victim.</p>
+
+      <p><a href="https://www.cafcass.gov.uk/sites/default/files/migrated/Top-Tips-for-parents-who-are-separated.pdf">Tips for parents</a> from a child's perspective.</p>
+
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -29,12 +29,13 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
         <li>how much notice you must give the other parent</li>
       </ul> -->
 
-     <form class="form" action="plan-long-term-notice" method="post">
 
-        {% set anotherHtml %}
+     <form class="form" action="plan-review" method="post">
+
+       {% set anotherHtml %}
         {{ govukTextarea({
-          name: "last-minute-another-arrangement",
-          id: "last-minute-another-arrangement",
+          name: "another-arrangement-long-term",
+          id: "another-arrangement-long-term",
           label: {
             text: "Describe the arrangement"
           }
@@ -42,52 +43,49 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
       {% endset -%}
 
 
-        {{ govukCheckboxes({
-          name: "last-minute-changes",
-          id: "last-minute-changes",
+       {{ govukRadios({
+          id: "long-term-notice",
+  name: "long-term-notice",
           fieldset: {
             legend: {
-              text: "How should last-minute changes be communicated?",
+              text: "How much notice should you give to change long-term arrangements?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
-          hint: {
-            html: "<p>There will be times when plans will need to change, such as if one parent is suddenly unwell and cannot collect a child from school. </p><p>Select all that apply.</p>"
-          }, 
+           hint: {
+            text: "Sometimes you may need to plan a long way ahead. For example, if you want to plan a holiday during time you do not usually spend with the children."
+          },
           items: [
             {
-              value: "By text message",
-              text: "By text message"
+              value: "2 weeks",
+              text: "2 weeks"
             },
-            {
-              value: "With a phone call",
-              text: "With a phone call"
+                        {
+              value: "4 weeks",
+              text: "4 weeks"
             },
-            {
-              value: "By email",
-              text: "By email"
-            },
-            {
-              value: "Using a parenting app",
-              text: "Using a parenting app"
-            },
-
                       {
-            value: "Another arrangement",
-            text: "Another arrangement",
-            behaviour: "exclusive",
-            conditional: {html: anotherHtml}
-          }
-    
-  
+              value: "6 weeks",
+              text: "6 weeks"
+            },
+                        {
+              value: "8 weeks",
+              text: "8 weeks"
+            },
+            {
+              value: "Another arrangement",
+              text: "Another arrangement",
+              conditional: {
+                html: anotherHtml}
+            }
           ]
         }) }}
 
         {{ govukButton({
           text: "Continue"
         }) }}
-  
+
 
       </form>
             <p><a href="#">We do not need to decide this</a></p>
