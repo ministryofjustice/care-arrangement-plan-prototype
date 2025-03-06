@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What else is important to include about visits? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+
+      <form class="form" action="make-a-plan" method="post">
+
+     
+        {{ govukTextarea({
+            name: "items-changeover",
+            id: "items-changeover",
+            label: {
+              text: "What items need to go between households?",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            },
+            hint: {
+              text: "Items include clothes, sports kit, school equipment, toys and electronics, medicines and personal care items such as toothbrushes.​"
+            }
+          }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+
+      <p><a href="will-arrangements-change" value="skip">We do not need to decide this</a></p>
+    </div>
+  </div>
+
+{% endblock %}

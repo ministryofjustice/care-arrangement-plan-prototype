@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <!-- <h1 class="govuk-heading-l">
+        How will you agree changes?
+      </h1>
+
+      <p>There will be times when plans will need to change, such as if one parent is too unwell to care for children.</p> 
+      
+      <p>Think about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>how changes should be agreed. For example, by email.</li>
+        <li>how much notice you must give the other parent</li>
+      </ul> -->
+
+     <h1 class="govuk-heading-l">When will the children’s needs change?</h1>
+  
+
+     <div class="govuk-inset-text">
+  You can also review these arrangements at an earlier time if they no longer meet your children’s needs.
+</div>
+
+   
+
+
+   <p>Children's needs change as they grow. When should you review this agreement to check it is still what's best for the children?</p>
+
+
+<div class="govuk-date-input" id="months-review">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="review-months">
+            Months
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="months-review" name="months-review" type="text" inputmode="numeric">
+        </div>
+      </div>
+
+<p>or</p>
+
+      <div class="govuk-date-input" id="years-review">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="review-years">
+            Years
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="years-review" name="years-review" type="text" inputmode="numeric">
+        </div>
+      </div>
+
+
+
+
+
+  <form class="form" action="make-a-plan" method="post">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+            <p><a href="#">Skip this question</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
