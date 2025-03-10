@@ -13,26 +13,50 @@ What else is important to include about visits? – {{ serviceName }} – GOV.UK
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+
+
+ <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      
 
-      <form class="form" action="plan-special-days" method="post">
+      <form class="form" action="items-for-changeover-act" method="post">
 
-     
-        {{ govukTextarea({
-            name: "items-changeover",
-            id: "items-changeover",
-            label: {
-              text: "What items need to go between households?",
-              classes: "govuk-label--l",
-              isPageHeading: true
-            },
-            hint: {
-              text: "Items include clothes, sports kit, school equipment, toys and electronics, medicines and personal care items such as toothbrushes.​"
-            }
-          }) }}
+
+              <h1 class="govuk-heading-l">
+                
+What items need to go between households?
+
+              </h1>
+
+ <h2 class="govuk-heading-s">Susan's answer:</h2>
+
+<p class="govuk-body">School uniform which you have WASHED AND IRONED the night before. I need their iPads back every time.
+</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "items-for-changeover-q",
+  fieldset: {
+    legend: {
+      text: "Do you agree?"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
+
 
         {{ govukButton({
           text: "Continue"

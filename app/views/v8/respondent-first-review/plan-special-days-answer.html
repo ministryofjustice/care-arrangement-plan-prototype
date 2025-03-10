@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What will happen on special days? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        What will happen on special days?
+      </h1>
+
+      <p>Keep your children’s feelings at the centre of your plans for holidays and meaningful events. For example, New Year celebrations, Mother’s Day and Father’s Day, and birthdays.</p>
+
+
+
+      <form class="form" action="plan-other-things" method="post">
+
+
+      {{ govukTextarea({
+        name: "special-days",
+        id: "special-days",
+        label: {
+          classes: "govuk-label--m"        }
+      }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+            <p><a href="#">We do not need to decide this</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

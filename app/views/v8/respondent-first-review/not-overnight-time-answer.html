@@ -13,17 +13,18 @@ Will the children also spend time with Richard without staying overnight? – {{
 
 {% block content %}
 
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="not-overnight-time-act" method="post">
+      <form class="form" action="responsible-for-collecting" method="post">
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
 
-              <h1 class="govuk-heading-l">
-                
-                   <!-- If statement for only child or multiple children-->
+                <!-- If statement for only child or multiple children-->
                 {% if data['number-of-children'] == '1' %}
 
 
@@ -47,36 +48,25 @@ Will the children also spend time with Richard without staying overnight? – {{
 
 
                 {% endif %}
-
+                
               </h1>
-
- <h2 class="govuk-heading-s">Susan's answer:</h2>
-
-<p class="govuk-body">Susan has suggested that the children will not do daytime visits to Ian.</p>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-{{ govukRadios({
-  name: "not-overnight-time-q",
-  fieldset: {
-    legend: {
-      text: "Do you agree?"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-    
-  ]
-}) }}
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-overnight-stays-check" name="not-overnight-stays-check" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="not-overnight-stays-check">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-overnight-stays-check-2" name="not-overnight-stays-check" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="not-overnight-stays-check-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
       
 

@@ -18,7 +18,7 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
       
 
-<form class="form" action="how-often-overnight" method="post">
+<form class="form" action="where-live" method="post">
 
 
            
@@ -38,77 +38,32 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<p class="govuk-body">Do you agree?</p>
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "where-children-live-agree-q",
+  fieldset: {
+    legend: {
+      text: "Do you agree?"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
 
 
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            
-
-            <div class="govuk-radios" data-module="govuk-radios">
-
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-children-live-3" name="where-children-live" type="radio" value="equal time">
-                <label class="govuk-label govuk-radios__label" for="where-children-live-3">
-                 Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="where-children-live-4" name="where-children-live" type="radio" value="another arrangement" data-aria-controls="conditional-where-children-live-4">
-                <label class="govuk-label govuk-radios__label" for="where-children-live-4">
-                  No
-                </label>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-where-children-live-4">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="more-detail">
-                    Suggest your alternative to where the children will mostly live
-                  </label>
-
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                      <p></p>
-
-                      <div class="govuk-radios" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-                          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                             With {{ data['first-name-adult'] }}
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                            With {{ data['first-name-other-adult'] }}
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
-                          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                                              {% if data['number-of-children'] == '1' %}
-                    {{ data['first-child-name'] }} will spend equal time with {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
-                  {% else %}
-                    They will split time between {{ data['first-name-adult'] }} and {{ data['first-name-other-adult'] }}
-                  {% endif %}
-                  
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-                          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                            Another arrangement
-                          </label>
-                        </div>
-
-
-            </div>
-
-                      </div>
-                    </fieldset>
-                  </div>
+  
+ 
     
 
 
@@ -128,10 +83,7 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
 
 
-</div>
 
-
-        </div>
 
 
 
@@ -140,7 +92,7 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
           text: "Continue"
         }) }}
 
-      </form>
+ </form>
 
       
 
