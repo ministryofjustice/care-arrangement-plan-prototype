@@ -13,105 +13,54 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
 {% block content %}
 
-  <div class="govuk-grid-row">
 
+
+
+
+
+
+          <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      
 
-      <form class="form" action="items-for-changeover" method="post">
+      <form class="form" action="will-arrangements-change-act" method="post">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Will these arrangements change during school holidays?
-              
+
+              <h1 class="govuk-heading-l">
+                
+Will these arrangements change during school holidays?
+
               </h1>
-              <div class="govuk-!-padding-bottom-5"></div>
-             
-<!--<p>School holidays include half terms, bank holidays and inset days. Older children may also have periods of study leave, or work experience. 
-</p> -->
 
-            </legend>
-            
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="arrangements-change-1" name="arrangements-change" type="radio" value="Yes">
-                <label class="govuk-label govuk-radios__label" for="arrangements-change-1">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="arrangements-change-2" name="arrangements-change" type="radio" value="No">
-                <label class="govuk-label govuk-radios__label" for="arrangements-change-2">
-                  No
-                </label>
-              </div>
-           <!-- <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="arrangements-change-3" name="arrangements-change" type="radio" value="Dont know">
-                <label class="govuk-label govuk-radios__label" for="arrangements-change-3">
-              We do not need to decide this now 
-                </label>
-              </div> -->
-            </div>
+ <h2 class="govuk-heading-s">Susan's answer:</h2>
 
-          </fieldset>
-                 </div>
+<p class="govuk-body">These arrangements do not need to change during school holidays.
+</p>
 
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+{{ govukRadios({
+  name: "will-arrangements-change-q",
+  fieldset: {
+    legend: {
+      text: "Do you agree?"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
 
-        <!--
-        {% set anotherHtml %}
-        {{ govukTextarea({
-          name: "another-arrangement-where-live",
-          id: "another-arrangement-where-live",
-          label: {
-            text: "Describe the arrangement"
-          }
-        }) }}
-      {% endset -%}
-
-
-
-        {{ govukRadios({
-          name: "where-children-live",
-          fieldset: {
-            legend: {
-              text: "Where will the child mostly live?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-
-          items: [
-            {
-              value: "With adult-a",
-              text: "With " +  data['first-name-adult'] 
-            },
-            {
-              value: "With adult-b",
-              text: "With " +  data['first-name-other-adult']
-            },
-            {
-              value: "equal time",
-              text: "They'll spend equal time with " + data['first-name-adult'] + " and " + data['first-name-other-adult']
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "Another arrangement",
-              text: "Another arrangement",
-              conditional: {
-                html: anotherHtml
-              }
-            }
-          ]
-        }) }}
-
-        -->
 
 
      

@@ -13,58 +13,48 @@ Where will the children mostly live? – {{ serviceName }} – GOV.UK Prototype 
 
 {% block content %}
 
-  <div class="govuk-grid-row">
 
+
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      
 
-      <form class="form" action="handover-location" method="post">
-
-       {% set anotherHtml %}
-        {{ govukTextarea({
-          name: "another-arrangement-collection",
-          id: "another-arrangement-collection",
-          label: {
-            text: "Describe the arrangement"
-          }
-        }) }}
-      {% endset -%}
+      <form class="form" action="responsible-for-collecting-act" method="post">
 
 
-        {{ govukRadios({
-          name: "collection-responibility",
-          id: "collection-responibility",
-          fieldset: {
-            legend: {
-              text: "How will the children get between households?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
+              <h1 class="govuk-heading-l">
+                
+       How will the children get between households?
 
-          items: [
+              </h1>
 
+ <h2 class="govuk-heading-s">Susan's answer:</h2>
 
-            {
-            value: data['first-name-other-adult'] + " collects the children",
-              text: data['first-name-other-adult'] + " collects the children"
-            },
+<p class="govuk-body">Susan suggests that Ian drops off the children.</p>
 
-             {
-            value: data['first-name-adult'] + " collects the children",
-              text: data['first-name-adult'] + " collects the children"
-            },
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-            {
-              value: "Another arrangement",
-              text: "Another arrangement",
-              conditional: {
-                html: anotherHtml}
-            }
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-          ]
-        }) }}
+{{ govukRadios({
+  name: "responsible-for-collecting-q",
+  fieldset: {
+    legend: {
+      text: "Do you agree?"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}        
 
         {{ govukButton({
           text: "Continue"

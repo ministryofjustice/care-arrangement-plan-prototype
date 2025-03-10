@@ -649,5 +649,137 @@ router.post('/v8/living-visiting/arrangements-change', function (req, res) {
   }  
 });
 
+// Version 8 respondent 1st review//
+
+router.post('/v8/respondent-first-review/where-live', function (req, res) {
+  const editChoice = req.session.data['where-children-live-agree-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('how-often-overnight')
+  } else if (editChoice === 'no') {
+    res.redirect('where-live-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/how-often-overnight-act', function (req, res) {
+  const editChoice = req.session.data['over-night-stay-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('which-days-overnight')
+  } else if (editChoice === 'no') {
+    res.redirect('how-often-overnight-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/which-days-overnight', function (req, res) {
+  const editChoice = req.session.data['which-days-overnight-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('not-overnight-time')
+  } else if (editChoice === 'no') {
+    res.redirect('which-days-overnight-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/not-overnight-time-act', function (req, res) {
+  const editChoice = req.session.data['not-overnight-time-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('responsible-for-collecting')
+  } else if (editChoice === 'no') {
+    res.redirect('not-overnight-time-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/responsible-for-collecting-act', function (req, res) {
+  const editChoice = req.session.data['responsible-for-collecting-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('handover-location')
+  } else if (editChoice === 'no') {
+    res.redirect('responsible-for-collecting-answer')
+  }   
+});
+
+
+router.post('/v8/respondent-first-review/handover-location-act', function (req, res) {
+  const editChoice = req.session.data['handover-location-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('will-arrangements-change')
+  } else if (editChoice === 'no') {
+    res.redirect('handover-location-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/will-arrangements-change-act', function (req, res) {
+  const editChoice = req.session.data['will-arrangements-change-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('items-for-changeover')
+  } else if (editChoice === 'no') {
+    res.redirect('will-arrangements-change-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/items-for-changeover-act', function (req, res) {
+  const editChoice = req.session.data['items-for-changeover-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('plan-special-days')
+  } else if (editChoice === 'no') {
+    res.redirect('items-for-changeover-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/plan-special-days-act', function (req, res) {
+  const editChoice = req.session.data['plan-special-days-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('plan-other-things')
+  } else if (editChoice === 'no') {
+    res.redirect('plan-special-days-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/plan-other-things-act', function (req, res) {
+  const editChoice = req.session.data['plan-other-things-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('plan-last-minute-changes')
+  } else if (editChoice === 'no') {
+    res.redirect('plan-other-things-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/plan-last-minute-changes-act', function (req, res) {
+  const editChoice = req.session.data['plan-last-minute-changes-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('plan-long-term-notice')
+  } else if (editChoice === 'no') {
+    res.redirect('plan-last-minute-changes-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/plan-long-term-notice-act', function (req, res) {
+  const editChoice = req.session.data['plan-long-term-notice-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('plan-review')
+  } else if (editChoice === 'no') {
+    res.redirect('plan-long-term-notice-answer')
+  }   
+});
+
+router.post('/v8/respondent-first-review/plan-review-act', function (req, res) {
+  const editChoice = req.session.data['plan-review-q']
+
+  if (editChoice === 'yes') {
+    res.redirect('task-list')
+  } else if (editChoice === 'no') {
+    res.redirect('plan-review-answer')
+  }   
+});
 
 

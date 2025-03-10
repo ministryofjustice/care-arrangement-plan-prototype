@@ -13,28 +13,50 @@ What will happen on special days? – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+
+
+
+          <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        What will happen on special days?
-      </h1>
 
-      <p>Keep your children’s feelings at the centre of your plans for holidays and meaningful events. For example, New Year celebrations, Mother’s Day and Father’s Day, and birthdays.</p>
+      <form class="form" action="plan-special-days-act" method="post">
 
 
+              <h1 class="govuk-heading-l">
+                
+What will happen on special days?
 
-      <form class="form" action="plan-other-things" method="post">
+              </h1>
 
+ <h2 class="govuk-heading-s">Susan's answer:</h2>
 
-      {{ govukTextarea({
-        name: "special-days",
-        id: "special-days",
-        label: {
-          classes: "govuk-label--m"        }
-      }) }}
+<p class="govuk-body">The kids to spend alternate Christmas with each of us. NY you can have. Easter I will take them abroad. Mother’s Day obviously.
+</p>
 
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "plan-special-days-q",
+  fieldset: {
+    legend: {
+      text: "Do you agree?"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
     
         {{ govukButton({
           text: "Continue"

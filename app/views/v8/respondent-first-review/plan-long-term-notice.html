@@ -13,74 +13,49 @@ How will you agree changes? – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+ <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-     <!-- <h1 class="govuk-heading-l">
-        How will you agree changes?
-      </h1>
 
-      <p>There will be times when plans will need to change, such as if one parent is too unwell to care for children.</p> 
-      
-      <p>Think about:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>how changes should be agreed. For example, by email.</li>
-        <li>how much notice you must give the other parent</li>
-      </ul> -->
+      <form class="form" action="plan-long-term-notice-act" method="post">
 
 
-     <form class="form" action="plan-review" method="post">
+              <h1 class="govuk-heading-l">
+                
+How much notice should you give to change long-term arrangements?
 
-       {% set anotherHtml %}
-        {{ govukTextarea({
-          name: "another-arrangement-long-term",
-          id: "another-arrangement-long-term",
-          label: {
-            text: "Describe the arrangement"
-          }
-        }) }}
-      {% endset -%}
+              </h1>
 
+ <h2 class="govuk-heading-s">Susan's answer:</h2>
 
-       {{ govukRadios({
-          id: "long-term-notice",
-  name: "long-term-notice",
-          fieldset: {
-            legend: {
-              text: "How much notice should you give to change long-term arrangements?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-           hint: {
-            text: "Sometimes you may need to plan a long way ahead. For example, if you want to plan a holiday during time you do not usually spend with the children."
-          },
-          items: [
-            {
-              value: "2 weeks",
-              text: "2 weeks"
-            },
-                        {
-              value: "4 weeks",
-              text: "4 weeks"
-            },
-                      {
-              value: "6 weeks",
-              text: "6 weeks"
-            },
-                        {
-              value: "8 weeks",
-              text: "8 weeks"
-            },
-            {
-              value: "Another arrangement",
-              text: "Another arrangement",
-              conditional: {
-                html: anotherHtml}
-            }
-          ]
-        }) }}
+<p class="govuk-body">Susan suggested you give each other 6 weeks notice. 
+</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "plan-long-term-notice-q",
+  fieldset: {
+    legend: {
+      text: "Do you agree?"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+    
+  ]
+}) }}
+
+ 
 
         {{ govukButton({
           text: "Continue"
