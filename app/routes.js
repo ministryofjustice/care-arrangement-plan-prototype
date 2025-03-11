@@ -782,4 +782,35 @@ router.post('/v8/respondent-first-review/plan-review-act', function (req, res) {
   }   
 });
 
+router.post('/v8/respondent-first-review/court', function (req, res) {
+  const editChoice = req.session.data['court-check']
+
+  if (editChoice === 'Yes') {
+    res.redirect('court-content')
+  } else if (editChoice === 'No') {
+    res.redirect('task-list')
+  }   
+});
+
+router.post('/v8/respondent-first-review/content-1', function (req, res) {
+  const editChoice = req.session.data['safe-check-1']
+
+  if (editChoice === 'Yes') {
+    res.redirect('content-2')
+  } else if (editChoice === 'No') {
+    res.redirect('safe-check-content-1-no')
+  } 
+});
+
+
+router.post('/v8/respondent-first-review/content-2', function (req, res) {
+  const editChoice = req.session.data['safe-check-2']
+
+  if (editChoice === 'Yes') {
+    res.redirect('content-3')
+  } else if (editChoice === 'No') {
+    res.redirect('safe-check-content-2-no')
+  } 
+});
+
 
