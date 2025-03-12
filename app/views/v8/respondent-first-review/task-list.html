@@ -56,7 +56,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
       <h2 class="govuk-heading-m">Living and visiting</h2>
       <ul class="govuk-task-list">
        
-        {% if data['where-children-live'] %}
+        {% if data['where-children-live-agree-q'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="where-live" aria-describedby="child-arrangement-plan-1-status">
@@ -65,7 +65,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                   Completed
+                   Reviewed
             </div>
           </li>
           {% else %}
@@ -83,7 +83,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </li>
           {% endif %}
 
-                  {% if data['where-children-live'] %}
+                  {% if data['over-night-stay-q'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="how-often-overnight" aria-describedby="child-arrangement-plan-1-status">
@@ -92,7 +92,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                   Completed
+                   Reviewed
             </div>
           </li>
           {% else %}
@@ -111,7 +111,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </li>
           {% endif %}
 
-                  {% if data['where-children-live'] %}
+                  {% if data['which-days-overnight-q'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="which-days-overnight" aria-describedby="child-arrangement-plan-1-status">
@@ -120,7 +120,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                   Completed
+                   Reviewed
             </div>
           </li>
           {% else %}
@@ -140,7 +140,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </li>
           {% endif %}
 
-                  {% if data['where-children-live'] %}
+                  {% if data['not-overnight-time-q'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="not-overnight-time" aria-describedby="child-arrangement-plan-1-status">
@@ -149,7 +149,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                   Completed
+                   Reviewed
             </div>
           </li>
           {% else %}
@@ -189,7 +189,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
     <h2 class="govuk-heading-m">Handovers and holidays</h2>
       <ul class="govuk-task-list">
        
-        {% if data['collection-responibility'] %}
+        {% if data['responsible-for-collecting-q'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="responsible-for-collecting" aria-describedby="child-arrangement-plan-1-status">
@@ -197,7 +197,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                   Completed
+                   Reviewed
             </div>
           </li>
           {% else %}
@@ -216,7 +216,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           {% endif %}
 
 
-                  {% if data['handover-location'] %}
+                  {% if data['handover-location-q'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="handover-location" aria-describedby="child-arrangement-plan-1-status">
@@ -224,7 +224,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                   Completed
+                   Reviewed
             </div>
           </li>
           {% else %}
@@ -245,7 +245,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
 
 
-          {% if data['arrangements-change'] %}
+          {% if data['will-arrangements-change-q'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="will-arrangements-change" aria-describedby="child-arrangement-plan-4-status">
@@ -254,7 +254,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
             
-                Completed
+                Reviewed
          
           </div>
         </li>
@@ -278,7 +278,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
         {% endif %}
     
 
-        {% if data['items-changeover'] %}
+        {% if data['items-for-changeover-q'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="items-for-changeover" aria-describedby="child-arrangement-plan-4-status">
@@ -287,7 +287,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-4-status">
             
-                Completed
+                Reviewed
          
           </div>
         </li>
@@ -315,7 +315,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
       <h2 class="govuk-heading-m">Special days</h2>
       <ul class="govuk-task-list">
        
-        {% if data['special-days'] %}
+        {% if data['plan-special-days-q'] %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="plan-special-days" aria-describedby="child-arrangement-plan-1-status">
@@ -323,7 +323,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
               </a>
             </div>
             <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
-                   Completed
+                   Reviewed
             </div>
           </li>
           {% else %}
@@ -351,7 +351,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
       <h2 class="govuk-heading-m">Other things</h2>
       <ul class="govuk-task-list">
 
-          {% if data['other-things'] %}
+          {% if data['plan-other-things-q'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="plan-other-things" aria-describedby="child-arrangement-plan-4-status">
@@ -359,7 +359,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </a>
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
-                Completed
+                Reviewed
           </div>
         </li>
         
@@ -388,7 +388,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
       <ul class="govuk-task-list">
 
 
-        {% if data['last-minute-changes'] %}
+        {% if data['plan-last-minute-changes-q'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="plan-last-minute-changes" aria-describedby="child-arrangement-plan-5-status">
@@ -396,7 +396,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </a>
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
-                Completed
+                Reviewed
           </div>
         </li>
        
@@ -418,7 +418,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
                    {% endif %}
 
 
-            {% if data['long-term-notice'] %}
+            {% if data['plan-long-term-notice-q'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="plan-long-term-notice" aria-describedby="child-arrangement-plan-5-status">
@@ -426,7 +426,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </a>
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
-                Completed
+                Reviewed
           </div>
         </li>
        
@@ -447,7 +447,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
                    {% endif %}
 
-            {% if data['long-term-notice'] %}
+            {% if data['plan-review-q'] %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="plan-review" aria-describedby="child-arrangement-plan-5-status">
@@ -455,7 +455,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             </a>
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-5-status">
-                Completed
+                Reviewed
           </div>
         </li>
        
