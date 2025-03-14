@@ -11,14 +11,14 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
 
       <div class="govuk-panel govuk-panel--confirmation">
   <h1 class="govuk-panel__title">
-    Your proposed plan is ready to share
+    Thanks for sending your response
   </h1>
   <!--<div class="govuk-panel__body">
     Your reference number<br><strong>HDJ2123F</strong>
   </div> -->
 </div>
 
-       {% if data['number-of-children'] == '1' %}
+     <!--  {% if data['number-of-children'] == '1' %}
           <h1 class="govuk-heading-l">Proposed child arrangements plan for {{ data['first-child-name'] }}</h1>
         {% elif data['number-of-children'] == '2' %}
           <h1 class="govuk-heading-l">Proposed child arrangements plan for {{ data['first-child-name'] }} and {{ data['second-child-name'] }}</h1>
@@ -26,18 +26,16 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           <h1 class="govuk-heading-l">Proposed child arrangements plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }} and {{ data['third-child-name'] }}</h1>
         {% elif data['number-of-children'] == '4' %}
           <h1 class="govuk-heading-l">Child arrangement plan for {{ data['first-child-name'] }}, {{ data['second-child-name'] }}, {{ data['third-child-name'] }} and {{ data['fourth-child-name'] }}</h1>
-        {% endif %}
+        {% endif %} -->
 
   
 
-      <p>You've created a proposed child arrangements plan. You must now share the plan with {{ data['first-name-other-adult'] }} to get their agreement.</p> 
+      <h1 class="govuk-heading-l">You’ve now sent your response back to {{ data['first-name-adult'] }} .</h1> 
 
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">What to do next</h2>
-<p>Send this proposed child 
-arrangements plan to {{ data['first-name-other-adult'] }}. {{ data['first-name-other-adult'] }} will have the chance to respond.</p>
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">If {{ data['first-name-adult'] }} does not respond</h2>
+<p>If Heather does not respond, you can try mediation. The next step would be to apply for a court order.</p>
 
-<h2 class="govuk-heading-s govuk-!-margin-bottom-2">If {{ data['first-name-other-adult'] }} does not respond</h2>
-<p>If {{ data['first-name-other-adult'] }} does not respond, you can try mediation. The next step would be to apply for a court order.</p>
+
 <p><a href="https://www.gov.uk/looking-after-children-divorce/types-of-court-order" class="govuk-link">Find out more about what to do if you cannot agree.</a></p>
 
 
@@ -47,9 +45,8 @@ arrangements plan to {{ data['first-name-other-adult'] }}. {{ data['first-name-o
 <div class="govuk-grid-column-one-third">
   <div style="border-top:10px solid #1d70b8;" class="govuk-related-items govuk-!-margin-bottom-4">
   </div>
-  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Now share your plan</h2>
-  <p class="govuk-body govuk-!-margin-bottom-2">Send this proposed child 
-arrangements plan to {{ data['first-name-other-adult'] }}.</p>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Reply sent</h2>
+  <p class="govuk-body govuk-!-margin-bottom-2">You have sent the proposed plan back to {{ data['first-name-adult'] }}.</p>
 
  
         <p><a href="#" class="govuk-link" style="text-decoration: none; text-align: left;">Download the plan</a></p>

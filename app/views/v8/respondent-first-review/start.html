@@ -38,28 +38,26 @@
         {{ serviceName }}
       </h1>
 
-
+<h2 class="govuk-heading-m">Please respond</h2>
       
-<p>Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. Some text to here etc. 
+
+
+<p class="govuk-body">
+<!-- If statement for only child or multiple children-->
+ {% if data['number-of-children'] == '1' %}
+ {{ data['first-name-adult'] }} is asking that you work together to come up with a plan for how to look after {{ data['first-child-name'] }}.
+ 
+{% else %}
+{{ data['first-name-adult'] }} is asking that you work together to come up with a plan for how to look after {{ data['first-child-name'] }} and {{ data['second-child-name'] }}.
+
+{% endif %}
 </p>
 
-      <p>This service helps you work out your child arrangements without having to go to court.</p>
-      <p>You’ll end up with a proposed plan that you can share with another parent or carer to ask their agreement.</p>
 
-      <p>Use this service to propose:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>where your children live</li>
-        <li>when your children spend time with each parent</li>
-        <li>handovers, holidays and whatever else matters to your children</li>
-      </ul>
 
-     
-      <p>This service is useful if:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>you are separated or divorced from your children’s other parent and have no child arrangements plan in place yet</li>
-        <li>you want to propose changes to your existing arrangements, even if you have a court order in place</li>
-      </ul>
+<p>Please read through the suggestions {{ data['first-name-adult'] }} has made. You’re then invited to reply with suggestions of your own.</p>
 
+ 
 
 
 
