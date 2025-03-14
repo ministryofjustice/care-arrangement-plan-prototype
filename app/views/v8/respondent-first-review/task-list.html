@@ -29,7 +29,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-1-status">
               The children
-            </a>
+            </a> <br>{{ data['first-child-name'] }}, {{ data['second-child-name'] }}
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">          
               Completed 
@@ -38,8 +38,8 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="child-arrangement-plan-1-status">
-              Who is using this service?
-            </a>
+              The adults
+            </a> <br>{{ data['first-name-adult'] }}, {{ data['first-name-other-adult'] }}
           </div>
           <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">  
                 Completed
@@ -144,7 +144,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="not-overnight-time" aria-describedby="child-arrangement-plan-1-status">
-                Will the children do daytime visits with Ian?
+                Will the children do daytime visits with {{ data['first-name-other-adult'] }}?
 
               </a>
             </div>
@@ -156,7 +156,7 @@ Child arrangement plan for Jay and Robyn – {{ serviceName }} – GOV.UK Protot
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 <a class="govuk-link govuk-task-list__link" href="not-overnight-time" aria-describedby="child-arrangement-plan-1-status">
-                   Will the children do daytime visits with Ian? 
+                   Will the children do daytime visits with {{ data['first-name-other-adult'] }}? 
                 </a>
               </div>
              <div class="govuk-task-list__status" id="child-arrangement-plan-1-status">
