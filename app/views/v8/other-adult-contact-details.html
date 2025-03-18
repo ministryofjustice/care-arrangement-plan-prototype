@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Who is using this service? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Other parent email address
+      </h1>
+
+      <p>Enter Dave's email address so we can share the child arrangement plan with him.</p>
+
+      <p>Make sure you have permission to share their ermail address before enetering their details.</p>
+
+
+      <form class="form" action="make-a-plan" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Dave's email address"
+          },
+
+          id: "other-adult-email",
+          name: "other-adult-email"
+        }) }}
+
+
+        
+  
+  
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
