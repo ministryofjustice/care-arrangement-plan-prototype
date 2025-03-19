@@ -17,23 +17,22 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        What is [Parent2]'s email address
+        What is your email address
       </h1>
 
-      <p>Make sure you have [Parent2]'s permission to use their email address to get emails about the plan.</p>
 
-      <p>We will not email them about anything else and we do not share their email address with other government departments.</p>
+      <p>We do not share this information with other government departments.</p>
 
 
       <form class="form" action="make-a-plan" method="post">
 
         {{ govukInput({
           label: {
-            text: "Dave's email address"
+            text: "Your email address"
           },
 
-          id: "other-adult-email",
-          name: "other-adult-email"
+          id: "first-adult-email",
+          name: "first-adult-email"
         }) }}
 
 
