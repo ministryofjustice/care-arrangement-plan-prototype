@@ -1,0 +1,13 @@
+services:
+  app:
+    image: care-arrangement-plan-prototype
+    container_name: care-arrangement-plan-prototype
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      PASSWORD: password
+    ports:
+      - "3000:3000"
