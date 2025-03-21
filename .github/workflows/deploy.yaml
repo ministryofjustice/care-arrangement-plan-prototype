@@ -23,21 +23,23 @@ jobs:
           aws-region: ${{ vars.ECR_REGION }}
       - uses: aws-actions/amazon-ecr-login@v2
         id: login-ecr
-      - run: |
+      - name: Build and push image
+        run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: ${{ vars.ECR_REPOSITORY }}
           IMAGE_TAG: ${{ github.sha }}
-      - name: Update image tag and branch name
-        run: export BRANCH=${GITHUB_REF##*/} && cat kubernetes-deploy-${GITHUB_REF##*/}.tpl | envsubst > kubernetes-deploy.yaml
+      - name: Create manifest
+        run: cat kubernetes-deploy-${BRANCH}.tpl | envsubst > kubernetes-deploy.yaml
         env:
           IMAGE_TAG: ${{ github.sha }}
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: ${{ vars.ECR_REPOSITORY }}
           KUBE_NAMESPACE: ${{ secrets.KUBE_NAMESPACE }}
           PASSWORD: ${{ secrets.PROTOTYPE_PASSWORD }}
+          BRANCH: ${{ github.ref_name }}
       - name: Authenticate to the cluster
         run: |
           echo "${KUBE_CERT}" > ca.crt
