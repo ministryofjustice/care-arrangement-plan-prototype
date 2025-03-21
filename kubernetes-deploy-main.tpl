@@ -17,10 +17,7 @@ spec:
         image: ${REGISTRY}/${REPOSITORY}:${IMAGE_TAG}
         env:
           - name: PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: password
-                key: password
+            value: ${PASSWORD}
         ports:
         - containerPort: 3000
 ---
